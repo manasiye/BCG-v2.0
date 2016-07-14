@@ -2,16 +2,21 @@ import { Component, ViewChild } from '@angular/core';
 import { App, ionicBootstrap, Platform,MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
+import { HTTP_PROVIDERS} from '@angular/http';
 import { Page1 } from './pages/page1/page1';
 import { Page2 } from './pages/page2/page2';
 import { Page3 } from './pages/page3/page3';
 import { Page4 } from './pages/page4/page4';
 import { Page5 } from './pages/page5/page5';
 import { Page6 } from './pages/page6/page6';
+import { Page7 } from './pages/page7/page7';
+import { Page8 } from './pages/page8/page8';
 
+import {Services} from './services';
 
 @Component({
-  templateUrl: 'build/app.html'
+  templateUrl: 'build/app.html',
+  providers:[Services,  HTTP_PROVIDERS]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -32,7 +37,9 @@ class MyApp {
       { title: 'Before, During & Ater TREATMENT', component: Page3 },
       { title: 'Treatment TIMELINE', component: Page4 },
       { title: 'BCG SIDEEFFECTS', component: Page5 },
-      { title: 'Frequently Asked QUESTIONS', component: Page6 }
+      { title: 'Frequently Asked QUESTIONS', component: Page6 },
+      { title: 'Help', component: Page7 },
+      { title: 'Acknowledgements', component: Page8 }
     ];
 
   }
@@ -52,4 +59,4 @@ class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp,[Services, HTTP_PROVIDERS]);

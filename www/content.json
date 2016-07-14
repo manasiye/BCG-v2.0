@@ -1,0 +1,32 @@
+{
+ "pageTitle": "Before Treatment",
+ "sections":    [{
+     "id": "1",
+     "title": "Before Treatment Begins, Tell Your Doctor",
+     "content": "<img  src='./img/text/text_before.png' ng-click='openModal({type:'audio'})'/><ul><li>If you have been taking any medications, vitamins, herbs or dietry supplements</li><li>If you have any allergies</li><li>If you received the smallpox vaccine recently</li><li>If you have ever had a positive test for tuberculosis</li><li>If you have fever, infection, severe burn, or an immune disorder</li><li>If you are pregnant or breastfeeding</li></ul><img src='./img/figures/talkingtodoc.png'>"
+ },{
+     "id": "2",
+     "title": "You Should Not Undergo BCG Treatment If:",
+     "content": "<ul><li>There is difficulty inserting a catheter</li><li>Your urine is thick or very dark color from blood</li><li>You have a urinary tract infection (UTI)</li><li>You have had transurethral surgery within the past 7-14 days</li></ul><br /><p>It is important to follow the treatment instuctions carefully, for two main reasons:</p><ul><li>If you do not follow the instructions, the BCG may not work efficiently</li></ul><ul><li>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li></ul><br /><h3 class='blue title-section'>Preparing for Treatment</h3><h3>Starting 4 Hours Before Your Treatment Starts:</h3><ul><li><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li><li><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li></ul>"
+ },{
+     "id": "3",
+     "title": "How is BCG Given?",
+     "content": " <img src='./img/text/text_during.png' ng-click='openModal({type:'audio'})'/>                   <p>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>                        <img src='./img/figures/administration_large.png'>"
+ },{
+     "id":"4",
+     "title": "How Does BCG Work?",
+     "content": "<p>Not all patients are able to hold BCG in the bladder for the full two hours. If you are able to hold it in for the full two hours, you may go home to complete the treatment.</p><p>If you are NOT able to hold it in, you will remain in the clinic for two hours with the catheter in place. A clamp will be placed on the catheter to hold the BCG in your bladder.</p>                         <img   src='./img/figures/twohours_illustration_large.png'>"
+ },{
+     "id":"5",
+     "title": "Instructions for Full Treatment Schedule",
+     "content": "<div class='row no-padding'><div><img class='calendar' src='./img/calendar_large.png'></img><p>You will be treated once a week for six weeks. After the first six weeks, some physicians may recommend a maintenance schedule which follows the SWOG (Southwest Oncology Group) protocol:</p><p>3 weekly treatments at 3, 6, 12, 18, 24, 30 and 36 months</p></div></div></div><div class='see-timeline-img' ui-sref='app.timeline'></div>"
+ },{
+     "id":"6",
+     "title": "For 6 Hours After Each Treatment:<",
+     "content": "<ul><li>You may take Tylenol<sup>&reg;</sup>/acetaminophen (for any fever or pain) or Benadryl<sup>&reg;</sup>/diphehydramine (for itching) if needed</li><li>To avoid splashing urine and exposing other people to BCG, both men and women should sit down to urinate</li><li>After you urinate, pour two cups of full-strength (not diluted) bleach into the toilet and then wait 15 minutes before closing the toilet lid and flushing</li><li>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li></ul>"
+ },{
+     "id":"7",
+     "title": "For 6 Weeks After Treatment:",
+     "content": "<ul><li>Drink plenty of water to flush the remaining BCG out of your bladder</li><li>While you are in treatment, and for six weeks afterwards, always use a condom during sex</li><li>While you are receiving BCG treatments, you or your partner should NOT become pregnant. No one knows how BCG affects sperm, eggs, embryos, or fetuses</li></ul><ul><li>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li></ul>"
+ }]
+}

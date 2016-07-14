@@ -8688,6 +8688,17 @@ body {
   text-align: right;
   width: 100%; }
 
+.card-background-page .card-footer {
+  position: absolute;
+  width: inherit;
+  height: 120px;
+  bottom: 0; }
+  .card-background-page .card-footer .card-bg-image {
+    width: 100%; }
+
+.card-background-page .card-bg-image {
+  width: 100%; }
+
 .card-background-page .card-title {
   position: absolute;
   top: 36%;
@@ -8702,3 +8713,41 @@ body {
   top: 52%;
   width: 100%;
   color: #000000; }
+
+ion-card {
+  background-image: url("../../img/img11.png");
+  background-size: contain;
+  width: initial !important;
+  height: 100%;
+  min-height: 120px; }
+
+.column-one {
+  width: 50%;
+  float: left; }
+
+.title {
+  text-align: center; }
+
+.title-blue {
+  color: #52caf5;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-align: center; }
+
+p {
+  font-size: 1.5em;
+  margin: 0 0 10px; }
+
+.row {
+  padding: 5px; }
+
+.figure-container {
+  position: relative;
+  width: 40%;
+  margin: 0 auto; }
+  .figure-container .figure-small {
+    width: 100%;
+    height: 100%; }
+
+.click-play {
+  padding: 2px; }
