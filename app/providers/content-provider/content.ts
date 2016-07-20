@@ -1,6 +1,17 @@
-[
+export let APP_CONTENT = [
   {
-    "pageId": "page1",
+    "pageId": "PageHome",
+    "pageTitle": "BCG",
+    "sections": [
+      {
+        "id": "1",
+        "title": "BCG For Bladder Cancer",
+        "content": "<p>BCG is a weakened form of the bacteria that causes tuberculosis (TB). It is the standard of care to treat bladder cancer.</p><p>BCG can be given after the tumor growth in your bladder has been completely removed.</p><p>BCG triggers your immune system to attack the cancer cells in your bladder. BCG may stop the future growth of cancer cells (tap on the image below for explanaton).</p>"
+      }
+    ]
+  },
+  {
+    "pageId": "PageIntro",
     "pageTitle": "BCG Treatment",
     "sections": [
       {
@@ -11,7 +22,7 @@
     ]
   },
   {
-    "pageId": "page2",
+    "pageId": "PageTreatment",
     "pageTitle": "Before Treatment",
     "sections": [
       {
@@ -27,12 +38,12 @@
       {
         "id": "3",
         "title": "How is BCG Given?",
-        "content": " <img src='./img/text/text_during.png' ng-click='openModal({type:'audio'})'/>                   <p>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>                        <img src='./img/figures/administration_large.png'>"
+        "content": " <img src='./img/text/text_during.png' ng-click='openModal({type:'audio'})'/><p>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>                        <img src='./img/figures/administration_large.png'>"
       },
       {
         "id": "4",
         "title": "How Does BCG Work?",
-        "content": "<p>Not all patients are able to hold BCG in the bladder for the full two hours. If you are able to hold it in for the full two hours, you may go home to complete the treatment.</p><p>If you are NOT able to hold it in, you will remain in the clinic for two hours with the catheter in place. A clamp will be placed on the catheter to hold the BCG in your bladder.</p>                         <img   src='./img/figures/twohours_illustration_large.png'>"
+        "content": "<p>Not all patients are able to hold BCG in the bladder for the full two hours. If you are able to hold it in for the full two hours, you may go home to complete the treatment.</p><p>If you are NOT able to hold it in, you will remain in the clinic for two hours with the catheter in place. A clamp will be placed on the catheter to hold the BCG in your bladder.</p><img   src='./img/figures/twohours_illustration_large.png'>"
       },
       {
         "id": "5",
@@ -52,7 +63,7 @@
     ]
   },
   {
-    "pageId": "page3",
+    "pageId": "PageSideEffects",
     "pageTitle": "Introduction to Pelvic Rehab",
     "sections": [
       {
@@ -63,7 +74,7 @@
       {
         "id": "2",
         "title": "Some Rare Yet Severe Side Effects",
-        "content": "<p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p><p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p><h3 />Get Medical Attention Immediately If You Have:</h3>     <ul><li>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li><li>Severe shivering</li><li>Dizziness or feeling light-headed</li><li>Shortness of breath</li><li>Confusion</li><li>Weakness</li></ul><img id='thermometer' class='figure' src='./img/figures/thermometer_image.png' />"
+        "content": "<p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p><p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p><h3 />Get Medical Attention Immediately If You Have:</h3><ul><li>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li><li>Severe shivering</li><li>Dizziness or feeling light-headed</li><li>Shortness of breath</li><li>Confusion</li><li>Weakness</li></ul><img id='thermometer' class='figure' src='./img/figures/thermometer_image.png' />"
       },
       {
         "id": "3",
@@ -73,7 +84,7 @@
     ]
   },
   {
-    "pageId": "page4",
+    "pageId": "PageQuestions",
     "pageTitle": "FAQ",
     "sections": [
       {
@@ -82,5 +93,27 @@
         "content": "<ul><li>Will a tuberculosis (PPD) test be positive after BCG treatment?</li><li>Yes</li><li>Is it OK to recieve BCG treatment if I test positive for tuberculosis (TB)?</li><li>Yes</li><li>Is it OK to be around pregnant women after I receive BCG treatment?</li><li>Yes</li><li>Can someone get tuberculosis if I forget to clean the toilet while i'm being treated with BCG?</li><li>Yes</li><li>Should I be worried if I have blood in my urine after treatment?</li><li>You should contact your doctor if you have bright red blood, heavy bleeding, large blood clots, or trouble urinating.</li></ul>"
       }
     ]
+  },
+  {
+    "pageId": "PageHelp",
+    "pageTitle": "Help",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Help: Navigating the Application",
+        "content": "<p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p><p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>"
+      }
+    ]
+  },
+  {
+    "pageId": "PageAck",
+    "pageTitle": "Acknowledgement",
+    "sections": [
+      {
+        "id": "1",
+        "title": "ATLAS",
+        "content": "<img  src='./img/text/text_before.png'/><p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p><p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p><p>Arnold Zimmer and Family</p><p>Robert P. Huben Endowed Professorship of Urology Oncology</p><p>Roswell Park Alliance Foundation</p>"
+      }
+    ]
   }
-]
+];

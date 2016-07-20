@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  templateUrl: 'build/pages/page8/page8.html'
+  templateUrl: 'build/pages/page-help/page-help.html'
 })
-export class Page8 {
+export class PageHelp {
 
   constructor(private navController: NavController) {
   }
