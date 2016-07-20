@@ -7,11 +7,7 @@ import { Services } from '../../services';
 })
 export class Page1 {
 
-  constructor(private navController: NavController, public appService: Services) {
-    this.appService = appService;
+  constructor(private navController: NavController) {
+
   }
-  
- loadContent():void{
-   this.appService.load();
- }
 }

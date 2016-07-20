@@ -1,30 +1,75 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import {Subject} from 'rxjs/Rx';
 
 @Injectable()
 export class Services {
-    data:any;
-    error:any;
-    url: 'https://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2Cdescription%20from%20rss%20where%20url%3D%22http%3A%2F%2Ffeeds.feedburner.com%2Fraymondcamdensblog%3Fformat%3Dxml%22&format=json&diagnostics=true&callback=';
-    constructor(public http: Http) {
+    error: any;
+    contentUrl: string = '../../content.json';
+    appContent: Subject<any>;
+
+    constructor(private http: Http) {
         this.http = http;
-  }
-  load():void{
-      this.http.get('../../content.json').subscribe(result => {
-          console.log(JSON.parse(result.text()));
-      });
-//       .map((res:Response) => res.json())
-//         .subscribe(
-//     data => this.saveData(data),
-//     err => this.error = err,
-//     () => console.log('complete')
-//   );
-  }
-  saveData(data:any){
-      console.log('Got this data: ',data);
-      this.data = data;
-  }
+        this.loadContent();
+        this.appContent = new Subject();
+        this.appContent.asObservable();
+    }
+
+    loadContent(): void {
+        console.log('Load content: Start');
+        // this.appContent  = ;
+
+        this.http.get(this.contentUrl).subscribe(
+            (data) => {
+                console.log('Got Data', data);
+
+                this.appContent.next(data.json());
+                console.log('Load content: End');
+            },
+            (error) => { console.log(error) }
+
+        );
+    }
+    getContent(pageId: string): Promise<any> {
+
+
+        console.log('Get content');
+        let requestedPage;
+        this.appContent.subscribe((data)=>{
+
+        });
+        this.appContent.forEach(page => {
+            if(page.pageId === pageId){
+                requestedPage = page;
+            }
+        });
+
+        /**
+         * TODO implement page logic here
+         */
+        return new Promise(function (resolve, reject) {
+            // async stuff, like fetching users from server, returning a response
+            if(typeof requestedPage === undefined){
+                reject('No Page Found');
+            }else{
+            resolve(requestedPage);
+            }
+        })
+    }
+    private extractData(res: Response) {
+        let body = res.json();
+        console.log(body);
+
+        return body.data || {};
+    }
+    private handleError(error: any) {
+        // In a real world app, we might use a remote logging infrastructure
+        // We'd also dig deeper into the error to get a better message
+        let errMsg = (error.message) ? error.message :
+            error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+        console.error(errMsg); // log to console instead
+        return Promise.reject(errMsg);
+    }
 }
 
 

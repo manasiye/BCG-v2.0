@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { App, ionicBootstrap, Platform,MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { HTTP_PROVIDERS} from '@angular/http';
+import { HTTP_PROVIDERS, Jsonp} from '@angular/http';
 import { Page1 } from './pages/page1/page1';
 import { Page2 } from './pages/page2/page2';
 import { Page3 } from './pages/page3/page3';
@@ -14,14 +14,15 @@ import { Page8 } from './pages/page8/page8';
 
 import {Services} from './services';
 
+
 @Component({
   templateUrl: 'build/app.html',
-  providers:[Services,  HTTP_PROVIDERS]
+  providers:[Services,  HTTP_PROVIDERS, Jsonp]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = Page2;
   pages: Array<{title: string, component: any}>
 
   constructor(
@@ -59,4 +60,4 @@ class MyApp {
   }
 }
 
-ionicBootstrap(MyApp,[Services, HTTP_PROVIDERS]);
+ionicBootstrap(MyApp,[Services, HTTP_PROVIDERS, Jsonp]);
