@@ -6,12 +6,12 @@ import { ContentProvider } from '../../providers/content-provider/content-provid
 @Component({
   templateUrl: 'build/pages/page-questions/page-questions.html'
 })
-export class PageQuestions implements AppPage{
+export class PageQuestions implements AppPage {
 
   pageId: string = 'PageQuestions';
   pageContent: any;
 
-  constructor(private navController: NavController,cp:ContentProvider) {
+  constructor(private navController: NavController, cp: ContentProvider) {
     this.loadPageContent();
     cp.getPage(this.pageId).subscribe((page) => {
       console.log('Got Page Data: ', page);

@@ -22,7 +22,7 @@ import { ContentProvider } from './providers/content-provider/content-provider';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = PageHome;
+  rootPage: any = PageAck;
   pages: Array<{ title: string, component: any }>
 
   constructor(
@@ -37,7 +37,7 @@ class MyApp {
       { title: 'BCG TREATMENT What, When & How', component: PageIntro },
       { title: 'Before, During & Ater TREATMENT', component: PageTreatment },
       { title: 'Treatment TIMELINE', component: PageTimeline },
-      { title: 'BCG SIDEEFFECTS', component: PageSideEffects },
+      { title: 'BCG SIDE EFFECTS', component: PageSideEffects },
       { title: 'Frequently Asked QUESTIONS', component: PageQuestions },
       { title: 'Help', component: PageHelp },
       { title: 'Acknowledgements', component: PageAck }

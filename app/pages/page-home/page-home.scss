@@ -1,10 +1,5 @@
 .card-background-page {
 
-  ion-card {
-    position: relative;
-    text-align: right;
-    width: 100%;
-  }
 .card-footer{
       position: absolute;
     width: inherit;
@@ -36,6 +31,9 @@
 
 }
 ion-card{
+  position: relative;
+  text-align: right;
+  width: 100%;
   background-image: url('../../img/img11.png');
   background-size: contain;
   width: initial !important;

@@ -13,15 +13,10 @@ export class PageHome implements AppPage {
   pageContent: any;
 
   constructor(private navController: NavController, cp: ContentProvider) {
-    this.loadPageContent();
     cp.getPage(this.pageId).subscribe((page) => {
+      this.pageContent = page;
       console.log('Got Page Data: ', page);
 
     });
-  }
-  loadPageContent(): void {
-    console.log('Load content: Start');
-    // this.appContent  = ;
-
   }
 }

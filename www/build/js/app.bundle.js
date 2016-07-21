@@ -26,7 +26,7 @@ var MyApp = (function () {
     function MyApp(platform, menu) {
         this.platform = platform;
         this.menu = menu;
-        this.rootPage = page_home_1.PageHome;
+        this.rootPage = page_ack_1.PageAck;
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
@@ -34,7 +34,7 @@ var MyApp = (function () {
             { title: 'BCG TREATMENT What, When & How', component: page_intro_1.PageIntro },
             { title: 'Before, During & Ater TREATMENT', component: page_treatment_1.PageTreatment },
             { title: 'Treatment TIMELINE', component: page_timeline_1.PageTimeline },
-            { title: 'BCG SIDEEFFECTS', component: page_sideeffects_1.PageSideEffects },
+            { title: 'BCG SIDE EFFECTS', component: page_sideeffects_1.PageSideEffects },
             { title: 'Frequently Asked QUESTIONS', component: page_questions_1.PageQuestions },
             { title: 'Help', component: page_help_1.PageHelp },
             { title: 'Acknowledgements', component: page_ack_1.PageAck }
@@ -83,16 +83,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageAck = (function () {
     function PageAck(navController, cp) {
+        var _this = this;
         this.navController = navController;
         this.pageId = 'PageAck';
-        this.loadPageContent();
         cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
             console.log('Got Page Data: ', page);
         });
     }
-    PageAck.prototype.loadPageContent = function () {
-        console.log('Load content: Start');
-    };
     PageAck = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-ack/page-ack.html'
@@ -116,21 +114,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
+var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageHelp = (function () {
-    function PageHelp(navController) {
+    function PageHelp(navController, cp) {
+        var _this = this;
         this.navController = navController;
+        this.pageId = 'PageHelp';
+        cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
+            console.log('Got Page Data: ', page);
+        });
     }
     PageHelp = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-help/page-help.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
     ], PageHelp);
     return PageHelp;
 }());
 exports.PageHelp = PageHelp;
 
-},{"@angular/core":158,"ionic-angular":422}],4:[function(require,module,exports){
+},{"../../providers/content-provider/content-provider":10,"@angular/core":158,"ionic-angular":422}],4:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -146,17 +151,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageHome = (function () {
     function PageHome(navController, cp) {
+        var _this = this;
         this.navController = navController;
         this.pageId = 'PageHome';
-        this.loadPageContent();
         cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
             console.log('Got Page Data: ', page);
         });
     }
-    PageHome.prototype.loadPageContent = function () {
-        console.log('Load content: Start');
-        // this.appContent  = ;
-    };
     PageHome = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-home/page-home.html',
@@ -183,16 +185,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageIntro = (function () {
     function PageIntro(nav, cp) {
+        var _this = this;
         this.nav = nav;
         this.pageId = 'PageIntro';
-        this.loadPageContent();
         cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
             console.log('Got Page Data: ', page);
         });
     }
-    PageIntro.prototype.loadPageContent = function () {
-        console.log('Load content: Start');
-    };
     PageIntro = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-intro/page-intro.html'
@@ -255,16 +255,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageSideEffects = (function () {
     function PageSideEffects(nav, cp) {
+        var _this = this;
         this.nav = nav;
         this.pageId = 'PageSideEffects';
-        this.loadPageContent();
         cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
             console.log('Got Page Data: ', page);
         });
     }
-    PageSideEffects.prototype.loadPageContent = function () {
-        console.log('Load content: Start');
-    };
     PageSideEffects = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-sideeffects/page-sideeffects.html'
@@ -288,22 +286,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
-var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageTimeline = (function () {
-    function PageTimeline(nav, cp) {
+    function PageTimeline(nav) {
         this.nav = nav;
     }
     PageTimeline = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-timeline/page-timeline.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], PageTimeline);
     return PageTimeline;
 }());
 exports.PageTimeline = PageTimeline;
 
-},{"../../providers/content-provider/content-provider":10,"@angular/core":158,"ionic-angular":422}],9:[function(require,module,exports){
+},{"@angular/core":158,"ionic-angular":422}],9:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -319,16 +316,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var PageTreatment = (function () {
     function PageTreatment(navController, cp) {
+        var _this = this;
         this.navController = navController;
         this.pageId = 'PageTreatment';
-        this.loadPageContent();
         cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
             console.log('Got Page Data: ', page);
         });
     }
-    PageTreatment.prototype.loadPageContent = function () {
-        console.log('Load content: Start');
-    };
     PageTreatment = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-treatment/page-treatment.html'
@@ -400,7 +395,6 @@ exports.APP_CONTENT = [
             {
                 "id": "1",
                 "title": "BCG For Bladder Cancer",
-                "content": "<p>BCG is a weakened form of the bacteria that causes tuberculosis (TB). It is the standard of care to treat bladder cancer.</p><p>BCG can be given after the tumor growth in your bladder has been completely removed.</p><p>BCG triggers your immune system to attack the cancer cells in your bladder. BCG may stop the future growth of cancer cells (tap on the image below for explanaton).</p>"
             }
         ]
     },
@@ -495,13 +489,13 @@ exports.APP_CONTENT = [
             {
                 "id": "1",
                 "title": "Help: Navigating the Application",
-                "content": "<p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p><p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>"
+                "content": "<h3>Narrator</h3><p>Tapping on the narrow icon will give you more information on each page.</p><h3>Pages</h3><p>Swipe with your fingers to go to the next page or to return to the previous page.</p><p>Tap on the bottom bar to take you to the desired page.</p><h3>Buttons</h3><p>Tapping on 'See Timeline' button will take you to the timeline image.</p><p>In the timeline image tapping on the hour button will highlight the relevant information.</p><h3>Video</h3><p>Tap on the video icon to play the animation.</p>"
             }
         ]
     },
     {
         "pageId": "PageAck",
-        "pageTitle": "Acknowledgement",
+        // "pageTitle": "Acknowledgement",
         "sections": [
             {
                 "id": "1",

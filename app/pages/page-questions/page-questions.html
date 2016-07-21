@@ -8,6 +8,20 @@
 </ion-header>
 
 
-<ion-content padding class="page6">
-
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>{{pageContent.pageTitle}}</h1>
+        <ion-card *ngFor="let section of pageContent.sections">
+          <ion-card-header>
+            {{section.title}}
+          </ion-card-header>
+          <ion-card-content [innerHtml]="section.content">
+            <!--{{section.content}}-->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

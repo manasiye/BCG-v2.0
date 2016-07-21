@@ -18,18 +18,18 @@ export class ContentProvider {
   }
 
   // APP_CONTENT
-  getPage(pageId:any) {
+  getPage(pageId: any) {
     return Observable.create(observer => {
       let reqPage;
       APP_CONTENT.forEach(page => {
-        if(page.pageId === pageId){
-          reqPage = page; 
+        if (page.pageId === pageId) {
+          reqPage = page;
         }
       });
-      if(typeof reqPage === 'undefined'){
-        
-      }else{
-      observer.next(reqPage);
+      if (typeof reqPage === 'undefined') {
+
+      } else {
+        observer.next(reqPage);
       }
       observer.complete();
     });

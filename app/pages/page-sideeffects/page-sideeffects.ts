@@ -13,12 +13,10 @@ export class PageSideEffects implements AppPage {
   pageContent: any;
 
   constructor(private nav: NavController, cp: ContentProvider) {
-    this.loadPageContent();
     cp.getPage(this.pageId).subscribe((page) => {
+      this.pageContent=page;
       console.log('Got Page Data: ', page);
     });
   }
-  loadPageContent(): void {
-    console.log('Load content: Start');
-  }
+
 }
