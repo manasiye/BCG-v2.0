@@ -3,24 +3,25 @@
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title class="title">Help</ion-title>
+    <ion-title>Help</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1>{{pageContent.pageTitle}}</h1>
-        <ion-card *ngFor="let section of pageContent.sections">
-          <ion-card-header>
-            {{section.title}}
-          </ion-card-header>
-          <ion-card-content [innerHtml]="section.content">
-            <!--{{section.content}}-->
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <h1>{{pageContent.pageTitle}}</h1>
+  <ion-row responsive-md wrap>
+    <ion-col *ngFor="let section of pageContent.sections" width-50 [innerHtml]="section.content">
+      <ion-card>
+        <ion-card-header class="help-page-card-header">
+          {{section.title}}
+        </ion-card-header>
+        <ion-card-content>
+          <!--{{section.content}}-->
+        </ion-card-content>
+        <div class="page-help-image">
+          <img src="img/300.png" />
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

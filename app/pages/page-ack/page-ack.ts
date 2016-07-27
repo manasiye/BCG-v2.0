@@ -5,7 +5,8 @@ import { ContentProvider } from '../../providers/content-provider/content-provid
 
 
 @Component({
-  templateUrl: 'build/pages/page-ack/page-ack.html'
+  templateUrl: 'build/pages/page-ack/page-ack.html',
+  // styleUrls: ['build/pages/page-ack/page-ack.css'] ---------written in app.core.scss under themes
 })
 export class PageAck implements AppPage {
 

@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
 
-
 @Component({
   templateUrl: 'build/pages/page-help/page-help.html'
 })

@@ -69,12 +69,34 @@ export let APP_CONTENT = [
             {
                 "id": "1",
                 "title": "Most Common Side Effects",
-                "content": "<ul><li>Frequent, painful and burning urination</li><li>Flu-like symptoms (fever, chills) that may occur 24-36 hours after recieving BCG</li><li>Nausea (upset stomach), occasional vomiting</li><li>Loss of appetite</li><li>Difficulty urinating or blood in urine</li><li>Persistent low-grade fever (temperature below 100.5&deg;F / 38&deg;C) for less than 2 days</li><li>Joint pain</li><li>Cough</li><li>Skin rash</li></ul>"
+                "content": `<ul>
+                <li>Frequent, painful and burning urination</li>
+                <li>Flu-like symptoms (fever, chills) that may occur 24-36 hours after recieving BCG</li>
+                <li>Nausea (upset stomach), occasional vomiting</li>
+                <li>Loss of appetite</li>
+                <li>Difficulty urinating or blood in urine</li>
+                <li>Persistent low-grade fever (temperature below 100.5&deg;F / 38&deg;C) for less than 2 days</li>
+                <li>Joint pain</li>
+                <li>Cough</li>
+                <li>Skin rash</li>
+                </ul>`
             },
             {
                 "id": "2",
                 "title": "Some Rare Yet Severe Side Effects",
-                "content": "<p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p><p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p><h3 />Get Medical Attention Immediately If You Have:</h3><ul><li>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li><li>Severe shivering</li><li>Dizziness or feeling light-headed</li><li>Shortness of breath</li><li>Confusion</li><li>Weakness</li></ul><img id='thermometer' class='figure' src='./img/figures/thermometer_image.png' />"
+                "content": `
+                <p>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p>
+                <p>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>
+                <h3>Get Medical Attention Immediately If You Have:</h3>
+                <ul>
+                    <li>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>
+                    <li>Severe shivering</li>
+                    <li>Dizziness or feeling light-headed</li>
+                    <li>Shortness of breath</li>
+                    <li>Confusion</li>
+                    <li>Weakness</li>
+                </ul>
+                <img id='thermometer' class='figure' src='./img/figures/thermometer_image.png' />`
             },
             {
                 "id": "3",
@@ -85,23 +107,48 @@ export let APP_CONTENT = [
     },
     {
         "pageId": "PageQuestions",
-        "pageTitle": "FAQ",
+        //"pageTitle": "FAQ",
         "sections": [
             {
                 "id": "1",
                 "title": "Frequently Asked Questions",
-                "content": "<ul><li>Will a tuberculosis (PPD) test be positive after BCG treatment?</li><li>Yes</li><li>Is it OK to recieve BCG treatment if I test positive for tuberculosis (TB)?</li><li>Yes</li><li>Is it OK to be around pregnant women after I receive BCG treatment?</li><li>Yes</li><li>Can someone get tuberculosis if I forget to clean the toilet while i'm being treated with BCG?</li><li>Yes</li><li>Should I be worried if I have blood in my urine after treatment?</li><li>You should contact your doctor if you have bright red blood, heavy bleeding, large blood clots, or trouble urinating.</li></ul>"
+                "content": "<ul><li>Will a tuberculosis (PPD) test be positive after BCG treatment?</li><li>Yes</li><li>Is it OK to recieve BCG treatment if I test positive for tuberculosis (TB)?</li><li>Yes</li><li>Is it OK to be around pregnant women after I receive BCG treatment?</li><li>Yes</li><li>Can someone get tuberculosis if I forget to clean the toilet while i'm being treated with BCG?</li><li>Yes</li><li>Should I be worried if I have blood in my urine after treatment?</li><li>You should contact your doctor if you have bright red blood, heavy bleeding, large blood clots, or trouble urinating.</li><li>Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li><li>No. Be sure to tell your doctor before treatment begins about all medications you are taking.</li><li>Will it hurt when the catheter is inserted?</li><li><p>It may be uncomfortable to have the catheter inserted.</p><p>Some physicians use topical numbing medication to ease your discomfort.</p></li></ul><p><b>If you have additional questions, please call the clinic.</b></p>"
             }
         ]
     },
     {
         "pageId": "PageHelp",
-        "pageTitle": "Help",
+        "pageTitle": "Help: Navigating the Application",
         "sections": [
             {
                 "id": "1",
                 "title": "Help: Navigating the Application",
-                "content": "<h3>Narrator</h3><p>Tapping on the narrow icon will give you more information on each page.</p><h3>Pages</h3><p>Swipe with your fingers to go to the next page or to return to the previous page.</p><p>Tap on the bottom bar to take you to the desired page.</p><h3>Buttons</h3><p>Tapping on 'See Timeline' button will take you to the timeline image.</p><p>In the timeline image tapping on the hour button will highlight the relevant information.</p><h3>Video</h3><p>Tap on the video icon to play the animation.</p>"
+                "content": "<h3>Narrator</h3><p>Tapping on the narrow icon will give you more information on each page.</p>"
+            },
+            {
+                "id": "2",
+                "title": "Help: Navigating the Application",
+                "content": "<h3>Pages</h3><p>Swipe with your fingers to go to the next page or to return to the previous page.</p>"
+            },
+            {
+                "id": "3",
+                "title": "Help: Navigating the Application",
+                "content": "<p>Tap on the bottom bar to take you to the desired page.</p>"
+            },
+            {
+                "id": "4",
+                "title": "Help: Navigating the Application",
+                "content": "<h3>Buttons</h3><p>Tapping on 'See Timeline' button will take you to the timeline image.</p>"
+            },
+            {
+                "id": "5",
+                "title": "Help: Navigating the Application",
+                "content": "<p>In the timeline image tapping on the hour button will highlight the relevant information.</p>"
+            },
+            {
+                "id": "6",
+                "title": "Help: Navigating the Application",
+                "content": "<h3>Video</h3><p>Tap on the video icon to play the animation.</p>"
             }
         ]
     },
@@ -111,8 +158,8 @@ export let APP_CONTENT = [
         "sections": [
             {
                 "id": "1",
-                "title": "ATLAS",
-                "content": "<img  src='./img/text/text_before.png'/><p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p><p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p><p>Arnold Zimmer and Family</p><p>Robert P. Huben Endowed Professorship of Urology Oncology</p><p>Roswell Park Alliance Foundation</p>"
+                "title": "Acknowledgement",
+                "content": "<img  src='./img/300.png' class='ack-image'/><p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p><p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p><p>Arnold Zimmer and Family</p><p>Robert P. Huben Endowed Professorship of Urology Oncology</p><p>Roswell Park Alliance Foundation</p>"
             }
         ]
     }

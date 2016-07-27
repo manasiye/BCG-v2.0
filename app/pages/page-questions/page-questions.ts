@@ -9,16 +9,13 @@ import { ContentProvider } from '../../providers/content-provider/content-provid
 export class PageQuestions implements AppPage {
 
   pageId: string = 'PageQuestions';
-  pageContent: any;
+  pageContent: any; 
 
   constructor(private navController: NavController, cp: ContentProvider) {
-    this.loadPageContent();
     cp.getPage(this.pageId).subscribe((page) => {
+      this.pageContent = page;
       console.log('Got Page Data: ', page);
 
     });
-  }
-  loadPageContent(): void {
-    console.log('Load content: Start');
   }
 }

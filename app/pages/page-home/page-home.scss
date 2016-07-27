@@ -1,5 +1,15 @@
 .card-background-page {
-
+ion-row{
+  height: inherit;
+}
+ion-col{
+  ion-card:last-child{
+    margin-top: 24px;
+  }
+  ion-card:first-child{
+    margin-top: 12px;
+  }
+}
 .card-footer{
       position: absolute;
     width: inherit;
@@ -9,9 +19,7 @@
       width: 100%;
     }
 }
-.card-bg-image{
-      width: 100%;
-    }
+
   .card-title {
     position:absolute;  
     top: 36%;
@@ -33,10 +41,6 @@
 ion-card{
   position: relative;
   text-align: right;
-  width: 100%;
-  background-image: url('../../img/img11.png');
-  background-size: contain;
-  width: initial !important;
-  height: 100%;
-  min-height: 120px;
+  height: inherit;
+
 }

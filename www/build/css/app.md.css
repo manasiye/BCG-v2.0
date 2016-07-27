@@ -9415,6 +9415,15 @@ body {
   font-size: 1.4rem;
   background-color: #fff; }
 
+.card-background-page ion-row {
+  height: inherit; }
+
+.card-background-page ion-col ion-card:last-child {
+  margin-top: 24px; }
+
+.card-background-page ion-col ion-card:first-child {
+  margin-top: 12px; }
+
 .card-background-page .card-footer {
   position: absolute;
   width: inherit;
@@ -9422,9 +9431,6 @@ body {
   bottom: 0; }
   .card-background-page .card-footer .card-bg-image {
     width: 100%; }
-
-.card-background-page .card-bg-image {
-  width: 100%; }
 
 .card-background-page .card-title {
   position: absolute;
@@ -9444,12 +9450,7 @@ body {
 ion-card {
   position: relative;
   text-align: right;
-  width: 100%;
-  background-image: url("../../img/img11.png");
-  background-size: contain;
-  width: initial !important;
-  height: 100%;
-  min-height: 120px; }
+  height: inherit; }
 
 .column-one {
   width: 50%;
@@ -9481,3 +9482,50 @@ p {
 
 .click-play {
   padding: 2px; }
+
+ion-card {
+  font-family: cursive;
+  height: 100%; }
+
+.ack-image {
+  height: 20%;
+  width: 20%;
+  display: initial; }
+
+.page-ack-content {
+  text-align: center; }
+
+h1 {
+  text-align: center; }
+
+ion-col {
+  text-align: left;
+  padding-right: 30%; }
+
+.page-help-image {
+  height: 20%;
+  width: 20%;
+  display: initial; }
+
+.faq {
+  top: 10%; }
+
+.page-help {
+  background-color: red;
+  text-align: left; }
+
+.column-one {
+  width: 50%;
+  float: left; }
+
+.title {
+  text-align: center; }
+
+.title-blue {
+  color: #52caf5;
+  font-weight: 900;
+  font-size: 1.5em; }
+
+.slide-text {
+  padding-left: 2em;
+  padding-right: 2em; }

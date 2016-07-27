@@ -2,26 +2,19 @@
   <ion-navbar>
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
+      <ion-icon name="happy"></ion-icon>
+<button ng-click="search()" class="button button-icon icon ion-android-search"></button>
+
     </button>
     <ion-title>FAQ</ion-title>
   </ion-navbar>
 </ion-header>
 
-
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1>{{pageContent.pageTitle}}</h1>
-        <ion-card *ngFor="let section of pageContent.sections">
-          <ion-card-header>
-            {{section.title}}
-          </ion-card-header>
-          <ion-card-content [innerHtml]="section.content">
-            <!--{{section.content}}-->
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content class="faq">
+  <h1>{{pageContent.pageTitle}}</h1>
+  <ion-content *ngFor="let section of pageContent.sections">
+    {{section.title}}
+    <ion-content [innerHtml]="section.content">
+    </ion-content>
+  </ion-content>
 </ion-content>

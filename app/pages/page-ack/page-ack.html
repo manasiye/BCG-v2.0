@@ -7,13 +7,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="ack">
-  <div class="header-field">
-    <h1>{{pageContent.pageTitle}}</h1>
-  </div>
-  <div class="content-field">
-    <ion-content *ngFor="let section of pageContent.sections" [innerHtml]="section.content">
-    </ion-content>
-  </div>
+<ion-content>
+
+  <h1>{{pageContent.pageTitle}}</h1>
+  <ion-card *ngFor="let section of pageContent.sections">
+  <div [innerHtml]="section.content" class="page-ack-content"></div>
+  </ion-card>
 
 </ion-content>
