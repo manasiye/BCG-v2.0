@@ -10,8 +10,5 @@
 <ion-content>
 
   <h1>{{pageContent.pageTitle}}</h1>
-  <ion-card *ngFor="let section of pageContent.sections">
-  <div [innerHtml]="section.content" class="page-ack-content"></div>
-  </ion-card>
-
+  <div *ngFor="let section of pageContent.sections" [innerHtml]="section.content" class="page-ack-content"></div>
 </ion-content>

@@ -22,7 +22,7 @@ import { ContentProvider } from './providers/content-provider/content-provider';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = PageHelp;
+  rootPage: any = PageQuestions;
   pages: Array<{ title: string, component: any }>
 
   constructor(

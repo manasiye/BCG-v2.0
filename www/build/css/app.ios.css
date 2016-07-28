@@ -1,3 +1,6 @@
+/*******************************
+URLs
+********************************/
 audio,
 canvas,
 progress,
@@ -8751,16 +8754,13 @@ p {
 .click-play {
   padding: 2px; }
 
-ion-card {
-  font-family: cursive;
-  height: 100%; }
-
 .ack-image {
   height: 20%;
   width: 20%;
   display: initial; }
 
 .page-ack-content {
+  font-family: cursive;
   text-align: center; }
 
 h1 {
@@ -8768,18 +8768,18 @@ h1 {
 
 ion-col {
   text-align: left;
-  padding-right: 30%; }
+  padding-right: 10%; }
 
 .page-help-image {
   height: 20%;
   width: 20%;
-  display: initial; }
+  float: right; }
 
-.faq {
-  top: 10%; }
+.help-para {
+  width: 60%;
+  float: left; }
 
-.page-help {
-  background-color: red;
+ion-card {
   text-align: left; }
 
 .column-one {
@@ -8797,3 +8797,53 @@ ion-col {
 .slide-text {
   padding-left: 2em;
   padding-right: 2em; }
+
+@font-face {
+  font-family: icomoon;
+  src: url(fonts/icomoon.eot?ry9h47);
+  src: url(fonts/icomoon.eot?#iefixry9h47) format("embedded-opentype"), url(fonts/icomoon.woff?ry9h47) format("woff"), url(fonts/icomoon.ttf?ry9h47) format("truetype"), url(fonts/icomoon.svg?ry9h47#icomoon) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*
+Custom and 3rd Party Icons
+*/
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-bcg:before {
+  content: "\e601"; }
+
+.icon-timeline:before {
+  content: "\e604"; }
+
+.icon-sideeffects:before {
+  content: "\e602"; }
+
+.icon-q:before {
+  content: "\e600";
+  font-family: icomoon;
+  position: relative;
+  top: 2px;
+  color: #52caf5; }
+
+.icon-a:before {
+  content: "\e603";
+  font-family: icomoon;
+  position: relative;
+  top: 2px;
+  color: #f5895b; }
+
+/*******************************
+URLs
+********************************/

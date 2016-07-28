@@ -5,10 +5,16 @@ h1{
 
 ion-col{
      text-align: left;
-     padding-right: 30%;
+     padding-right: 10%;
 }
 .page-help-image{
     height: 20%;
     width: 20%;
-    display: initial;
+    float: right;
+
+}
+
+.help-para{
+    width: 60%;
+    float: left;
 }
