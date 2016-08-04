@@ -1,0 +1,61 @@
+.menu-nav-item{
+
+.menu-title-small{
+    font-size: 1em;   
+}
+.menu-title-large{
+    font-size: 1.5em;
+}
+}
+.icon-bcg-menu{
+    color: color($colors, blue)   
+}
+
+/*
+General Formatting
+*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font_Arial, $font_Helvetica, $font_sans_serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../../img/bg_content.jpg');
+}
+h3 {
+    // color: color($colors, blue);
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+%menu-item {
+  font-family: $font_HelveticaNeue_CondensedBold, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
+  font-weight: bolder;
+  color: color($colors, dark_gray);
+  display: table-cell;
+  float: left;
+  min-width: 100%;
+}
+
+.title-section{
+    font-size: 1.17em;
+    font-weight: 900;
+}
+
+.blue{
+    color: color($colors, blue);
+}
+
+p{
+    
+    font-size: 1.1em !important;
+    margin: 0 0 10px;
+    color: color($colors,black);
+}
+ion-card{
+    // box-shadow: none;
+}

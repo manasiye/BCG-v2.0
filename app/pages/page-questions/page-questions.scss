@@ -1,8 +1,17 @@
-
-
 ion-card{
     text-align: left;
-    // width: 100%;
+
+ion-card-content{
+    font-size: 1.4em;
+}
 }
 
+ul{
+    list-style: none;
+    padding-bottom: 5px;
+}
 
+li{
+    position: relative;
+    text-indent: -1.4em;
+}

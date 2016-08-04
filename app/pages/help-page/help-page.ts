@@ -3,14 +3,12 @@ import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
 
-
 @Component({
-  templateUrl: 'build/pages/page-ack/page-ack.html',
-  // styleUrls: ['build/pages/page-ack/page-ack.css'] ---------written in app.core.scss under themes
+  templateUrl: 'build/pages/help-page/help-page.html'
 })
-export class PageAck implements AppPage {
+export class HelpPage implements AppPage {
 
-  pageId: string = 'PageAck';
+  pageId: string = 'HelpPage';
   pageContent: any;
 
   constructor(private navController: NavController, cp: ContentProvider) {
@@ -19,5 +17,4 @@ export class PageAck implements AppPage {
       console.log('Got Page Data: ', page);
     });
   }
-
 }

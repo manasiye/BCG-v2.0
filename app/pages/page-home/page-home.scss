@@ -1,3 +1,7 @@
+ion-navbar{
+  background-color: #444;
+}
+
 .card-background-page {
 ion-row{
   height: inherit;
@@ -10,36 +14,82 @@ ion-col{
     margin-top: 12px;
   }
 }
-.card-footer{
-      position: absolute;
-    width: inherit;
-    height: 120px;
-    bottom: 0;
-    .card-bg-image{
-      width: 100%;
-    }
-}
+
 
   .card-title {
-    position:absolute;  
+    position:right;  
     top: 36%;
     font-size: 2.0em;
     width: 100%;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
+    
   }
 
   .card-subtitle {
     font-size: 1.0em;
-    position: absolute;
+    position: right;
     top: 52%;
     width: 100%;
-    color: #000000;
+    color: #ffffff;
   }
 
 }
-ion-card{
+// .card-title-small{
+//   position: relative;
+//   text-align: right;
+//   img{
+//     height: 100%;
+//     width: 100%;
+//   }
+// }
+// .card-title-big{
+//   position: relative;
+//   text-align: right;
+//   // height: ;
+//   // width: 232px;
+// }
+.card-navigation{
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
-  text-align: right;
-  height: inherit;
+  border: 5px solid white;
+  img{
+    opacity: 0;
+  }
+  &.card-intro{
+    background-image: url('../../img/home/bladder.jpg'); 
+    // background-size: cover;
+  }
+  &.card-treatment{
+    background-image: url('../../img/home/treatment.png'); 
+  }
+  &.card-questions{
+    background-image: url('../../img/home/questions.png'); 
+  }
+  &.card-sideeffects{
+    background-image: url('../../img/home/flush.png'); 
+  }
+  &.card-timeline{
+    background-image: url('../../img/home/timeline.png');
+  }
+
+  .card-footer{
+    position: absolute;
+    padding: 5px;
+    font-family: 'Oswald';
+  //  background-color: color($colors, blue);
+    // opacity: 0.7;
+    background: rgba(82, 202, 245, 0.7); 
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    color: color($colors, white);
+    z-index: 1;
+    div{
+      z-index: 2;
+      opacity: 1;
+    }
+    
+}
 }

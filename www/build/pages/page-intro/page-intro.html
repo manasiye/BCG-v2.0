@@ -1,32 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-      <ion-icon name="happy"></ion-icon>
-    </button>
+  <ion-navbar primary>
+    <ion-buttons start left menuToggle>
+      <button class="menu-button">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+      <button icon class="menu-button">
+                <i class="icon-bcg icon-bcg-menu" test></i>
+            </button>
+    </ion-buttons>
     <ion-title class="title">What is BCG?</ion-title>
+    <ion-buttons end>
+      <button (click)=openHome() blue>
+                <ion-icon name="home"></ion-icon>
+            </button>
+      <button (click)=openHome()>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col width-50>
-        <h1>{{pageContent.pageTitle}}</h1>
-        <ion-card *ngFor="let section of pageContent.sections">
-          <ion-card-header>
-            {{section.title}}
-          </ion-card-header>
-          <ion-card-content [innerHtml]="section.content">
-            <!--{{section.content}}-->
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <!--<ion-col>
-
-      </ion-col>-->
-    </ion-row>
-  </ion-grid>
+  <h1>{{pageContent.pageTitle}}</h1>
+  <ion-row responsive-lg>
+    <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding>
+      <ion-card>
+        <ion-card-header>
+          <!--{{section.title}}-->
+        </ion-card-header>
+        <ion-card-content [innerHtml]="section.content">
+          <!--{{section.content}}-->
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

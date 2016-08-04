@@ -24,32 +24,53 @@
 // The "primary" color is the only required color in the map.
 // Both iOS and MD colors can be further customized if colors
 // are different per mode.
-
+// (
+//     base: #55acee,
+//     contrast: #ffffff
+//   )
 $colors: (
-  primary:    #387ef5,
+  primary: (
+     base: #515151,
+     contrast: #ffffff
+     ),
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  favorite:   #69BB7B
+  favorite:   #69BB7B,
+  blue:       #52caf5,
+  orange:     #f5895b,
+  darkGrey:   #515151,
+  black:      #000000
 );
 
-$blue: #52caf5;
-$orange: #f5895b;
+$test: #32db64;
+
+
+/*******************************
+Fonts
+********************************/
+
+$font_Helvetica:Helvetica;
+$font_Arial: Arial;
+$font_sans_serif: sans-serif;
+$font_Ionicons: Ionicons;
+$font_HelveticaNeue_CondensedBold: HelveticaNeue-CondensedBold;
+$font_Helvetica_Neue: Helvetica Neue;
 $font_icomoon: icomoon;
 
 /*******************************
 URLs
 ********************************/
 
-$url_soundwave_sprite: url(../img/soundwave-sprite.png);
+$url_soundwave_sprite: url(.../img/soundwave-sprite.png);
 $url_btn_treatment: url(../img/btn_treatment.png);
 $url_bg_content: url(../img/bg_content.jpg);
-$url_font_eot: url(fonts/icomoon.eot?ry9h47);
-$url_font_eot2: url(fonts/icomoon.eot?#iefixry9h47);
-$url_font_woff: url(fonts/icomoon.woff?ry9h47);
-$url_font_ttf: url(fonts/icomoon.ttf?ry9h47);
-$url_font_svg: url(fonts/icomoon.svg?ry9h47#icomoon);
+$url_font_eot: url(../../fonts/icomoon.eot?ry9h47);
+$url_font_eot2: url(../../fonts/icomoon.eot?#iefixry9h47);
+$url_font_woff: url(../../fonts/icomoon.woff?ry9h47);
+$url_font_ttf: url(../../fonts/icomoon.ttf?ry9h47);
+$url_font_svg: url(../../fonts/icomoon.svg?ry9h47#icomoon);
 
 
 

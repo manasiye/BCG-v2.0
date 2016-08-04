@@ -1,10 +1,22 @@
 <ion-header>
-    <ion-navbar>
-        <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-      <ion-icon name="happy"></ion-icon>
-    </button>
+    <ion-navbar primary>
+        <ion-buttons start left menuToggle>
+            <button class="menu-button">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <button icon class="menu-button">
+                <i class="icon-bcg icon-bcg-menu" test></i>
+            </button>
+        </ion-buttons>
         <ion-title>Home</ion-title>
+        <ion-buttons end>
+            <button (click)=openHome() blue>
+                <ion-icon name="home"></ion-icon>
+            </button>
+            <button (click)=openHome()>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
     <div>
         <h1>BCG for Bladder Cancer</h1>
@@ -12,53 +24,51 @@
 </ion-header>
 
 <ion-content class="card-background-page">
+    <ion-row responsive-lg>
+        <ion-col width-50 no-margin no-padding>
+            <ion-card class="card-navigation card-intro">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-title">BCG TREATMENT</div>
+                    <div class="card-subtitle">What, When & How</div>
+                </div>
+            </ion-card>
+        </ion-col>
 
-    <!--<ion-grid>-->
-        <ion-row responsive-lg>
-            <ion-col width-50  no-margin no-padding>
-                <ion-card>
-                    <img class="card-bg-image" src="img/500.png" />
-                    <div class="card-footer"> 
-                        <div class="card-title">BCG TREATMENT</div>
-                        <div class="card-subtitle">What, When & How</div>
-                    </div>
-                </ion-card>
-            </ion-col>
+        <ion-col width-25 no-margin no-padding>
+            <ion-card class="card-navigation card-treatment">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-title">TREATMENT</div>
+                    <div class="card-subtitle">Before, During & After</div>
+                </div>
+            </ion-card>
 
-            <ion-col width-25 no-margin no-padding>
-                <ion-card>
-                    <img class="card-bg-image" src="img/300.png" />
-                    <div class="card-footer">
-                    <div class="card-title">Before, During & After</div>
-                    <div class="card-subtitle">TREATMENT</div>
-                    </div>
-                </ion-card>
-
-                <ion-card>
-                    <img class="card-bg-image" src="img/300.png" />
-                    <div class="card-footer">
-                    <div class="card-title">BCG</div>
-                    <div class="card-subtitle">SIDEEFFECTS</div>
-                    </div>
-                </ion-card>
-            </ion-col>
-            <ion-col width-25 no-margin no-padding>
-                <ion-card>
-                    <img class="card-bg-image" src="img/300.png" />
-                    <div class="card-footer">
-                    <div class="card-title">Treatment</div>
-                    <div class="card-subtitle">TIMELINE</div>
-                    </div>
-                </ion-card>
-
-                <ion-card>
-                    <img class="card-bg-image" src="img/300.png" />
-                    <div class="card-footer">
+            <ion-card class="card-navigation card-questions">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
                     <div class="card-title">Frequently Asked</div>
                     <div class="card-subtitle">QUESTIONS</div>
-                    </div>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    <!--</ion-grid>-->
+                </div>
+            </ion-card>
+
+        </ion-col>
+        <ion-col width-25 no-margin no-padding>            
+            <ion-card class="card-navigation card-sideeffects">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-title">BCG</div>
+                    <div class="card-subtitle">SIDEEFFECTS</div>
+                </div>
+            </ion-card>
+            <ion-card class="card-navigation card-timeline">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-title">Treatment</div>
+                    <div class="card-subtitle">TIMELINE</div>
+                </div>
+            </ion-card>
+
+        </ion-col>
+    </ion-row>
 </ion-content>

@@ -1,15 +1,14 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar primary>
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Help</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
   <h1>{{pageContent.pageTitle}}</h1>
-  <ion-row responsive-md wrap>
+  <ion-row responsive-lg wrap>
     <ion-col *ngFor="let section of pageContent.sections" width-50 [innerHtml]="section.content">
       <ion-card>
         <ion-card-header class="help-page-card-header">

@@ -9,11 +9,21 @@ import { PageTreatment } from './pages/page-treatment/page-treatment';
 import { PageTimeline } from './pages/page-timeline/page-timeline';
 import { PageSideEffects } from './pages/page-sideeffects/page-sideeffects';
 import { PageQuestions } from './pages/page-questions/page-questions';
-import { PageHelp } from './pages/page-help/page-help';
-import { PageAck } from './pages/page-ack/page-ack';
+import { HelpPage } from './pages/help-page/help-page';
+import { AckPage } from './pages/ack-page/ack-page';
 
 import { ContentProvider } from './providers/content-provider/content-provider';
 
+export interface Page {
+  iconName: string;
+  customIcon?: boolean,
+  title: {
+    smallFirst?: boolean,
+    small?: string,
+    large?: string
+  },
+  component: any
+}
 
 @Component({
   templateUrl: 'build/app.html',
@@ -22,8 +32,8 @@ import { ContentProvider } from './providers/content-provider/content-provider';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = PageQuestions;
-  pages: Array<{ title: string, component: any }>
+  rootPage: any = PageTreatment;
+  pages: Array<Page>
 
   constructor(
     private platform: Platform,
@@ -33,14 +43,80 @@ class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: PageHome },
-      { title: 'BCG TREATMENT What, When & How', component: PageIntro },
-      { title: 'Before, During & Ater TREATMENT', component: PageTreatment },
-      { title: 'Treatment TIMELINE', component: PageTimeline },
-      { title: 'BCG SIDE EFFECTS', component: PageSideEffects },
-      { title: 'Frequently Asked QUESTIONS', component: PageQuestions },
-      { title: 'Help', component: PageHelp },
-      { title: 'Acknowledgements', component: PageAck }
+      {
+        iconName: 'home',
+        title: {
+          small: 'Home'
+        },
+        component: PageHome
+      },
+      {
+        iconName: 'icon-bcg',
+        customIcon: true,
+        title: {
+          smallFirst: true,
+          small: 'What, When & How',
+          large: 'BCG TREATMENT'
+        },
+        component: PageIntro
+      },
+      {
+        iconName: 'timer',
+        title: {
+          smallFirst: true,
+          small: 'Before, During & After',
+          large: 'TREATMENT'
+        },
+        component: PageTreatment
+      },
+      {
+        iconName: 'icon-timeline',
+        customIcon: true,
+        title: {
+          small: 'Treatment',
+          large: 'TIMELINE'
+        },
+        component: PageTimeline
+      },
+      {
+        iconName: 'icon-sideeffects',
+        customIcon: true,
+        title: {
+          small: 'BCG',
+          large: 'SIDE EFFECTS'
+        },
+        component: PageSideEffects
+      },
+      {
+        iconName: 'help-circle',
+        title: {
+          small: 'Frequently Asked',
+          large: 'QUESTIONS'
+        },
+        component: PageQuestions
+      },
+      {
+        iconName: 'information-circle',
+        title: {
+          large: 'Help'
+        },
+        component: HelpPage
+      },
+      {
+        iconName: 'medal',
+        title: {
+          large: 'Acknowledgements'
+        },
+        component: AckPage
+      }
+      // ,
+      // { title: 'BCG TREATMENT What, When & How', component: PageIntro },
+      // { title: 'Before, During & Ater TREATMENT', component: PageTreatment },
+      // { title: 'Treatment TIMELINE', component: PageTimeline },
+      // { title: 'BCG SIDE EFFECTS', component: PageSideEffects },
+      // { title: 'Frequently Asked QUESTIONS', component: PageQuestions },
+      // { title: 'Help', component: PageHelp },
+      // { title: 'Acknowledgements', component: PageAck }
     ];
 
   }

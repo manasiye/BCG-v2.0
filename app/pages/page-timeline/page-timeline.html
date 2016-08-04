@@ -1,13 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-      <ion-icon name="happy"></ion-icon>
-    </button>
+  <ion-navbar primary>
+    <ion-buttons start left menuToggle>
+      <button class="menu-button">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+      <button icon class="menu-button">
+                <i class="icon-bcg icon-bcg-menu" test></i>
+            </button>
+    </ion-buttons>
     <ion-title>Timeline</ion-title>
+    <ion-buttons end>
+      <button (click)=openHome() blue>
+                <ion-icon name="home"></ion-icon>
+            </button>
+      <button (click)=openHome()>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="page4">
-  
+
 </ion-content>
