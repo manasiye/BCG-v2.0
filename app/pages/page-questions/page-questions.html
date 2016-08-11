@@ -5,27 +5,29 @@
                 <ion-icon name="menu"></ion-icon>
             </button>
       <button icon class="menu-button">
-                <i class="icon-bcg icon-bcg-menu" test></i>
+                <i class="icon-bcg icon-bcg-menu" blue></i>
             </button>
     </ion-buttons>
     <ion-title>FAQ</ion-title>
     <ion-buttons end>
-      <button (click)=openHome() blue>
+      <button (click)=openHome(p)>
                 <ion-icon name="home"></ion-icon>
             </button>
-      <button (click)=openHome()>
+      <button (click)=openHelp(p)>
                 <ion-icon name="information-circle"></ion-icon>
             </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <h1>{{pageContent.pageTitle}}</h1>
+<ion-content class="bg_image">
+  <!--<h1>{{pageContent.pageTitle}}</h1>-->
   <ion-row responsive-lg wrap>
     <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding>
       <ion-card>
-        <ion-content-header>{{section.title}}</ion-content-header>
+        <ion-card-header [innerHtml]="section.title">
+          <!--{{section.title}}-->
+        </ion-card-header>
         <ion-card-content [innerHtml]="section.content">
           <!--{{section.content}}-->
         </ion-card-content>

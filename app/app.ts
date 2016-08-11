@@ -32,7 +32,7 @@ export interface Page {
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = PageTreatment;
+  rootPage: any = PageHome;
   pages: Array<Page>
 
   constructor(
@@ -46,7 +46,7 @@ class MyApp {
       {
         iconName: 'home',
         title: {
-          small: 'Home'
+          large: 'Home'
         },
         component: PageHome
       },
@@ -54,7 +54,7 @@ class MyApp {
         iconName: 'icon-bcg',
         customIcon: true,
         title: {
-          smallFirst: true,
+          // smallFirst: true,
           small: 'What, When & How',
           large: 'BCG TREATMENT'
         },
@@ -63,7 +63,7 @@ class MyApp {
       {
         iconName: 'timer',
         title: {
-          smallFirst: true,
+          // smallFirst: true,
           small: 'Before, During & After',
           large: 'TREATMENT'
         },
@@ -98,14 +98,14 @@ class MyApp {
       {
         iconName: 'information-circle',
         title: {
-          large: 'Help'
+          small: 'Help'
         },
         component: HelpPage
       },
       {
         iconName: 'medal',
         title: {
-          large: 'Acknowledgements'
+          small: 'Acknowledgements'
         },
         component: AckPage
       }

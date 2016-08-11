@@ -1,6 +1,9 @@
 
-h1{
+h1.ack-header{
     text-align: center;
+    // font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
+    font-size: 2.3em;
+    height: 3em;
 }
 
 ion-col{
@@ -17,4 +20,12 @@ ion-col{
 .help-para{
     width: 60%;
     float: left;
+}
+// .opacity{
+//         -webkit-filter: opacity(50%);
+//         filter: opacity(50%);
+// }
+.help-audiobtn-image{
+    width: 120px;
+    height: 110px;
 }

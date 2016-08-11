@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
-
+import {HelpPage} from '../help-page/help-page';
+import {PageHome} from '../page-home/page-home';
 
 @Component({
   templateUrl: 'build/pages/page-intro/page-intro.html'
@@ -17,5 +18,11 @@ export class PageIntro implements AppPage {
       this.pageContent = page;
       console.log('Got Page Data: ', page);
     });
+  }
+  openHome(page) {
+    this.nav.setRoot(PageHome);
+  }
+  openHelp(page) {
+    this.nav.setRoot(HelpPage);
   }
 }
