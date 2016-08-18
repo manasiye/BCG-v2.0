@@ -7,14 +7,16 @@
   </ion-navbar>
 </ion-header>-->
 <ion-content class="bg_image">
-  <h1 class="ack-header title-font blue" >{{pageContent.pageTitle}}</h1>
+  <div class="title-button-section" [innerHtml]="pageContent.pageTitle">
+    <button dark outline class="close-button"><ion-icon name='close'></ion-icon> Done</button>
+  </div>
   <ion-row responsive-lg wrap>
-    <ion-col *ngFor="let section of pageContent.sections" width-50 text-left no-padding [innerHtml]="section.content">
-      <ion-card no-margin no-padding>
-        <ion-card-header class="help-page-card-header">
+    <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding no-margin>
+      <ion-card class="card-properties" no-padding no-margin text-left>
+        <ion-card-header [innerHtml]="section.title">
           <!--{{section.title}}-->
         </ion-card-header>
-        <ion-card-content>
+        <ion-card-content no-margin no-padding [innerHtml]="section.content">
           <!--{{section.content}}-->
         </ion-card-content>
       </ion-card>
