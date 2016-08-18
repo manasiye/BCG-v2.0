@@ -45,6 +45,7 @@ html, body {
 .title-section{
     font-size: $para-list-menu-font-size;
     font-weight: 900;
+    margin-left:$margin-title;
 }
 .title-font{
     font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
@@ -56,7 +57,7 @@ html, body {
 .text-content{
     font-size: $para-list-menu-font-size;
     color: color($colors,black);
-    padding: $para-padding;
+    margin-left:$margin-title;
 }
 
 .card-properties{
@@ -105,7 +106,7 @@ ul.list{
                 color: color($colors,white);
                 font-size: 6vh;
                 padding-top: 2%;
-                margin-left: 0.2em;
+                margin-left: $margin-ion-header;
             }
             .page-header-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
@@ -139,7 +140,7 @@ ul.list{
                 color: color($colors,white);
                 font-size: 18vh;
                 padding-top: 1%;
-                margin-left: 0.5em; 
+                margin-left: $margin-ion-header; 
             }
             .page-header-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
@@ -176,7 +177,7 @@ ul.list{
                 color: color($colors,white);
                 font-size: 6vh;
                 padding-top: 2%;
-                margin-left: 0.2em;
+                margin-left: $margin-ion-header;
             }
             .page-header-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
