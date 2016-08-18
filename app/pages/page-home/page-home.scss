@@ -63,7 +63,6 @@ ion-col{
   }
   &.card-intro{
     background-image: url('../../img/home/bladder.jpg'); 
-    // background-size: cover;
   }
   &.card-treatment{
     background-image: url('../../img/home/treatment.png'); 
@@ -81,7 +80,6 @@ ion-col{
   .card-footer{
     position: absolute;
     padding: 5px;
-    // font-family: 'Oswald';
     background: rgba(82, 202, 245, 0.7); 
     width: 100%;
     height: 70px;
@@ -96,47 +94,43 @@ ion-col{
 }
 
 .flex-header{
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-      
-    .header-item1{
-      color: color($colors,blue);
-      font-size: 6em;
-      height: 85px;
-    //   width: 140px;
-    // }
+    height: 12vw;
+    width: 100%;
+    margin-left: 1em;
+}
+.header-font-big{
+  color: color($colors,blue);
+  font-size: 12vw;
+}
 
-    .header-item2{
-      color: color($colors,orange);
-      font-size: 2em;
-      padding-top: 56px;
-      height: 85px;
-      // width: 33px;
-    } 
-    .header-item3{
-      color: color($colors,orange);
-      font-size: 4em;
-      // padding-top: 28px;
-      height: 85px;
-      // width: 400px;
-    }  
-    .header-item4{
-      padding-top: 10px;
-      height: 85px;
-    }
+.header-font-small{
+  color: color($colors,orange);
+  font-size: 4vw;
+  padding-top: 7.9%;
+} 
+.header-font-med{
+  color: color($colors,orange);
+  font-size: 8vw;
+  padding-top: 4%;
+}  
+.header-audiobtn{
+  margin-top: 1em;
+  margin-left: 1em;
+  height: 12vw;
+  width: 12vw;
 }
 
 .sub-header{
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
     color: color($colors,blue);
-}
-
-.copyrights{
-  font-size: 1em !important;
-  text-align: center;
+    margin-left: 17px;
+    font-size: 2.4vw;
 }
 
 .main{

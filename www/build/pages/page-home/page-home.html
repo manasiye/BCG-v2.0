@@ -22,15 +22,15 @@
 
 <ion-content class="card-background-page bg_image">
     <div class="flex-header">
-        <div class="header-item1">BCG</div>
-        <div class="header-item2">for</div>
-        <div class="header-item3">Bladder Cancer</div>
-        <img class="header-item4" src="img/audio_btn.png" />
+        <div class="header-font-big">BCG</div>
+        <div class="header-font-small">for</div>
+        <div class="header-font-med">Bladder Cancer</div>
+        <img class="header-audiobtn" src="img/audio_btn.png" />
     </div>
     <div class="sub-header">Everything You Need to Know</div>
     <ion-row responsive-lg>
         <ion-col width-50 no-margin no-padding>
-            <ion-card class="card-navigation card-intro" (click)="openIntro(p)">
+            <ion-card no-margin no-padding class="card-navigation card-intro" (click)="openIntro(p)">
                 <img class="card-bg-image" src="img/300.png" />
                 <div class="card-footer">
                     <div class="card-title1">BCG TREATMENT</div>
@@ -75,5 +75,5 @@
             </ion-card>
         </ion-col>
     </ion-row>
-    <p class="copyrights">&copy; Roswell Park Cancer Institute 2016. All Rights Reserved.</p>
+    <p text-center no-margin>&copy; Roswell Park Cancer Institute 2016. All Rights Reserved.</p>
 </ion-content>
