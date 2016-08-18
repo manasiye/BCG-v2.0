@@ -317,56 +317,52 @@ export let APP_CONTENT = [
     },
     {
         "pageId": "HelpPage",
-        "pageTitle": `HELP: Navigating the Application`,
+        "pageTitle": `<div class="ack-header title-font blue" >HELP: Navigating the Application</div>`,
         "sections": [
             {
                 "id": "1",
-                "title": "Help: Navigating the Application",
-                "content": `<h3 class='title-section title-font'>Narrator</h3>
-                            <div class='opacity'>
+                "title": `<h3 class='title-section title-font'>Narrator</h3>`,
+                "content": `<div class='help-content'>
                                 <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>
                                 <img  src='./img/audio_btn.png' class='help-audiobtn-image' />
                             </div>`
             },
             {
                 "id": "2",
-                "title": "Help: Navigating the Application",
-                "content": `<h3>Buttons</h3>
-                            <div> 
+                "title": `<h3 class='title-section title-font'>Buttons</h3>`,
+                "content": `<div class='help-content'> 
                             <p class ='help-para'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
                             <img  src='./img/300.png' class='page-help-image' />
                             </div>`
             },
             {
                 "id": "3",
-                "title": "Help: Navigating the Application",
-                "content": `<h3>Pages</h3>
-                            <div>   
+                "title": `<h3 class='title-section title-font'>Pages</h3>`,
+                "content": `<div class='help-content'>   
                             <p class ='help-para'>Swipe with your fingers to go to the next page or to return to the previous page.</p>
                             <img  src='./img/300.png' class='page-help-image' />
                             </div>`
             },
             {
                 "id": "4",
-                "title": "Help: Navigating the Application",
-                "content": `<div> 
+                // "title": "Help: Navigating the Application",
+                "content": `<div class='help-content'> 
                             <p class ='help-para'>In the timeline image tapping on the hour button will highlight the relevant information.</p>
                             <img  src='./img/300.png' class='page-help-image' />
                             </div>`
             },
             {
                 "id": "5",
-                "title": "Help: Navigating the Application",
-                "content": `<div> 
+                // "title": "Help: Navigating the Application",
+                "content": `<div class='help-content'> 
                             <p class ='help-para'>Tap on the bottom bar to take you to the desired page.</p>
                             <img  src='./img/300.png' class='page-help-image' />
                             </div>`
             },
             {
                 "id": "6",
-                "title": "Help: Navigating the Application",
-                "content": `<h3>Video</h3>
-                            <div> 
+                "title": `<h3 class='title-section title-font'>Video</h3>`,
+                "content": `<div class='help-content'>
                             <p class ='help-para'>Tap on the video icon to play the animation.</p>
                             <img  src='./img/300.png' class='page-help-image' />
                             </div>`
