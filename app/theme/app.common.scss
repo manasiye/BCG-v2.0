@@ -42,22 +42,12 @@ html, body {
   min-width: 100%;
 }
 
-.title-section{
-    font-size: $para-list-menu-font-size;
-    font-weight: 900;
-    margin-left:$margin-title;
-}
 .title-font{
     font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
 }
 
 .blue{
     color: color($colors, blue);
-}
-.text-content{
-    font-size: $para-list-menu-font-size;
-    color: color($colors,black);
-    margin-left:$margin-title;
 }
 
 .card-properties{
@@ -125,6 +115,16 @@ ul.list{
             position: absolute;
         }
     }
+    .title-section{
+        font-size: $para-list-menu-font-size;
+        font-weight: 900;
+        margin-left:$margin-title-portrait;
+    }
+    .text-content{
+        font-size: $para-list-menu-font-size;
+        color: color($colors,black);
+        margin-left:$margin-title-portrait;
+    }
 }
 @media only screen and (orientation: landscape) {
     .page-header-components{
@@ -155,14 +155,23 @@ ul.list{
             width: 20vw;
             background: transparent;
             left: 76vw;
-            // flex: 1;
             top: 0;
             position: absolute;
         }   
     }
+    .title-section{
+        font-size: $para-list-menu-font-size;
+        font-weight: 900;
+        margin-left:$margin-title-landscape;
+    }
+    .text-content{
+        font-size: $para-list-menu-font-size;
+        color: color($colors,black);
+        margin-left:$margin-title-landscape;
+    }
 }
 @media only screen and (max-device-width : 1024px) 
-                   and (min-device-width : 768px) 
+                   and (min-device-height : 768px) 
                    and (orientation:portrait) {
     .page-header-components{
         position: relative;  
@@ -196,9 +205,19 @@ ul.list{
             position: absolute;
         }
     }
+    .title-section{
+        font-size: $para-list-menu-font-size;
+        font-weight: 900;
+        margin-left:$margin-title-portrait-ios;
+    }
+    .text-content{
+        font-size: $para-list-menu-font-size;
+        color: color($colors,black);
+        margin-left:$margin-title-portrait-ios;
+    }
 }
 @media only screen and (max-device-width : 1024px) 
-                   and (min-device-width : 768px) 
+                   and (min-device-height : 768px) 
                    and (orientation : landscape) {
     .page-header-components{
         position: relative;
@@ -214,7 +233,7 @@ ul.list{
                 color: color($colors,white);
                 font-size: 6.5vh;
                 padding-top: 2%;
-                margin-left: 0.5em; 
+                margin-left: $margin-ion-header; 
             }
             .page-header-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
@@ -232,6 +251,16 @@ ul.list{
             flex: 1;
             position: absolute;
         }          
+    }
+    .title-section{
+        font-size: $para-list-menu-font-size;
+        font-weight: 900;
+        margin-left:$margin-title-landscape-ios;
+    }
+    .text-content{
+        font-size: $para-list-menu-font-size;
+        color: color($colors,black);
+        margin-left:$margin-title-landscape-ios;
     }
 }
 .title-filler{
