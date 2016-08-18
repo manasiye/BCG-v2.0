@@ -25,10 +25,10 @@
   <ion-row responsive-lg>
     <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding>
       <ion-card class="card-properties" no-margin text-left>
-        <ion-card-header no-margin no-padding [innerHtml]="section.title">
+        <ion-card-header no-padding [innerHtml]="section.title">
         <!--{{section.title}} -->
         </ion-card-header>
-        <ion-card-content no-margin no-padding [innerHtml]="section.content">
+        <ion-card-content no-padding [innerHtml]="section.content">
           <!--{{section.content}}-->
         </ion-card-content>
       </ion-card>

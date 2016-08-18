@@ -9,8 +9,8 @@
 <ion-content class="bg_image">
   <h1 class="ack-header title-font blue" >{{pageContent.pageTitle}}</h1>
   <ion-row responsive-lg wrap>
-    <ion-col *ngFor="let section of pageContent.sections" width-50 [innerHtml]="section.content">
-      <ion-card>
+    <ion-col *ngFor="let section of pageContent.sections" width-50 text-left no-padding [innerHtml]="section.content">
+      <ion-card no-margin no-padding>
         <ion-card-header class="help-page-card-header">
           <!--{{section.title}}-->
         </ion-card-header>

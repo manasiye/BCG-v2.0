@@ -26,7 +26,7 @@ var MyApp = (function () {
     function MyApp(platform, menu) {
         this.platform = platform;
         this.menu = menu;
-        this.rootPage = ack_page_1.AckPage;
+        this.rootPage = page_intro_1.PageIntro;
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
@@ -665,7 +665,7 @@ exports.APP_CONTENT = [
             {
                 "id": "1",
                 "title": "Help: Navigating the Application",
-                "content": "<h3 class='title-section title-font'>Narrator</h3>\n                            <div class='opacity'>\n                                <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>\n                                <img  src='./img/audio_btn.png' class='help-audiobtn-image' />\n                            </div>"
+                "content": "<h3 class='title-section title-font'>Narrator</h3>\n                                <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>\n                                <img  src='./img/audio_btn.png' class='help-audiobtn-image' />\n                            "
             },
             {
                 "id": "2",
