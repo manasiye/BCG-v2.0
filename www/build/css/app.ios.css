@@ -9615,11 +9615,15 @@ body {
   height: 50%; }
 
 .fig-container {
-  display: inline; }
+  position: relative;
+  height: 500px; }
 
 .figure-small {
-  width: 40%;
-  height: 40%; }
+  width: 45%;
+  height: 43%;
+  position: absolute;
+  left: 100px;
+  top: 55px; }
 
 .ack-image {
   height: 20%;
@@ -9754,6 +9758,122 @@ li.faq-list {
   font-size: 1.5em;
   line-height: 1em; }
 
+@media only screen and (orientation: portrait) {
+  .page-header-components1 {
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    .page-header-components1 .page-header1 {
+      background-color: #52caf5;
+      width: 91%; }
+      .page-header-components1 .page-header1 .page-header-smalltext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 5.5vw;
+        margin-left: 1.6em; }
+      .page-header-components1 .page-header1 .page-header-largetext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 9.7vw;
+        margin-left: 0.9em; }
+    .page-header-components1 .page-header-audiobtn1 {
+      height: 13vh;
+      width: 22vw;
+      background: transparent;
+      left: 75vw;
+      top: 0;
+      position: absolute; } }
+
+@media only screen and (orientation: landscape) {
+  .page-header-components1 {
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    .page-header-components1 .page-header1 {
+      background-color: #52caf5;
+      width: 91%; }
+      .page-header-components1 .page-header1 .page-header-smalltext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 5.5vw;
+        margin-left: 0.9em; }
+      .page-header-components1 .page-header1 .page-header-largetext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 9.7vw;
+        margin-left: 0.5em; }
+    .page-header-components1 .page-header-audiobtn1 {
+      height: 40vh;
+      width: 22vw;
+      background: transparent;
+      left: 75vw;
+      top: 0;
+      position: absolute; } }
+
+@media only screen and (max-device-width: 1024px) and (min-device-height: 768px) and (orientation: portrait) {
+  .page-header-components1 {
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    .page-header-components1 .page-header1 {
+      background-color: #52caf5;
+      width: 91%; }
+      .page-header-components1 .page-header1 .page-header-smalltext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 5.5vw;
+        margin-left: 1.6em; }
+      .page-header-components1 .page-header1 .page-header-largetext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 9.7vw;
+        margin-left: 0.9em; }
+    .page-header-components1 .page-header-audiobtn1 {
+      height: 17vh;
+      width: 23vw;
+      background: transparent;
+      left: 75vw;
+      top: 0;
+      position: absolute; } }
+
+@media only screen and (max-device-width: 1024px) and (min-device-height: 768px) and (orientation: landscape) {
+  .page-header-components1 {
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    .page-header-components1 .page-header1 {
+      background-color: #52caf5;
+      width: 91%; }
+      .page-header-components1 .page-header1 .page-header-smalltext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 2.5vw;
+        margin-left: 1.2em; }
+      .page-header-components1 .page-header1 .page-header-largetext {
+        font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-size: 4.7vw;
+        margin-left: 0.6em; }
+    .page-header-components1 .page-header-audiobtn1 {
+      height: 15vh;
+      width: 13vw;
+      background: transparent;
+      left: 36vw;
+      top: 0;
+      position: absolute; } }
+
 .thermometer {
   width: 20%;
   height: 20%;
@@ -9801,15 +9921,17 @@ Custom and 3rd Party Icons
   content: "\e600";
   font-family: icomoon;
   position: relative;
-  top: 8px;
-  color: #52caf5; }
+  top: 4px;
+  color: #52caf5;
+  font-size: 25px; }
 
 .icon-a:before {
   content: "\e603";
   font-family: icomoon;
   position: relative;
-  top: 8px;
-  color: #f5895b; }
+  top: 4px;
+  color: #f5895b;
+  font-size: 25px; }
 
 /*******************************
 Fonts

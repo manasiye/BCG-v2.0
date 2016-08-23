@@ -34,9 +34,8 @@ export let APP_CONTENT = [
                 "id": "2",
                 // "title": `<div class='title-filler'></div>`,
                 "content": `<h3 class='blue title-section'>When BCG is Given: Tumor Removal Procedure</h3>
-                            add video
-                            <h3 class='blue title-section'>How BCG Works: BCG Treatment</h3>
-                            add video`
+                            
+                            <h3 class='blue title-section'>How BCG Works: BCG Treatment</h3>`
             }
         ]
     },
@@ -265,12 +264,12 @@ export let APP_CONTENT = [
         "sections": [
             {
                 "id": "1",
-                "title": `<div class='page-header-components'>
-                            <div class='page-header'>
-                            <div class='page-header-small'>FREQUENTLY ASKED</div>
-                            <div class='page-header-large'>QUESTIONS</div>
-                          </div>
-                            <img src='img/audio_btn.png' class='page-header-audiobtn' /></div>`,
+                "title": `<div class='page-header-components1'>
+                            <div class='page-header1'>
+                                <div class='page-header-smalltext'>FREQUENTLY ASKED</div>
+                                <div class='page-header-largetext'>QUESTIONS</div>
+                            </div>
+                            <img src='img/audio_btn.png' class='page-header-audiobtn1' /></div>`,
                 "content": `<ul>
                                 <li class='faq-list'><i class="icon-q"></i> Will a tuberculosis (PPD) test be positive after BCG treatment?</li>
                                 <li class='faq-list'><i class="icon-a"></i> Yes</li>
@@ -292,12 +291,12 @@ export let APP_CONTENT = [
             },
             {
                 "id": "3",
-                "title": `<div class='page-header-components'>
-                            <div class='page-header'>
-                                <div class='page-header-small'>FREQUENTLY ASKED</div>
-                                <div class='page-header-large'>QUESTIONS</div>
+                "title": `<div class='page-header-components1'>
+                            <div class='page-header1'>
+                                <div class='page-header-smalltext'>FREQUENTLY ASKED</div>
+                                <div class='page-header-largetext'>QUESTIONS</div>
                             </div>
-                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>
+                            <img src='img/audio_btn.png' class='page-header-audiobtn1'/>
                           </div>`,
                 "content": `<ul>
                                 <li class='faq-list'><i class="icon-q"></i> Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li>

@@ -46,15 +46,17 @@ Custom and 3rd Party Icons
   content: "\e600";
   font-family: $font_icomoon;
   position: relative;
-  top: 8px;
+  top: 4px;
   color: color($colors, blue);
+  font-size: 25px;
 }
 
 .icon-a:before {
   content: "\e603";
   font-family: $font_icomoon;
   position: relative;
-  top: 8px;
+  top: 4px;
   color: color($colors, orange);
+  font-size: 25px;
 }
 
