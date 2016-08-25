@@ -2,24 +2,31 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
-import {HelpPage} from '../help-page/help-page';
-import {PageHome} from '../page-home/page-home';
+import { HelpPage } from '../help-page/help-page';
+import { PageHome } from '../page-home/page-home';
+import { PageableSections } from '../../types/pageable-sections';
+import { Pager } from '../../components/pager/pager';
 
 
 @Component({
-  templateUrl: 'build/pages/page-treatment/page-treatment.html'
+  templateUrl: 'build/pages/page-treatment/page-treatment.html',
+  directives: [Pager]
 })
-export class PageTreatment implements AppPage {
+export class PageTreatment extends PageableSections implements AppPage {
 
   pageId: string = 'PageTreatment';
   pageContent: any;
 
   constructor(private nav: NavController, cp: ContentProvider) {
-    cp.getPage(this.pageId).subscribe((page) => {
-      this.pageContent = page;
-      // console.log('Got Page Data: ', page);
-
+    super();
+    cp.getPage(this.pageId).subscribe((page)=>{
+      console.log(page);
+        this.pageContent = page;
     });
+  }
+  test(){
+    console.log(this.pageContent);
+    
   }
   openHome(page) {
     this.nav.setRoot(PageHome);
