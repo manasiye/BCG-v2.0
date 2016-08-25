@@ -8,7 +8,7 @@ import { Content, ViewController } from 'ionic-angular';
 })
 export class Pager implements AfterViewInit {
 
-  _sections: Array<ElementRef> = [];
+  // _sections: Array<ElementRef> = [];
   _sectionPositions: Array<number> = [];
 
 
@@ -17,7 +17,7 @@ export class Pager implements AfterViewInit {
   @Output() currentSection = new EventEmitter();
   @Output() sectionPositions = new EventEmitter();
 
-  @ContentChildren('pageSection') sections: any;
+  @ContentChildren('pageSection') sections: QueryList<any>;
   @ContentChildren('pagerElement') pagers: any;
 
   @ViewChild(Content) content: Content;
@@ -28,24 +28,19 @@ export class Pager implements AfterViewInit {
   constructor(el: ElementRef, vc: ViewController) {
     this.el = el;
     this.vc = vc;
-
+    console.log('pager', this.el);
     this.vc.loaded(() => {
-    
+
     });
   }
   ngAfterViewInit() {
-    this.sections.changes.subscribe((newElements) => {
-  
-      for (let element of newElements.toArray()) {
-        // console.log(element);
-        this._sections.push(element);
-      }
+    // this.sections.forEach((element) => {
+    //   console.log(element)
+    //   this.sections.push(element);
+    // });
 
-      this.updateSectionPositions();
-      // console.log(this._sections);
-      // console.log(this._sectionPositions);
+    this.updateSectionPositions();
 
-    });
 
     this.pageScrollEvent.subscribe(event => {
       this.updateCurrentSeciton(event.target.offsetTop, event.target.scrollTop);
@@ -56,9 +51,9 @@ export class Pager implements AfterViewInit {
   }
   updateSectionPositions() {
     this._sectionPositions = [];
-    for (let section of this._sections) {
+    this.sections.forEach((section) => {
       this._sectionPositions.push(section.nativeElement.offsetTop);
-    }
+    });
   }
 
   private updateCurrentSeciton(offsetTop: number, scrollTop: number) {
