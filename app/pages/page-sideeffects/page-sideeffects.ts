@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
 import {HelpPage} from '../help-page/help-page';
-import {PageHome} from '../page-home/page-home';
+import {HomePage} from '../home-page/home-page';
 
 @Component({
   templateUrl: 'build/pages/page-sideeffects/page-sideeffects.html'
@@ -20,7 +20,7 @@ export class PageSideEffects implements AppPage {
     });
   }
   openHome(page) {
-   this.nav.setRoot(PageHome);
+   this.nav.setRoot(HomePage);
   }
    openHelp(page) {
    this.nav.setRoot(HelpPage);

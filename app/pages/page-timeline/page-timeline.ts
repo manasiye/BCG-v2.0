@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {HelpPage} from '../help-page/help-page';
-import {PageHome} from '../page-home/page-home';
+import {HomePage} from '../home-page/home-page';
 
 @Component({
   templateUrl: 'build/pages/page-timeline/page-timeline.html'
@@ -13,7 +13,7 @@ export class PageTimeline {
 
   }
   openHome(page) {
-    this.nav.setRoot(PageHome);
+    this.nav.setRoot(HomePage);
   }
    openHelp(page) {
    this.nav.setRoot(HelpPage);

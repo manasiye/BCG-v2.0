@@ -31,12 +31,9 @@ export let APP_CONTENT = [
                                     </div>`
                     },
                     {
-                        "title": "When BCG is Given: Tumor Removal Procedure",
-                        "content": ``
-                    },
-                    {
-                        "title": "How BCG Works: BCG Treatment",
-                        "content": ``
+                        "title": "",
+                        "content": `<div class='blue sub-section-title'>When BCG is Given: Tumor Removal Procedure</div>
+                                    <div class='blue sub-section-title'>How BCG Works: BCG Treatment</div>`
                     }
                 ]
             }
@@ -107,9 +104,8 @@ export let APP_CONTENT = [
                 },
                 "subSections": [
                     {
-                        "title": "Before Treatment Begins, Tell Your Doctor",
-                        "content": `<h3 class='blue sub-section-title'>How is BCG Given?</h3>
-                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>`
+                        "title": "How is BCG Given?",
+                        "content": `<p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>`
                     },
                     {
                         "title": "",
@@ -210,9 +206,8 @@ export let APP_CONTENT = [
                                      </div>`
                     },
                     {
-                        "title": "",
-                        "content": `<div class='blue sub-section-title'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>
-                                    <ul class='list'>
+                        "title": "Call your doctor immediately if you experience any signs of an allergic reaction:",
+                        "content": `<ul class='list'>
                                         <li class='list-content'>Itching</li>
                                         <li class='list-content'>Hives</li>
                                         <li class='list-content'>Swelling of your face or hands</li>
@@ -267,7 +262,7 @@ export let APP_CONTENT = [
                                         <li class='faq-list'><i class="icon-a"></i> It may be uncomfortable to have the catheter inserted. 
                                         Some physicians use topical numbing medication to ease your discomfort.</li>
                                     </ul>
-                                    <p><strong>If you have additional questions, please call the clinic.</strong></p>`
+                                    <p class='text-content'>If you have additional questions, please call the clinic.</p>`
                     },
                     {
                         "title": "",

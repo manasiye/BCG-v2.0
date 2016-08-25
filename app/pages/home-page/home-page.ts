@@ -15,7 +15,7 @@ import {PageSideEffects} from '../page-sideeffects/page-sideeffects';
 @Component({
   templateUrl: 'build/pages/page-home/page-home.html',
 })
-export class PageHome implements AppPage {
+export class HomePage implements AppPage {
 
   pageId: string = 'PageHome';
   pageContent: any;
@@ -30,7 +30,7 @@ export class PageHome implements AppPage {
    openHome(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(PageHome);
+    this.nav.setRoot(HomePage);
   }
    openHelp(page) {
     this.nav.setRoot(HelpPage);
