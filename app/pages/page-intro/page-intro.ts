@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
-import {HelpPage} from '../help-page/help-page';
-import {PageHome} from '../page-home/page-home';
+import { HelpPage } from '../help-page/help-page';
+import { PageHome } from '../page-home/page-home';
 
 @Component({
   templateUrl: 'build/pages/page-intro/page-intro.html'
@@ -14,9 +14,10 @@ export class PageIntro implements AppPage {
   pageContent: any;
 
   constructor(private nav: NavController, cp: ContentProvider) {
-    cp.getPage(this.pageId).subscribe((page) => {
-      this.pageContent = page;
-      console.log('Got Page Data: ', page);
+
+   cp.getPage(this.pageId).subscribe((page)=>{
+      // console.log(page);
+        this.pageContent = page;
     });
   }
   openHome(page) {
@@ -25,4 +26,5 @@ export class PageIntro implements AppPage {
   openHelp(page) {
     this.nav.setRoot(HelpPage);
   }
+
 }

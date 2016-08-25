@@ -36,7 +36,7 @@
       </div>
       <div class="sub-section-container" responsive-lg>
       <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
-        <ion-card-header class='blue title-section sub-section-title' no-margin no-padding>
+        <ion-card-header class='blue title-section sub-section-title' no-margin no-padding wrap>
           {{subSection.title}}
         </ion-card-header>
         <ion-card-content no-margin no-padding [innerHtml]="subSection.content">

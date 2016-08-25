@@ -7,17 +7,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="bg_image">
-  <ion-row responsive-lg wrap>
-    <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding no-margin>
-      <div class='title-section blue'>{{section.title.large}}</div> 
+  <ion-row wrap *ngFor="let section of pageContent.sections" >
+    <ion-col no-padding no-margin>
+      <div text-center class='sub-section-title blue'>{{section.title.large}}</div> 
+      <div class="sub-section-container" responsive-lg>
       <ion-card class="sub-section" no-padding no-margin text-left *ngFor="let subSection of section.subSections">
-        <ion-card-header class="title-font title-section">
+        <ion-card-header class="title-font sub-section-title">
           {{subSection.title}}
         </ion-card-header>
-        <ion-card-content no-margin no-padding [innerHtml]="subSection.content">
+        <ion-card-content no-margin [innerHtml]="subSection.content">
           <!--{{section.content}}-->
         </ion-card-content>
       </ion-card>
+      </div>
     </ion-col>
   </ion-row>
 </ion-content>

@@ -21,11 +21,11 @@ export class PageHome implements AppPage {
   pageContent: any;
 
   constructor(private nav: NavController, cp: ContentProvider) {
-    cp.getPage(this.pageId).subscribe((page) => {
-      this.pageContent = page;
-      // console.log('Got Page Data: ', page);
+    // cp.getPage(this.pageId).subscribe((page) => {
+    //   this.pageContent = page;
+    //   // console.log('Got Page Data: ', page);
 
-    });
+    // });
   }
    openHome(page) {
     // Reset the content nav to have just this page

@@ -89,8 +89,8 @@ export let APP_CONTENT = [
                                 <li class='list-content'>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li>
                             </ul>
                             <br />
-                            <h3 class='blue title-section'>Preparing for Treatment</h3>
-                            <h3 class='title-section'>Starting 4 Hours Before Your Treatment Starts:</h3>
+                            <h3 class='blue sub-section-title'>Preparing for Treatment</h3>
+                            <h3 class='sub-section-title'>Starting 4 Hours Before Your Treatment Starts:</h3>
                             <ul class='list'>
                                 <li class='list-content'><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li>
                                 <li class='list-content'><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li>
@@ -108,7 +108,7 @@ export let APP_CONTENT = [
                 "subSections": [
                     {
                         "title": "Before Treatment Begins, Tell Your Doctor",
-                        "content": `<h3 class='blue title-section'>How is BCG Given?</h3>
+                        "content": `<h3 class='blue sub-section-title'>How is BCG Given?</h3>
                             <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>`
                     },
                     {
@@ -196,7 +196,7 @@ export let APP_CONTENT = [
                         "title": "Some Rare Yet Severe Side Effects",
                         "content": `<p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur               within a week of bladder surgery or BCG treatments.</p>
                                             <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>
-                                    <div class='title-section'>Get Medical Attention Immediately If You Have:</div>
+                                    <div class='sub-section-title'>Get Medical Attention Immediately If You Have:</div>
                                     <div>
                                         <img class='thermometer' src='./img/figures/thermometer_image.png' />
                                         <ul class='list'>
@@ -211,7 +211,7 @@ export let APP_CONTENT = [
                     },
                     {
                         "title": "",
-                        "content": `<div class='blue title-section'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>
+                        "content": `<div class='blue sub-section-title'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>
                                     <ul class='list'>
                                         <li class='list-content'>Itching</li>
                                         <li class='list-content'>Hives</li>
@@ -290,43 +290,43 @@ export let APP_CONTENT = [
                 "subSections": [
                     {
                         "title": "Narrator",
-                        "content": `<div class='help-content'>
-                                        <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>
-                                        <img  src='./img/audio_btn.png' class='help-audiobtn-image' />
+                        "content": `<div class='help-content-container'>
+                                        <p class ='help-content'>Tapping on the narrow icon will give you more information on each page.</p>
+                                        <img  src='./img/audio_btn.png' class='help-content-audiobtn' />
                                     </div>`
                     },
                     // {
                     //     "title": "Buttons",
-                    //     "content": `<div class='help-content'> 
-                    //                     <p class ='help-para'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
+                    //     "content": `<div class='help-content-container'> 
+                    //                     <p class ='help-content'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
                     //                     <img  src='./img/300.png' class='page-help-image' />
                     //                 </div>`
                     // },
                     {
                         "title": "Pages",
-                        "content": `<div class='help-content'>   
-                                        <p class ='help-para'>Swipe with your fingers to go to the next page or to return to the previous page.</p>
+                        "content": `<div class='help-content-container'>   
+                                        <p class ='help-content'>Swipe with your fingers to go to the next page or to return to the previous page.</p>
                                         <img  src='./img/300.png' class='page-help-image' />
                                     </div>`
                     },
                     // {
                     //     "title": "",
-                    //     "content": `<div class='help-content'> 
-                    //                     <p class ='help-para'>In the timeline image tapping on the hour button will highlight the relevant information.</p>
+                    //     "content": `<div class='help-content-container'> 
+                    //                     <p class ='help-content'>In the timeline image tapping on the hour button will highlight the                                 relevant information.</p>
                     //                     <img  src='./img/300.png' class='page-help-image' />
                     //                 </div>`
                     // },
                     {
-                        "title": "",
-                        "content": `<div class='help-content'> 
-                                        <p class ='help-para'>Tap on the bottom bar to take you to the desired page.</p>
+                        "title": "Video",
+                        "content": `<div class='help-content-container'>
+                                        <p class ='help-content'>Tap on the video icon to play the animation.</p>
                                         <img  src='./img/300.png' class='page-help-image' />
                                     </div>`
                     },
                     {
-                        "title": "Video",
-                        "content": `<div class='help-content'>
-                                        <p class ='help-para'>Tap on the video icon to play the animation.</p>
+                        "title": "",
+                        "content": `<div class='help-content-container'> 
+                                        <p class ='help-content'>Tap on the bottom bar to take you to the desired page.</p>
                                         <img  src='./img/300.png' class='page-help-image' />
                                     </div>`
                     }

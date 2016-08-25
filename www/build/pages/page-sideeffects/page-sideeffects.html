@@ -13,7 +13,7 @@
       <button (click)=openHome(p)>
                 <ion-icon name="home"></ion-icon>
             </button>
-      <button (click)=openHome(p)>
+      <button (click)=openHelp(p)>
                 <ion-icon name="information-circle"></ion-icon>
             </button>
     </ion-buttons>
@@ -31,7 +31,7 @@
       </div>
       <div class="sub-section-container" responsive-lg>
       <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
-        <ion-card-header class='blue title-section sub-section-title' no-margin no-padding> 
+        <ion-card-header wrap class='blue sub-section-title' no-margin no-padding> 
           {{subSection.title}}
         </ion-card-header>
         <ion-card-content no-margin no-padding [innerHtml]="subSection.content">

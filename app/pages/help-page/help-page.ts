@@ -12,9 +12,9 @@ export class HelpPage implements AppPage {
   pageContent: any;
 
   constructor(private navController: NavController, cp: ContentProvider) {
-    cp.getPage(this.pageId).subscribe((page) => {
-      this.pageContent = page;
-      // console.log('Got Page Data: ', page);
+   cp.getPage(this.pageId).subscribe((page)=>{
+      console.log(page);
+        this.pageContent = page;
     });
   }
 }

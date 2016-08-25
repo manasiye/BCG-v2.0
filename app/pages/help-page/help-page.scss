@@ -5,20 +5,7 @@
 }
 
 @media only screen and (orientation:portrait) {
-    .title-button-section{
-     position: relative;
-     .ack-header{
-        padding-top: 1em;
-        text-align: center;
-        font-size: 2em;
-        }
-     .done-button{
-         position: absolute;   
-         top: 0;
-         right: 0;
-     }
- } 
-    .help-content{
+    .help-content-container{
         position: relative;
         .page-help-image{
             width: 100px;
@@ -27,7 +14,7 @@
             top: 0vh;
             right: 8vw;
     }
-      .help-para{
+      .help-content{
             width: 50%;
             font-family: $font_HelveticaNeue_CondensedBold, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
             color: color($colors,darkGray);
@@ -36,18 +23,13 @@
             font-size: $list-menu-font-small-size;
         }
 
-        .help-audiobtn-image{
+        .help-content-audiobtn{
             width: 100px;
             height: 90px;
             position: absolute;
-            top: -12px;
-            right: 8vw;
+            top: 0;
+            right: 0;
         }
-    }
-     .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-portrait;
     }
 }
 @media only screen and (orientation: landscape) {
@@ -57,7 +39,7 @@
         font-size: 2em;
         }
 
-    .help-content{
+    .help-content-container{
         position: relative;
         .page-help-image{
             width: 100px;
@@ -67,7 +49,7 @@
             right: 8vw;
         }
 
-        .help-para{
+        .help-content{
             width: 50%;
             font-family: $font_HelveticaNeue_CondensedBold, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
             color: color($colors,darkGray);
@@ -76,18 +58,13 @@
             font-size: $list-menu-font-small-size;
         }
 
-        .help-audiobtn-image{
+        .help-content-audiobtn{
             width: 100px;
             height: 90px;
             position: absolute;
-            top: -12px;
+            top: -27px;
             right: 8vw;
         }
-    }
-    .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-landscape;
     }
 }
 @media only screen and (max-device-width : 1024px) 
@@ -99,10 +76,10 @@
         font-size: 2em;
         }
 
-    .help-content{
+    .help-content-container{
         position: relative;
 
-        .help-para{
+        .help-content{
             width: 50%;
             font-family: $font_HelveticaNeue_CondensedBold, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
             color: color($colors,darkGray);
@@ -117,18 +94,13 @@
             top: 0vh;
             right: 10vw;
         }
-        .help-audiobtn-image{
+        .help-content-audiobtn{
             width: 140px;
             height: 130px;
             position: absolute;
             top: -12px;
             right: 10vw;
         }
-    }
-    .title-section{
-        font-size: 1.9em;
-        font-weight: 900;
-        margin-left:$margin-title-portrait-ios;
     }
 }
 @media only screen and (max-device-width : 1024px) 
@@ -140,10 +112,10 @@
         font-size: 2em;
         }
         
-    .help-content{
+    .help-content-container{
         position: relative;
 
-        .help-para{
+        .help-content{
             width: 50%;
             font-family: $font_HelveticaNeue_CondensedBold, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
             color: color($colors,darkGray);
@@ -158,17 +130,12 @@
             top: 0vh;
             right: 8vw;
         }
-        .help-audiobtn-image{
+        .help-content-audiobtn{
             width: 100px;
             height: 90px;
             position: absolute;
             top: -12px;
             right: 8vw;
         }
-    }
-     .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-landscape-ios;
     }
 }

@@ -706,7 +706,7 @@ exports.APP_CONTENT = [
                     },
                     {
                         "title": "",
-                        "content": "<ul  class='list'>\n                                <li class='list-content'>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li>\n                            </ul>\n                            <br />\n                            <h3 class='blue title-section'>Preparing for Treatment</h3>\n                            <h3 class='title-section'>Starting 4 Hours Before Your Treatment Starts:</h3>\n                            <ul class='list'>\n                                <li class='list-content'><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li>\n                                <li class='list-content'><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li>\n                            </ul>"
+                        "content": "<ul  class='list'>\n                                <li class='list-content'>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li>\n                            </ul>\n                            <br />\n                            <h3 class='blue sub-section-title'>Preparing for Treatment</h3>\n                            <h3 class='sub-section-title'>Starting 4 Hours Before Your Treatment Starts:</h3>\n                            <ul class='list'>\n                                <li class='list-content'><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li>\n                                <li class='list-content'><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li>\n                            </ul>"
                     }
                 ]
             },
@@ -719,7 +719,7 @@ exports.APP_CONTENT = [
                 "subSections": [
                     {
                         "title": "Before Treatment Begins, Tell Your Doctor",
-                        "content": "<h3 class='blue title-section'>How is BCG Given?</h3>\n                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
+                        "content": "<h3 class='blue sub-section-title'>How is BCG Given?</h3>\n                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
                     },
                     {
                         "title": "",
@@ -777,11 +777,11 @@ exports.APP_CONTENT = [
                     },
                     {
                         "title": "Some Rare Yet Severe Side Effects",
-                        "content": "<p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur               within a week of bladder surgery or BCG treatments.</p>\n                                            <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>\n                                    <div class='title-section'>Get Medical Attention Immediately If You Have:</div>\n                                    <div>\n                                        <img class='thermometer' src='./img/figures/thermometer_image.png' />\n                                        <ul class='list'>\n                                            <li class='list-content'>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>\n                                            <li class='list-content'>Severe shivering</li>\n                                            <li class='list-content'>Dizziness or feeling light-headed</li>\n                                            <li class='list-content'>Shortness of breath</li>\n                                            <li class='list-content'>Confusion</li>\n                                            <li class='list-content'>Weakness</li>\n                                        </ul>\n                                     </div>"
+                        "content": "<p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur               within a week of bladder surgery or BCG treatments.</p>\n                                            <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>\n                                    <div class='sub-section-title'>Get Medical Attention Immediately If You Have:</div>\n                                    <div>\n                                        <img class='thermometer' src='./img/figures/thermometer_image.png' />\n                                        <ul class='list'>\n                                            <li class='list-content'>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>\n                                            <li class='list-content'>Severe shivering</li>\n                                            <li class='list-content'>Dizziness or feeling light-headed</li>\n                                            <li class='list-content'>Shortness of breath</li>\n                                            <li class='list-content'>Confusion</li>\n                                            <li class='list-content'>Weakness</li>\n                                        </ul>\n                                     </div>"
                     },
                     {
                         "title": "",
-                        "content": "<div class='blue title-section'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>\n                                    <ul class='list'>\n                                        <li class='list-content'>Itching</li>\n                                        <li class='list-content'>Hives</li>\n                                        <li class='list-content'>Swelling of your face or hands</li>\n                                        <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                        <li class='list-content'>Tightness in your chest</li>\n                                    </ul>"
+                        "content": "<div class='blue sub-section-title'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>\n                                    <ul class='list'>\n                                        <li class='list-content'>Itching</li>\n                                        <li class='list-content'>Hives</li>\n                                        <li class='list-content'>Swelling of your face or hands</li>\n                                        <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                        <li class='list-content'>Tightness in your chest</li>\n                                    </ul>"
                     },
                     {
                         "title": "",
@@ -835,33 +835,33 @@ exports.APP_CONTENT = [
                 "subSections": [
                     {
                         "title": "Narrator",
-                        "content": "<div class='help-content'>\n                                        <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>\n                                        <img  src='./img/audio_btn.png' class='help-audiobtn-image' />\n                                    </div>"
+                        "content": "<div class='help-content-container'>\n                                        <p class ='help-content'>Tapping on the narrow icon will give you more information on each page.</p>\n                                        <img  src='./img/audio_btn.png' class='help-content-audiobtn' />\n                                    </div>"
                     },
                     // {
                     //     "title": "Buttons",
-                    //     "content": `<div class='help-content'> 
-                    //                     <p class ='help-para'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
+                    //     "content": `<div class='help-content-container'> 
+                    //                     <p class ='help-content'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
                     //                     <img  src='./img/300.png' class='page-help-image' />
                     //                 </div>`
                     // },
                     {
                         "title": "Pages",
-                        "content": "<div class='help-content'>   \n                                        <p class ='help-para'>Swipe with your fingers to go to the next page or to return to the previous page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                        "content": "<div class='help-content-container'>   \n                                        <p class ='help-content'>Swipe with your fingers to go to the next page or to return to the previous page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
                     },
                     // {
                     //     "title": "",
-                    //     "content": `<div class='help-content'> 
-                    //                     <p class ='help-para'>In the timeline image tapping on the hour button will highlight the relevant information.</p>
+                    //     "content": `<div class='help-content-container'> 
+                    //                     <p class ='help-content'>In the timeline image tapping on the hour button will highlight the                                 relevant information.</p>
                     //                     <img  src='./img/300.png' class='page-help-image' />
                     //                 </div>`
                     // },
                     {
-                        "title": "",
-                        "content": "<div class='help-content'> \n                                        <p class ='help-para'>Tap on the bottom bar to take you to the desired page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                        "title": "Video",
+                        "content": "<div class='help-content-container'>\n                                        <p class ='help-content'>Tap on the video icon to play the animation.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
                     },
                     {
-                        "title": "Video",
-                        "content": "<div class='help-content'>\n                                        <p class ='help-para'>Tap on the video icon to play the animation.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                        "title": "",
+                        "content": "<div class='help-content-container'> \n                                        <p class ='help-content'>Tap on the bottom bar to take you to the desired page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
                     }
                 ]
             }
