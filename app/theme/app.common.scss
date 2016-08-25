@@ -102,42 +102,8 @@ ul.list{
         margin-top: 0;
     }
 }
-
-@media only screen and (orientation:portrait) {
-    .section-title-container{
-        position: relative;
-        padding-bottom: 20px;   
-        .section-title{
-            background-color: color($colors,blue);
-            display: flex;
-            width: 87%;
-            height: 10vh;
-            .section-title-large{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
-                font-size: 6vh;
-                padding-top: 2%;
-                margin-left: $margin-ion-header;
-            }
-            .section-title-small{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
-                font-size: 7vw;
-                padding-top: 6%;
-                padding-left: 6px;
-            }
-        }
-        .section-title-audiobtn{
-            height: 13vh;
-            width: 22vw;
-            left: 75vw;
-            top: 0; 
-            position: absolute;
-        }
-    }
-    .sub-section-container{
+.sub-section-container{
     display: flex;
-    // flex-direction: column;
     flex-basis: 100%;
     flex-wrap: wrap;
     .sub-section{
@@ -145,6 +111,66 @@ ul.list{
         // box-shadow: none;
         background: transparent;
         min-width: 50%;
+        .sub-section-title{
+            // font-size: 1.9em;
+            font-weight: 900;
+            // margin-left:$margin-title-portrait-ios;
+            white-space: normal;
+            }
+    }   
+}
+
+.section-title-container{
+        font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
+        position: relative;
+        padding-bottom: 20px;   
+        .section-title{
+            background-color: color($colors,blue);
+            color: color($colors,white);
+            display: flex;
+        }
+        .section-title-audiobtn{
+            flex:1;
+            top: 0; 
+            position: absolute;
+        }
+    }
+.text-content{
+        color: color($colors,black);
+    }
+@media only screen and (orientation:portrait) {
+    .section-title-container{
+        .section-title{
+            width: 87%;
+            height: 10vh;
+            .section-title-large{
+                font-size: 6vh;
+                padding-top: 2%;
+                margin-left: $margin-ion-header;
+            }
+            .section-title-small{
+                font-size: 7vw;
+                padding-top: 6%;
+                padding-left: 6px;
+            }
+            .page-header-smalltext{
+                font-size: 5.5vw;
+                margin-left: 1.6em;
+                            
+            }
+            .page-header-largetext{
+                font-size: 9.7vw;
+                margin-left: $margin-title-landscape;
+            }
+        }
+        .section-title-audiobtn{
+            height: 13vh;
+            width: 22vw;
+            left: 75vw;
+        }
+    }
+    .sub-section-container{
+        .sub-section{
         .sub-section-title{
             font-size: $para-list-menu-font-size;
             font-weight: 900;
@@ -159,26 +185,16 @@ ul.list{
     }
 }
 @media only screen and (orientation: landscape) {
-    .section-title-container{
-        position: relative;
-        padding-bottom: 20px; 
-        // margin-top: 28px;
+    .section-title-container{ 
         .section-title{
-            background-color: color($colors,blue);
-            display: flex;
-            flex-direction: row;
             width: 78%;
             height: 25vh;
             .section-title-large{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
                 font-size: 18vh;
                 padding-top: 1%;
                 margin-left: $margin-ion-header; 
             }
             .section-title-small{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
                 font-size: 6vw;
                 padding-top: 6%;
                 padding-left: 6px;
@@ -188,30 +204,19 @@ ul.list{
             height: 31vh;
             width: 20vw;
             left: 67vw;
-            top: 0;
-            position: absolute;
         }   
     }
     .sub-section-container{
-    display: flex;
-    // flex-direction: column;
-    flex-basis: 100%;
-    flex-wrap: wrap;
-    .sub-section{
-        flex: 1;
-        // box-shadow: none;
-        background: transparent;
-        min-width: 50%;
+        .sub-section{
         .sub-section-title{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-portrait-ios;
-            }
+            font-size: $para-list-menu-font-size;
+            font-weight: 900;
+            margin-left:$margin-title-portrait-ios;
+        }
     }   
 }
     .text-content{
         font-size: $para-list-menu-font-size;
-        color: color($colors,black);
         margin-left:$margin-title-landscape;
     }
 }
@@ -220,28 +225,16 @@ ul.list{
                    and (orientation:portrait) {
 
     .section-title-container{
-        position: relative;
-        // width: 50%;
         .section-title{
-            background-color: color($colors,blue);
-            // max-width: 100%;
             width: 85%;
             height: 11.5vh;
-            display: flex;
-            flex-direction: row;
-            // position: relative;
             .section-title-large{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
-                font-size: 8vh;
-                // padding-top: 2%;
+                font-size: 7vh;
                 margin-left: $margin-ion-header; 
             }
             .section-title-small{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
                 font-size: 5vh;
-                padding-top: 6.8%;
+                padding-top: 5%;
                 padding-left: 6px;
             }
         }
@@ -249,60 +242,34 @@ ul.list{
             height: 14vh;
             width: 18vw;
             left: 75vw;
-            top: 0;
-            flex: 1;
-            position: absolute;
         }          
     }
     .sub-section-container{
-    display: flex;
-    // flex-direction: column;
-    flex-basis: 100%;
-    flex-wrap: wrap;
-
-
-    
     .sub-section{
-        flex: 1;
-        // box-shadow: none;
-        background: transparent;
-        min-width: 50%;
         .sub-section-title{
             font-size: 1.9em;
             font-weight: 900;
             margin-left:$margin-title-portrait-ios;
-            }
+        }
     }   
 }
     .text-content{
         font-size: $para-list-menu-font-size;
-        color: color($colors,black);
-        margin-left:$margin-title-portrait-ios;
+        margin-left:1.2em;
     }
 }
 @media only screen and (max-device-width : 1024px) 
                    and (min-device-height : 768px) 
                    and (orientation : landscape) {
     .section-title-container{
-        position: relative;
-        // width: 50%;
         .section-title{
-            background-color: color($colors,blue);
-            // max-width: 100%;
             width: 47%;
             height: 11.5vh;
-            display: flex;
-            position: relative;
             .section-title-large{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
                 font-size: 8vh;
-                // padding-top: 2%;
                 margin-left: $margin-ion-header; 
             }
             .section-title-small{
-                font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-                color: color($colors,white);
                 font-size: 5vh;
                 padding-top: 5.8%;
                 padding-left: 6px;
@@ -312,21 +279,10 @@ ul.list{
             height: 14vh;
             width: 12vw;
             left: 41vw;
-            top: 0;
-            flex: 1;
-            position: absolute;
         }          
     }
     .sub-section-container{
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    flex-wrap: wrap;
     .sub-section{
-        flex: 1;
-        // box-shadow: none;
-        background: transparent;
-        min-width: 50%;
         .sub-section-title{
             font-size: $para-list-menu-font-size;
             font-weight: 900;
@@ -336,7 +292,6 @@ ul.list{
 }
 .text-content{
         font-size: $para-list-menu-font-size;
-        color: color($colors,black);
-        margin-left:$margin-title-landscape-ios;
+        margin-left:$margin-title-portrait-ios;
     }
 }

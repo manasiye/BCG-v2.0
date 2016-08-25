@@ -19,19 +19,22 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content no-margin no-padding class="bg_image">
+<ul class="pager-container">
+  <li #pagerElement *ngFor="let section of pageContent.sections; let i = index" class="pager-indicator" [ngClass]="{active:currentSection === i}" (click)="selectSection(i)">{{i+1}}</li>
+</ul>
+<ion-content no-margin no-padding class="bg_image" pager [pageScrollEvent]="pageScrollEvent" [selectSectionEvent]="selectSectionEvent" (currentSection)="updateCurrentSection($event)">
   <!--<h1>{{pageContent.pageTitle}}</h1>-->
-  <ion-row wrap *ngFor="let section of pageContent.sections" >
-    <ion-col width-50 no-padding>
-      <div class='section-title-container1'>
-        <div class='page-header1'>
-          <div class='page-header-smalltext'>{{section.title.small}}</div>
-          <div class='page-header-largetext'>{{section.title.large}}</div>          
+  <ion-row wrap *ngFor="let section of pageContent.sections; let i = index" >
+    <ion-col no-padding>
+      <div class="section-title-container" section-title (click)="selectSection(i)" >
+        <div class="section-title">
+          <div class="section-title-large">{{section.title.large}}</div>
+          <div class="section-title-small">{{section.title.small}}</div>
         </div>
-        <img src='img/audio_btn.png' class='page-header-audiobtn1' />
+        <img src='img/audio_btn.png' class="section-title-audiobtn" (click)="selectSection(i)"/>
       </div>
       <div class="sub-section-container" responsive-lg>
-      <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
+      <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections; let i = index">
         <ion-card-header class='blue title-section' no-margin no-padding>
           {{subSection.title}}
         </ion-card-header>

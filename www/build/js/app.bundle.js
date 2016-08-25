@@ -13,7 +13,7 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var ionic_native_1 = require('ionic-native');
 var http_1 = require('@angular/http');
-var page_home_1 = require('./pages/page-home/page-home');
+var home_page_1 = require('./pages/home-page/home-page');
 var page_intro_1 = require('./pages/page-intro/page-intro');
 var page_treatment_1 = require('./pages/page-treatment/page-treatment');
 var page_timeline_1 = require('./pages/page-timeline/page-timeline');
@@ -35,7 +35,7 @@ var MyApp = (function () {
                 title: {
                     large: 'Home'
                 },
-                component: page_home_1.PageHome
+                component: home_page_1.HomePage
             },
             {
                 iconName: 'icon-bcg',
@@ -125,7 +125,7 @@ var MyApp = (function () {
 }());
 ionic_angular_1.ionicBootstrap(MyApp, [http_1.HTTP_PROVIDERS, content_provider_1.ContentProvider]);
 
-},{"./pages/ack-page/ack-page":3,"./pages/help-page/help-page":4,"./pages/page-home/page-home":5,"./pages/page-intro/page-intro":6,"./pages/page-questions/page-questions":7,"./pages/page-sideeffects/page-sideeffects":8,"./pages/page-timeline/page-timeline":9,"./pages/page-treatment/page-treatment":10,"./providers/content-provider/content-provider":11,"@angular/core":160,"@angular/http":248,"ionic-angular":424,"ionic-native":451}],2:[function(require,module,exports){
+},{"./pages/ack-page/ack-page":3,"./pages/help-page/help-page":4,"./pages/home-page/home-page":5,"./pages/page-intro/page-intro":6,"./pages/page-questions/page-questions":7,"./pages/page-sideeffects/page-sideeffects":8,"./pages/page-timeline/page-timeline":9,"./pages/page-treatment/page-treatment":10,"./providers/content-provider/content-provider":11,"@angular/core":160,"@angular/http":248,"ionic-angular":424,"ionic-native":451}],2:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -141,27 +141,23 @@ var Observable_1 = require('rxjs/Observable');
 var ionic_angular_1 = require('ionic-angular');
 var Pager = (function () {
     function Pager(el, vc) {
-        this._sections = [];
+        // _sections: Array<ElementRef> = [];
         this._sectionPositions = [];
         this.currentSection = new core_1.EventEmitter();
         this.sectionPositions = new core_1.EventEmitter();
         this.el = el;
         this.vc = vc;
+        console.log('pager', this.el);
         this.vc.loaded(function () {
         });
     }
     Pager.prototype.ngAfterViewInit = function () {
+        // this.sections.forEach((element) => {
+        //   console.log(element)
+        //   this.sections.push(element);
+        // });
         var _this = this;
-        this.sections.changes.subscribe(function (newElements) {
-            for (var _i = 0, _a = newElements.toArray(); _i < _a.length; _i++) {
-                var element = _a[_i];
-                // console.log(element);
-                _this._sections.push(element);
-            }
-            _this.updateSectionPositions();
-            // console.log(this._sections);
-            // console.log(this._sectionPositions);
-        });
+        this.updateSectionPositions();
         this.pageScrollEvent.subscribe(function (event) {
             _this.updateCurrentSeciton(event.target.offsetTop, event.target.scrollTop);
         });
@@ -170,11 +166,11 @@ var Pager = (function () {
         });
     };
     Pager.prototype.updateSectionPositions = function () {
+        var _this = this;
         this._sectionPositions = [];
-        for (var _i = 0, _a = this._sections; _i < _a.length; _i++) {
-            var section = _a[_i];
-            this._sectionPositions.push(section.nativeElement.offsetTop);
-        }
+        this.sections.forEach(function (section) {
+            _this._sectionPositions.push(section.nativeElement.offsetTop);
+        });
     };
     Pager.prototype.updateCurrentSeciton = function (offsetTop, scrollTop) {
         if (this._sectionPositions[0] === 0) {
@@ -214,7 +210,7 @@ var Pager = (function () {
     ], Pager.prototype, "sectionPositions", void 0);
     __decorate([
         core_1.ContentChildren('pageSection'), 
-        __metadata('design:type', Object)
+        __metadata('design:type', core_1.QueryList)
     ], Pager.prototype, "sections", void 0);
     __decorate([
         core_1.ContentChildren('pagerElement'), 
@@ -322,8 +318,8 @@ var page_questions_1 = require('../page-questions/page-questions');
 var page_treatment_1 = require('../page-treatment/page-treatment');
 var page_timeline_1 = require('../page-timeline/page-timeline');
 var page_sideeffects_1 = require('../page-sideeffects/page-sideeffects');
-var PageHome = (function () {
-    function PageHome(nav, cp) {
+var HomePage = (function () {
+    function HomePage(nav, cp) {
         // cp.getPage(this.pageId).subscribe((page) => {
         //   this.pageContent = page;
         //   // console.log('Got Page Data: ', page);
@@ -331,38 +327,38 @@ var PageHome = (function () {
         this.pageId = 'PageHome';
         // });
     }
-    PageHome.prototype.openHome = function (page) {
+    HomePage.prototype.openHome = function (page) {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(PageHome);
+        this.nav.setRoot(HomePage);
     };
-    PageHome.prototype.openHelp = function (page) {
+    HomePage.prototype.openHelp = function (page) {
         this.nav.setRoot(help_page_1.HelpPage);
     };
-    PageHome.prototype.openIntro = function (page) {
+    HomePage.prototype.openIntro = function (page) {
         this.nav.setRoot(page_intro_1.PageIntro);
     };
-    PageHome.prototype.openTreatment = function (page) {
+    HomePage.prototype.openTreatment = function (page) {
         this.nav.setRoot(page_treatment_1.PageTreatment);
     };
-    PageHome.prototype.openFaq = function (page) {
+    HomePage.prototype.openFaq = function (page) {
         this.nav.setRoot(page_questions_1.PageQuestions);
     };
-    PageHome.prototype.openSideEffects = function (page) {
+    HomePage.prototype.openSideEffects = function (page) {
         this.nav.setRoot(page_sideeffects_1.PageSideEffects);
     };
-    PageHome.prototype.openTimeline = function (page) {
+    HomePage.prototype.openTimeline = function (page) {
         this.nav.setRoot(page_timeline_1.PageTimeline);
     };
-    PageHome = __decorate([
+    HomePage = __decorate([
         core_1.Component({
             templateUrl: 'build/pages/page-home/page-home.html',
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
-    ], PageHome);
-    return PageHome;
+    ], HomePage);
+    return HomePage;
 }());
-exports.PageHome = PageHome;
+exports.HomePage = HomePage;
 
 },{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-intro/page-intro":6,"../page-questions/page-questions":7,"../page-sideeffects/page-sideeffects":8,"../page-timeline/page-timeline":9,"../page-treatment/page-treatment":10,"@angular/core":160,"ionic-angular":424}],6:[function(require,module,exports){
 "use strict";
@@ -379,7 +375,7 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var help_page_1 = require('../help-page/help-page');
-var page_home_1 = require('../page-home/page-home');
+var home_page_1 = require('../home-page/home-page');
 var PageIntro = (function () {
     function PageIntro(nav, cp) {
         var _this = this;
@@ -391,7 +387,7 @@ var PageIntro = (function () {
         });
     }
     PageIntro.prototype.openHome = function (page) {
-        this.nav.setRoot(page_home_1.PageHome);
+        this.nav.setRoot(home_page_1.HomePage);
     };
     PageIntro.prototype.openHelp = function (page) {
         this.nav.setRoot(help_page_1.HelpPage);
@@ -406,126 +402,7 @@ var PageIntro = (function () {
 }());
 exports.PageIntro = PageIntro;
 
-},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],7:[function(require,module,exports){
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var ionic_angular_1 = require('ionic-angular');
-var content_provider_1 = require('../../providers/content-provider/content-provider');
-var help_page_1 = require('../help-page/help-page');
-var page_home_1 = require('../page-home/page-home');
-var PageQuestions = (function () {
-    function PageQuestions(nav, cp) {
-        var _this = this;
-        this.nav = nav;
-        this.pageId = 'PageQuestions';
-        cp.getPage(this.pageId).subscribe(function (page) {
-            _this.pageContent = page;
-            console.log('Got Page Data: ', page);
-        });
-    }
-    PageQuestions.prototype.openHome = function (page) {
-        this.nav.setRoot(page_home_1.PageHome);
-    };
-    PageQuestions.prototype.openHelp = function (page) {
-        this.nav.setRoot(help_page_1.HelpPage);
-    };
-    PageQuestions = __decorate([
-        core_1.Component({
-            templateUrl: 'build/pages/page-questions/page-questions.html'
-        }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
-    ], PageQuestions);
-    return PageQuestions;
-}());
-exports.PageQuestions = PageQuestions;
-
-},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],8:[function(require,module,exports){
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var ionic_angular_1 = require('ionic-angular');
-var content_provider_1 = require('../../providers/content-provider/content-provider');
-var help_page_1 = require('../help-page/help-page');
-var page_home_1 = require('../page-home/page-home');
-var PageSideEffects = (function () {
-    function PageSideEffects(nav, cp) {
-        var _this = this;
-        this.nav = nav;
-        this.pageId = 'PageSideEffects';
-        cp.getPage(this.pageId).subscribe(function (page) {
-            _this.pageContent = page;
-            // console.log('Got Page Data: ', page);
-        });
-    }
-    PageSideEffects.prototype.openHome = function (page) {
-        this.nav.setRoot(page_home_1.PageHome);
-    };
-    PageSideEffects.prototype.openHelp = function (page) {
-        this.nav.setRoot(help_page_1.HelpPage);
-    };
-    PageSideEffects = __decorate([
-        core_1.Component({
-            templateUrl: 'build/pages/page-sideeffects/page-sideeffects.html'
-        }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
-    ], PageSideEffects);
-    return PageSideEffects;
-}());
-exports.PageSideEffects = PageSideEffects;
-
-},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],9:[function(require,module,exports){
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var ionic_angular_1 = require('ionic-angular');
-var help_page_1 = require('../help-page/help-page');
-var page_home_1 = require('../page-home/page-home');
-var PageTimeline = (function () {
-    function PageTimeline(nav) {
-        this.nav = nav;
-    }
-    PageTimeline.prototype.openHome = function (page) {
-        this.nav.setRoot(page_home_1.PageHome);
-    };
-    PageTimeline.prototype.openHelp = function (page) {
-        this.nav.setRoot(help_page_1.HelpPage);
-    };
-    PageTimeline = __decorate([
-        core_1.Component({
-            templateUrl: 'build/pages/page-timeline/page-timeline.html'
-        }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
-    ], PageTimeline);
-    return PageTimeline;
-}());
-exports.PageTimeline = PageTimeline;
-
-},{"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],10:[function(require,module,exports){
+},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../home-page/home-page":5,"@angular/core":160,"ionic-angular":424}],7:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -545,7 +422,146 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var help_page_1 = require('../help-page/help-page');
-var page_home_1 = require('../page-home/page-home');
+var home_page_1 = require('../home-page/home-page');
+var pageable_sections_1 = require('../../types/pageable-sections');
+var pager_1 = require('../../components/pager/pager');
+var PageQuestions = (function (_super) {
+    __extends(PageQuestions, _super);
+    function PageQuestions(nav, cp) {
+        var _this = this;
+        _super.call(this);
+        this.nav = nav;
+        this.pageId = 'PageQuestions';
+        cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
+            console.log('Got Page Data: ', page);
+        });
+    }
+    PageQuestions.prototype.openHome = function (page) {
+        this.nav.setRoot(home_page_1.HomePage);
+    };
+    PageQuestions.prototype.openHelp = function (page) {
+        this.nav.setRoot(help_page_1.HelpPage);
+    };
+    PageQuestions = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/page-questions/page-questions.html',
+            directives: [pager_1.Pager]
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
+    ], PageQuestions);
+    return PageQuestions;
+}(pageable_sections_1.PageableSections));
+exports.PageQuestions = PageQuestions;
+
+},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../home-page/home-page":5,"@angular/core":160,"ionic-angular":424}],8:[function(require,module,exports){
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var ionic_angular_1 = require('ionic-angular');
+var content_provider_1 = require('../../providers/content-provider/content-provider');
+var help_page_1 = require('../help-page/help-page');
+var home_page_1 = require('../home-page/home-page');
+var pageable_sections_1 = require('../../types/pageable-sections');
+var pager_1 = require('../../components/pager/pager');
+var PageSideEffects = (function (_super) {
+    __extends(PageSideEffects, _super);
+    function PageSideEffects(nav, cp) {
+        var _this = this;
+        _super.call(this);
+        this.nav = nav;
+        this.pageId = 'PageSideEffects';
+        cp.getPage(this.pageId).subscribe(function (page) {
+            _this.pageContent = page;
+            // console.log('Got Page Data: ', page);
+        });
+    }
+    PageSideEffects.prototype.openHome = function (page) {
+        this.nav.setRoot(home_page_1.HomePage);
+    };
+    PageSideEffects.prototype.openHelp = function (page) {
+        this.nav.setRoot(help_page_1.HelpPage);
+    };
+    PageSideEffects = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/page-sideeffects/page-sideeffects.html',
+            directives: [pager_1.Pager]
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
+    ], PageSideEffects);
+    return PageSideEffects;
+}(pageable_sections_1.PageableSections));
+exports.PageSideEffects = PageSideEffects;
+
+},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../home-page/home-page":5,"@angular/core":160,"ionic-angular":424}],9:[function(require,module,exports){
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var ionic_angular_1 = require('ionic-angular');
+var help_page_1 = require('../help-page/help-page');
+var home_page_1 = require('../home-page/home-page');
+var PageTimeline = (function () {
+    function PageTimeline(nav) {
+        this.nav = nav;
+    }
+    PageTimeline.prototype.openHome = function (page) {
+        this.nav.setRoot(home_page_1.HomePage);
+    };
+    PageTimeline.prototype.openHelp = function (page) {
+        this.nav.setRoot(help_page_1.HelpPage);
+    };
+    PageTimeline = __decorate([
+        core_1.Component({
+            templateUrl: 'build/pages/page-timeline/page-timeline.html'
+        }), 
+        __metadata('design:paramtypes', [ionic_angular_1.NavController])
+    ], PageTimeline);
+    return PageTimeline;
+}());
+exports.PageTimeline = PageTimeline;
+
+},{"../help-page/help-page":4,"../home-page/home-page":5,"@angular/core":160,"ionic-angular":424}],10:[function(require,module,exports){
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var ionic_angular_1 = require('ionic-angular');
+var content_provider_1 = require('../../providers/content-provider/content-provider');
+var help_page_1 = require('../help-page/help-page');
+var home_page_1 = require('../home-page/home-page');
 var pageable_sections_1 = require('../../types/pageable-sections');
 var pager_1 = require('../../components/pager/pager');
 var PageTreatment = (function (_super) {
@@ -564,7 +580,7 @@ var PageTreatment = (function (_super) {
         console.log(this.pageContent);
     };
     PageTreatment.prototype.openHome = function (page) {
-        this.nav.setRoot(page_home_1.PageHome);
+        this.nav.setRoot(home_page_1.HomePage);
     };
     PageTreatment.prototype.openHelp = function (page) {
         this.nav.setRoot(help_page_1.HelpPage);
@@ -580,7 +596,7 @@ var PageTreatment = (function (_super) {
 }(pageable_sections_1.PageableSections));
 exports.PageTreatment = PageTreatment;
 
-},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],11:[function(require,module,exports){
+},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../home-page/home-page":5,"@angular/core":160,"ionic-angular":424}],11:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -670,12 +686,8 @@ exports.APP_CONTENT = [
                         "content": "<p class='text-content'>BCG is a weakened form of the bacteria that causes tuberculosis (TB). It is the \t        tandard of care to treat bladder cancer.</p>\n                                    <p class='text-content'>BCG can be given after the tumor growth in your bladder has been completely removed.</p>\n                                    <p class='text-content'>BCG triggers your immune system to attack the cancer cells in your bladder. BCG may stop the future growth of cancer cells (tap on the image below for explanaton).</p>\n                                    <div class='fig-container'>\n                                        <img src='./img/autoimmunity.png' class='figure-small' />\n                                    </div>"
                     },
                     {
-                        "title": "When BCG is Given: Tumor Removal Procedure",
-                        "content": ""
-                    },
-                    {
-                        "title": "How BCG Works: BCG Treatment",
-                        "content": ""
+                        "title": "",
+                        "content": "<div class='blue sub-section-title'>When BCG is Given: Tumor Removal Procedure</div>\n                                    <div class='blue sub-section-title'>How BCG Works: BCG Treatment</div>"
                     }
                 ]
             }
@@ -718,8 +730,8 @@ exports.APP_CONTENT = [
                 },
                 "subSections": [
                     {
-                        "title": "Before Treatment Begins, Tell Your Doctor",
-                        "content": "<h3 class='blue sub-section-title'>How is BCG Given?</h3>\n                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
+                        "title": "How is BCG Given?",
+                        "content": "<p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
                     },
                     {
                         "title": "",
@@ -780,8 +792,8 @@ exports.APP_CONTENT = [
                         "content": "<p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur               within a week of bladder surgery or BCG treatments.</p>\n                                            <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>\n                                    <div class='sub-section-title'>Get Medical Attention Immediately If You Have:</div>\n                                    <div>\n                                        <img class='thermometer' src='./img/figures/thermometer_image.png' />\n                                        <ul class='list'>\n                                            <li class='list-content'>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>\n                                            <li class='list-content'>Severe shivering</li>\n                                            <li class='list-content'>Dizziness or feeling light-headed</li>\n                                            <li class='list-content'>Shortness of breath</li>\n                                            <li class='list-content'>Confusion</li>\n                                            <li class='list-content'>Weakness</li>\n                                        </ul>\n                                     </div>"
                     },
                     {
-                        "title": "",
-                        "content": "<div class='blue sub-section-title'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>\n                                    <ul class='list'>\n                                        <li class='list-content'>Itching</li>\n                                        <li class='list-content'>Hives</li>\n                                        <li class='list-content'>Swelling of your face or hands</li>\n                                        <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                        <li class='list-content'>Tightness in your chest</li>\n                                    </ul>"
+                        "title": "Call your doctor immediately if you experience any signs of an allergic reaction:",
+                        "content": "<ul class='list'>\n                                        <li class='list-content'>Itching</li>\n                                        <li class='list-content'>Hives</li>\n                                        <li class='list-content'>Swelling of your face or hands</li>\n                                        <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                        <li class='list-content'>Tightness in your chest</li>\n                                    </ul>"
                     },
                     {
                         "title": "",
@@ -812,7 +824,7 @@ exports.APP_CONTENT = [
                     },
                     {
                         "title": "",
-                        "content": "<ul>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> No. Be sure to tell your doctor before treatment begins about all medications you are taking.</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Will it hurt when the catheter is inserted?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> It may be uncomfortable to have the catheter inserted. \n                                        Some physicians use topical numbing medication to ease your discomfort.</li>\n                                    </ul>\n                                    <p><strong>If you have additional questions, please call the clinic.</strong></p>"
+                        "content": "<ul>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> No. Be sure to tell your doctor before treatment begins about all medications you are taking.</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Will it hurt when the catheter is inserted?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> It may be uncomfortable to have the catheter inserted. \n                                        Some physicians use topical numbing medication to ease your discomfort.</li>\n                                    </ul>\n                                    <p class='text-content'>If you have additional questions, please call the clinic.</p>"
                     },
                     {
                         "title": "",
