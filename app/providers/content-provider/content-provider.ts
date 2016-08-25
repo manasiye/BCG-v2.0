@@ -11,18 +11,31 @@ import { Observable } from  'rxjs/Observable';
 */
 @Injectable()
 export class ContentProvider {
-  data: any;
+  
 
   constructor(private http: Http) {
-    this.data = null;
+   
   }
 
   // APP_CONTENT
-  getPage(pageId: any) {
+  getPage(pageId: string) {
+    // return new Observable();
+    // return new Promise(resolve => {
+      
+    //   });
+    
+      // this.http.get('path/to/data.json')
+      //   .map(res => res.json())
+      //   .subscribe(data => {
+      //     this.data = data;
+      //     resolve(this.data);
+      //   });
+
+    // });
     return Observable.create(observer => {
       let reqPage;
       APP_CONTENT.forEach(page => {
-        if (page.pageId === pageId) {
+        if (page.id === pageId) {
           reqPage = page;
         }
       });
