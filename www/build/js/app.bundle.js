@@ -26,7 +26,7 @@ var MyApp = (function () {
     function MyApp(platform, menu) {
         this.platform = platform;
         this.menu = menu;
-        this.rootPage = page_intro_1.PageIntro;
+        this.rootPage = page_sideeffects_1.PageSideEffects;
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
@@ -139,44 +139,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
 var ionic_angular_1 = require('ionic-angular');
-/*
-  Generated class for the Pager directive.
-  See https://angular.io/docs/ts/latest/api/core/DirectiveMetadata-class.html
-  for more info on Angular 2 Directives.
-*/
 var Pager = (function () {
     function Pager(el, vc) {
-        // currentSection: number;
-        // _currentSection: number;
         this._sections = [];
         this._sectionPositions = [];
         this.currentSection = new core_1.EventEmitter();
         this.sectionPositions = new core_1.EventEmitter();
         this.el = el;
         this.vc = vc;
-        // this.vc.sc
         this.vc.loaded(function () {
-            // console.log('View Loaded');
-            // this.sections.changes.subscribe((newElements)=>{
-            //   console.log(newElements);
-            // });
-            // console.log('Some children', this.sections);
         });
-        // console.log(this.el.nativeElement.children[0].children);
-        // console.log('Hello World');
     }
     Pager.prototype.ngAfterViewInit = function () {
         var _this = this;
         this.sections.changes.subscribe(function (newElements) {
-            // console.log('Some children', this.sections);
             for (var _i = 0, _a = newElements.toArray(); _i < _a.length; _i++) {
                 var element = _a[_i];
-                console.log(element);
+                // console.log(element);
                 _this._sections.push(element);
             }
             _this.updateSectionPositions();
-            console.log(_this._sections);
-            console.log(_this._sectionPositions);
+            // console.log(this._sections);
+            // console.log(this._sectionPositions);
         });
         this.pageScrollEvent.subscribe(function (event) {
             _this.updateCurrentSeciton(event.target.offsetTop, event.target.scrollTop);
@@ -204,7 +188,6 @@ var Pager = (function () {
             }
         }
         this.currentSection.emit(currentSection);
-        // this.scrollToSection(currentSection);
     };
     Pager.prototype.scrollToSection = function (sectionIndex) {
         if (this._sectionPositions[0] === 0) {
@@ -305,8 +288,8 @@ var HelpPage = (function () {
         this.navController = navController;
         this.pageId = 'HelpPage';
         cp.getPage(this.pageId).subscribe(function (page) {
+            console.log(page);
             _this.pageContent = page;
-            // console.log('Got Page Data: ', page);
         });
     }
     HelpPage = __decorate([
@@ -341,13 +324,12 @@ var page_timeline_1 = require('../page-timeline/page-timeline');
 var page_sideeffects_1 = require('../page-sideeffects/page-sideeffects');
 var PageHome = (function () {
     function PageHome(nav, cp) {
-        var _this = this;
+        // cp.getPage(this.pageId).subscribe((page) => {
+        //   this.pageContent = page;
+        //   // console.log('Got Page Data: ', page);
         this.nav = nav;
         this.pageId = 'PageHome';
-        cp.getPage(this.pageId).subscribe(function (page) {
-            _this.pageContent = page;
-            // console.log('Got Page Data: ', page);
-        });
+        // });
     }
     PageHome.prototype.openHome = function (page) {
         // Reset the content nav to have just this page
@@ -384,11 +366,6 @@ exports.PageHome = PageHome;
 
 },{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-intro/page-intro":6,"../page-questions/page-questions":7,"../page-sideeffects/page-sideeffects":8,"../page-timeline/page-timeline":9,"../page-treatment/page-treatment":10,"@angular/core":160,"ionic-angular":424}],6:[function(require,module,exports){
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -403,18 +380,14 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var help_page_1 = require('../help-page/help-page');
 var page_home_1 = require('../page-home/page-home');
-var pager_1 = require('../../components/pager/pager');
-var pageable_sections_1 = require('../../types/pageable-sections');
-var PageIntro = (function (_super) {
-    __extends(PageIntro, _super);
+var PageIntro = (function () {
     function PageIntro(nav, cp) {
         var _this = this;
-        _super.call(this);
         this.nav = nav;
         this.pageId = 'PageIntro';
         cp.getPage(this.pageId).subscribe(function (page) {
+            // console.log(page);
             _this.pageContent = page;
-            console.log('Got Page Data: ', page);
         });
     }
     PageIntro.prototype.openHome = function (page) {
@@ -425,16 +398,15 @@ var PageIntro = (function (_super) {
     };
     PageIntro = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/page-intro/page-intro.html',
-            directives: [pager_1.Pager]
+            templateUrl: 'build/pages/page-intro/page-intro.html'
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
     ], PageIntro);
     return PageIntro;
-}(pageable_sections_1.PageableSections));
+}());
 exports.PageIntro = PageIntro;
 
-},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],7:[function(require,module,exports){
+},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],7:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -555,6 +527,11 @@ exports.PageTimeline = PageTimeline;
 
 },{"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],10:[function(require,module,exports){
 "use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -569,16 +546,23 @@ var ionic_angular_1 = require('ionic-angular');
 var content_provider_1 = require('../../providers/content-provider/content-provider');
 var help_page_1 = require('../help-page/help-page');
 var page_home_1 = require('../page-home/page-home');
-var PageTreatment = (function () {
+var pageable_sections_1 = require('../../types/pageable-sections');
+var pager_1 = require('../../components/pager/pager');
+var PageTreatment = (function (_super) {
+    __extends(PageTreatment, _super);
     function PageTreatment(nav, cp) {
         var _this = this;
+        _super.call(this);
         this.nav = nav;
         this.pageId = 'PageTreatment';
         cp.getPage(this.pageId).subscribe(function (page) {
+            console.log(page);
             _this.pageContent = page;
-            // console.log('Got Page Data: ', page);
         });
     }
+    PageTreatment.prototype.test = function () {
+        console.log(this.pageContent);
+    };
     PageTreatment.prototype.openHome = function (page) {
         this.nav.setRoot(page_home_1.PageHome);
     };
@@ -587,15 +571,16 @@ var PageTreatment = (function () {
     };
     PageTreatment = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/page-treatment/page-treatment.html'
+            templateUrl: 'build/pages/page-treatment/page-treatment.html',
+            directives: [pager_1.Pager]
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController, content_provider_1.ContentProvider])
     ], PageTreatment);
     return PageTreatment;
-}());
+}(pageable_sections_1.PageableSections));
 exports.PageTreatment = PageTreatment;
 
-},{"../../providers/content-provider/content-provider":11,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],11:[function(require,module,exports){
+},{"../../components/pager/pager":2,"../../providers/content-provider/content-provider":11,"../../types/pageable-sections":13,"../help-page/help-page":4,"../page-home/page-home":5,"@angular/core":160,"ionic-angular":424}],11:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -619,14 +604,23 @@ var Observable_1 = require('rxjs/Observable');
 var ContentProvider = (function () {
     function ContentProvider(http) {
         this.http = http;
-        this.data = null;
     }
     // APP_CONTENT
     ContentProvider.prototype.getPage = function (pageId) {
+        // return new Observable();
+        // return new Promise(resolve => {
+        //   });
+        // this.http.get('path/to/data.json')
+        //   .map(res => res.json())
+        //   .subscribe(data => {
+        //     this.data = data;
+        //     resolve(this.data);
+        //   });
+        // });
         return Observable_1.Observable.create(function (observer) {
             var reqPage;
             content_1.APP_CONTENT.forEach(function (page) {
-                if (page.pageId === pageId) {
+                if (page.id === pageId) {
                     reqPage = page;
                 }
             });
@@ -649,195 +643,246 @@ exports.ContentProvider = ContentProvider;
 },{"./content":12,"@angular/core":160,"@angular/http":248,"rxjs/Observable":518}],12:[function(require,module,exports){
 "use strict";
 exports.APP_CONTENT = [
+    // {
+    //     "id": "PageHome",
+    //     "pageTitle": "BCG",
+    //     "sections": [
+    //         {
+    //             "id": "1",
+    //             "title": "BCG For Bladder Cancer",
+    //             "content": ``
+    //         }
+    //     ]
+    // },
     {
-        "pageId": "PageHome",
-        "pageTitle": "BCG",
+        "id": "PageIntro",
+        "title": "What is BCG?",
         "sections": [
             {
                 "id": "1",
-                "title": "BCG For Bladder Cancer",
-                "content": ""
+                "title": {
+                    "small": "",
+                    "large": "BCG TREATMENT"
+                },
+                "subSections": [
+                    {
+                        "title": "What is BCG (Bacillus Calmette-Guerin)?",
+                        "content": "<p class='text-content'>BCG is a weakened form of the bacteria that causes tuberculosis (TB). It is the \t        tandard of care to treat bladder cancer.</p>\n                                    <p class='text-content'>BCG can be given after the tumor growth in your bladder has been completely removed.</p>\n                                    <p class='text-content'>BCG triggers your immune system to attack the cancer cells in your bladder. BCG may stop the future growth of cancer cells (tap on the image below for explanaton).</p>\n                                    <div class='fig-container'>\n                                        <img src='./img/autoimmunity.png' class='figure-small' />\n                                    </div>"
+                    },
+                    {
+                        "title": "When BCG is Given: Tumor Removal Procedure",
+                        "content": ""
+                    },
+                    {
+                        "title": "How BCG Works: BCG Treatment",
+                        "content": ""
+                    }
+                ]
             }
         ]
     },
     {
-        "pageId": "PageIntro",
-        "pageTitle": "BCG",
+        "id": "PageTreatment",
+        "title": "Treatment",
         "sections": [
             {
                 "id": "1",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>BCG TREATMENT</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='blue title-section'> What is BCG (Bacillus Calmette-Guerin)?</h3>\n                            <p class='text-content'>BCG is a weakened form of the bacteria that causes tuberculosis (TB). It is the standard of care to treat bladder cancer.</p>\n                            <p class='text-content'>BCG can be given after the tumor growth in your bladder has been completely removed.</p>\n                            <p class='text-content'>BCG triggers your immune system to attack the cancer cells in your bladder. BCG may stop the future growth of cancer cells (tap on the image below for explanaton).</p>\n                            <div class='fig-container'>\n                                <img  src='./img/autoimmunity.png' class='figure-small' />\n                            </div>"
+                "title": {
+                    "small": "TREATMENT",
+                    "large": "BEFORE"
+                },
+                "subSections": [
+                    {
+                        "title": "Before Treatment Begins, Tell Your Doctor",
+                        "content": "<ul class='list'>\n                                <li class='list-content'>If you have been taking any medications, vitamins, herbs or dietry supplements</li>\n                                <li class='list-content'>If you have any allergies</li>\n                                <li class='list-content'>If you received the smallpox vaccine recently</li>\n                                <li class='list-content'>If you have ever had a positive test for tuberculosis</li>\n                                <li class='list-content'>If you have fever, infection, severe burn, or an immune disorder</li>\n                                <li class='list-content'>If you are pregnant or breastfeeding.</li>\n                            </ul>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img src='./img/figures/talkingtodoc.png'>"
+                    },
+                    {
+                        "title": "You Should Not Undergo BCG Treatment If:",
+                        "content": "\n                            <ul class='list'>\n                                <li class='list-content'>There is difficulty inserting a catheter</li>\n                                <li class='list-content'>Your urine is thick or very dark color from blood</li>\n                                <li class='list-content'>You have a urinary tract infection (UTI)</li>\n                                <li class='list-content'>You have had transurethral surgery within the past 7-14 days</li>\n                            </ul>\n                            <br />\n                            <p class='text-content'>It is important to follow the treatment instuctions carefully, for two main reasons:</p>\n                            <ul class='list'>\n                                <li class='list-content'>If you do not follow the instructions, the BCG may not work efficiently</li>\n                            </ul>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<ul  class='list'>\n                                <li class='list-content'>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li>\n                            </ul>\n                            <br />\n                            <h3 class='blue title-section'>Preparing for Treatment</h3>\n                            <h3 class='title-section'>Starting 4 Hours Before Your Treatment Starts:</h3>\n                            <ul class='list'>\n                                <li class='list-content'><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li>\n                                <li class='list-content'><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li>\n                            </ul>"
+                    }
+                ]
             },
             {
                 "id": "2",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<h3 class='blue title-section'>When BCG is Given: Tumor Removal Procedure</h3>\n                            \n                            <h3 class='blue title-section'>How BCG Works: BCG Treatment</h3>"
-            }
-        ]
-    },
-    {
-        "pageId": "PageTreatment",
-        "pageTitle": "BEFORE Treatment",
-        "sections": [
-            {
-                "id": "1",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>BEFORE</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                           </div>",
-                "content": "<h3 class='blue title-section'>Before Treatment Begins, Tell Your Doctor</h3>\n                            <ul class='list'>\n                                <li class='list-content'>If you have been taking any medications, vitamins, herbs or dietry supplements</li>\n                                <li class='list-content'>If you have any allergies</li>\n                                <li class='list-content'>If you received the smallpox vaccine recently</li>\n                                <li class='list-content'>If you have ever had a positive test for tuberculosis</li>\n                                <li class='list-content'>If you have fever, infection, severe burn, or an immune disorder</li>\n                                <li class='list-content'>If you are pregnant or breastfeeding.</li>\n                            </ul>"
-            },
-            {
-                "id": "2",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img src='./img/figures/talkingtodoc.png'>"
-            },
-            {
+                "title": {
+                    "small": "TREATMENT",
+                    "large": "DURING"
+                },
+                "subSections": [
+                    {
+                        "title": "Before Treatment Begins, Tell Your Doctor",
+                        "content": "<h3 class='blue title-section'>How is BCG Given?</h3>\n                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img src='./img/figures/administration_large.png'>"
+                    },
+                    {
+                        "title": "How does BCG Work?",
+                        "content": "<p class='text-content'>Not all patients are able to hold BCG in the bladder for the full two hours. If you are able to hold it in for the full two hours, you may go home to complete the treatment.</p>\n                            <p class='text-content'>If you are NOT able to hold it in, you will remain in the clinic for two hours with the catheter in place. A clamp will be placed on the catheter to hold the BCG in your bladder.</p>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img src='./img/figures/twohours_illustration_large.png'>"
+                    }
+                ]
+            }, {
                 "id": "3",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>BEFORE</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn' /> \n                          </div>",
-                "content": "<h3 class='title-section'>You Should Not Undergo BCG Treatment If:</h3>\n                            <ul class='list'>\n                                <li class='list-content'>There is difficulty inserting a catheter</li>\n                                <li class='list-content'>Your urine is thick or very dark color from blood</li>\n                                <li class='list-content'>You have a urinary tract infection (UTI)</li>\n                                <li class='list-content'>You have had transurethral surgery within the past 7-14 days</li>\n                            </ul>\n                            <br />\n                            <p class='text-content'>It is important to follow the treatment instuctions carefully, for two main reasons:</p>\n                            <ul class='list'>\n                                <li class='list-content'>If you do not follow the instructions, the BCG may not work efficiently</li>\n                            </ul>"
-            },
+                "title": {
+                    "small": "TREATMENT",
+                    "large": "AFTER"
+                },
+                "subSections": [
+                    {
+                        "title": "Instructions for Full Treatment Schedule",
+                        "content": "<div>    \n                            <img class='calendar' src='./img/calendar_large.png'></img>\n                                <p class='text-content'>You will be treated once a week for six weeks. After the first six weeks, some physicians may recommend a maintenance schedule which follows the SWOG (Southwest Oncology Group) protocol:</p>\n                                <p class='text-content'>3 weekly treatments at 3, 6, 12, 18, 24, 30 and 36 months</p>\n                            </div>"
+                    },
+                    {
+                        "title": "For 6 Hours After Each Treatment:",
+                        "content": "<ul class='list'>\n                                <li class='list-content'>You may take Tylenol<sup>&reg;</sup>/acetaminophen (for any fever or pain) or Benadryl<sup>&reg;</sup>/diphehydramine (for itching) if needed</li>\n                                <li class='list-content'>To avoid splashing urine and exposing other people to BCG, both men and women should sit down to urinate</li>\n                                <li class='list-content'>After you urinate, pour two cups of full-strength (not diluted) bleach into the toilet and then wait 15 minutes before closing the toilet lid and flushing</li>\n                                <li class='list-content'>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li>\n                            </ul>"
+                    },
+                    {
+                        "title": "For 6 Weeks After Treatment:",
+                        "content": "<ul class='list'>\n                                <li class='list-content'>Drink plenty of water to flush the remaining BCG out of your bladder</li>\n                                <li class='list-content'>While you are in treatment, and for six weeks afterwards, always use a condom during sex</li>\n                                <li class='list-content'>While you are receiving BCG treatments, you or your partner should NOT become pregnant. No one knows how BCG affects sperm, eggs, embryos, or fetuses</li>\n                            </ul>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<ul class='list'>\n                                <li class='list-content'>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li>\n                            </ul>"
+                    }
+                ]
+            }
+        ]
+    }, {
+        "id": "PageSideEffects",
+        "title": "Side Effects",
+        "sections": [
             {
-                "id": "4",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<ul  class='list'>\n                                <li class='list-content'>Contact with BCG may make others sick. To protect others from the BCG in your urine, follow the safety instructions.</li>\n                            </ul>\n                            <br />\n                            <h3 class='blue title-section'>Preparing for Treatment</h3>\n                            <h3 class='title-section'>Starting 4 Hours Before Your Treatment Starts:</h3>\n                            <ul class='list'>\n                                <li class='list-content'><strong>It is advisable to restrict fluids.</strong> If you drink liquids, there may not be enough room in your bladder for the BCG.</li>\n                                <li class='list-content'><strong>If possible, try to avoid emptying your bladder (peeing).</strong></li>\n                            </ul>"
-            },
-            {
-                "id": "5",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>DURING</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='blue title-section'>How is BCG Given?</h3>\n                            <p class='text-content'>First a tube called a catheter is inserted through your urethra (the opening where you urinate) into your bladder. The BCG is given as a liquid. It is put into the catheter and it flows into your bladder. This part of the treatment is called bladder instillation. The BCG needs to stay in your bladder for two hours in order to work.</p>"
-            },
-            {
-                "id": "6",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img src='./img/figures/administration_large.png'>"
-            },
-            {
-                "id": "7",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>DURING</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          <div>",
-                "content": "<h3 class='blue title-section'>How does BCG Work?</h3>\n                            <p class='text-content'>Not all patients are able to hold BCG in the bladder for the full two hours. If you are able to hold it in for the full two hours, you may go home to complete the treatment.</p>\n                            <p class='text-content'>If you are NOT able to hold it in, you will remain in the clinic for two hours with the catheter in place. A clamp will be placed on the catheter to hold the BCG in your bladder.</p>"
-            },
-            {
-                "id": "8",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img src='./img/figures/twohours_illustration_large.png'>"
-            },
-            {
-                "id": "9",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>AFTER</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='blue title-section'>Instructions for Full Treatment Schedule</h3>\n                            <div>    \n                            <img class='calendar' src='./img/calendar_large.png'></img>\n                                <p class='text-content'>You will be treated once a week for six weeks. After the first six weeks, some physicians may recommend a maintenance schedule which follows the SWOG (Southwest Oncology Group) protocol:</p>\n                                <p class='text-content'>3 weekly treatments at 3, 6, 12, 18, 24, 30 and 36 months</p>\n                            </div>"
-            },
-            {
-                "id": "10",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<h3 class='title-section'>For 6 Hours After Each Treatment:</h3>\n                            <ul class='list'>\n                                <li class='list-content'>You may take Tylenol<sup>&reg;</sup>/acetaminophen (for any fever or pain) or Benadryl<sup>&reg;</sup>/diphehydramine (for itching) if needed</li>\n                                <li class='list-content'>To avoid splashing urine and exposing other people to BCG, both men and women should sit down to urinate</li>\n                                <li class='list-content'>After you urinate, pour two cups of full-strength (not diluted) bleach into the toilet and then wait 15 minutes before closing the toilet lid and flushing</li>\n                                <li class='list-content'>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li>\n                            </ul>"
-            },
-            {
-                "id": "11",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>AFTER</div>\n                                <div class='page-header-small'>Treatment</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='title-section'>For 6 Weeks After Treatment:</h3>\n                            <ul class='list'>\n                                <li class='list-content'>Drink plenty of water to flush the remaining BCG out of your bladder</li>\n                                <li class='list-content'>While you are in treatment, and for six weeks afterwards, always use a condom during sex</li>\n                                <li class='list-content'>While you are receiving BCG treatments, you or your partner should NOT become pregnant. No one knows how BCG affects sperm, eggs, embryos, or fetuses</li>\n                            </ul>"
-            },
-            {
-                "id": "12",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<ul class='list'>\n                                <li class='list-content'>Wash your hands and genitals after you urinate. This will help protect your skin from getting irritated by the BCG in your urine</li>\n                            </ul>"
+                "id": "1",
+                "title": {
+                    "small": "",
+                    "large": "SIDE EFFECTS"
+                },
+                "subSections": [
+                    {
+                        "title": "Most Common Side Effects",
+                        "content": "<ul class='list'>\n                                        <li class='list-content'>Frequent, painful and burning urination</li>\n                                        <li class='list-content'>Flu-like symptoms (fever, chills) that may occur 24-36 hours after recieving BCG</li>\n                                        <li class='list-content'>Nausea (upset stomach), occasional vomiting</li>\n                                        <li class='list-content'>Loss of appetite</li>\n                                        <li class='list-content'>Difficulty urinating or blood in urine</li>\n                                        <li class='list-content'>Persistent low-grade fever (temperature below 100.5&deg;F / 38&deg;C) for less than 2 days</li>\n                                        <li class='list-content'>Joint pain</li>\n                                        <li class='list-content'>Cough</li>\n                                        <li class='list-content'>Skin rash</li>\n                                    </ul>"
+                    },
+                    {
+                        "title": "Some Rare Yet Severe Side Effects",
+                        "content": "<p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur               within a week of bladder surgery or BCG treatments.</p>\n                                            <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>\n                                    <div class='title-section'>Get Medical Attention Immediately If You Have:</div>\n                                    <div>\n                                        <img class='thermometer' src='./img/figures/thermometer_image.png' />\n                                        <ul class='list'>\n                                            <li class='list-content'>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>\n                                            <li class='list-content'>Severe shivering</li>\n                                            <li class='list-content'>Dizziness or feeling light-headed</li>\n                                            <li class='list-content'>Shortness of breath</li>\n                                            <li class='list-content'>Confusion</li>\n                                            <li class='list-content'>Weakness</li>\n                                        </ul>\n                                     </div>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<div class='blue title-section'>Call your doctor immediately if you experience any signs of an allergic                 reaction:</div>\n                                    <ul class='list'>\n                                        <li class='list-content'>Itching</li>\n                                        <li class='list-content'>Hives</li>\n                                        <li class='list-content'>Swelling of your face or hands</li>\n                                        <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                        <li class='list-content'>Tightness in your chest</li>\n                                    </ul>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img  src='./img/figures/talkingonphone_image.png' />"
+                    }
+                ]
             }
         ]
     },
     {
-        "pageId": "PageSideEffects",
-        "pageTitle": "Introduction to Pelvic Rehab",
+        "id": "PageQuestions",
+        "title": "FAQ",
         "sections": [
             {
                 "id": "1",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>SIDE EFFECTS</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='blue title-section'>Most Common Side Effects</h3>\n                            <ul class='list'>\n                                <li class='list-content'>Frequent, painful and burning urination</li>\n                                <li class='list-content'>Flu-like symptoms (fever, chills) that may occur 24-36 hours after recieving BCG</li>\n                                <li class='list-content'>Nausea (upset stomach), occasional vomiting</li>\n                                <li class='list-content'>Loss of appetite</li>\n                                <li class='list-content'>Difficulty urinating or blood in urine</li>\n                                <li class='list-content'>Persistent low-grade fever (temperature below 100.5&deg;F / 38&deg;C) for less than 2 days</li>\n                                <li class='list-content'>Joint pain</li>\n                                <li class='list-content'>Cough</li>\n                                <li class='list-content'>Skin rash</li>\n                            </ul>"
-            },
-            {
-                "id": "2",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<h3 class='blue title-section'>Some Rare Yet Severe Side Effects</h3>\n                            <p class='text-content'>Side effects from widespread infection (sepsis) or allergic reaction can occur within a week of bladder surgery or BCG treatments.</p>\n                            <p class='text-content'>These reactions are rare, but when they do happen, can be serious. If you experience these symptoms, you may need to be admitted to the hospital for treatment.</p>\n                            <h3 class='title-section'>Get Medical Attention Immediately If You Have:</h3>\n                            <div>\n                            <img class='thermometer' src='./img/figures/thermometer_image.png' />\n                                <ul class='list'>\n                                    <li class='list-content'>High fever (temperature below 101.5&deg;F/38&deg;C) for more than 24 hours, or a fever with chills</li>\n                                    <li class='list-content'>Severe shivering</li>\n                                    <li class='list-content'>Dizziness or feeling light-headed</li>\n                                    <li class='list-content'>Shortness of breath</li>\n                                    <li class='list-content'>Confusion</li>\n                                    <li class='list-content'>Weakness</li>\n                                </ul>\n                            </div>"
-            },
-            {
-                "id": "3",
-                "title": "<div class='page-header-components'>\n                            <div class='page-header'>\n                                <div class='page-header-large'>SIDE EFFECTS</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn'/>\n                          </div>",
-                "content": "<h3 class='title-section'>Call your doctor immediately if you experience any signs of an allergic reaction:</h3> \n                            <ul class='list'>\n                                <li class='list-content'>Itching</li>\n                                <li class='list-content'>Hives</li>\n                                <li class='list-content'>Swelling of your face or hands</li>\n                                <li class='list-content'>Swelling or tingling in the mouth or throat</li>\n                                <li class='list-content'>Tightness in your chest</li>\n                            </ul>"
-            },
-            {
-                "id": "4",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img  src='./img/figures/talkingonphone_image.png' />"
+                "title": {
+                    "small": "FREQUENTLY ASKED",
+                    "large": "QUESTIONS"
+                },
+                "subSections": [
+                    {
+                        "title": "",
+                        "content": "<ul>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Will a tuberculosis (PPD) test be positive after BCG treatment?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to recieve BCG treatment if I test positive for tuberculosis (TB)?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to be around pregnant women after I receive BCG treatment?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Can someone get tuberculosis if I forget to clean the toilet while i'm being treated with BCG?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Should I be worried if I have blood in my urine after treatment?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> You should contact your doctor if you have bright red blood, heavy bleeding, large blood clots, or trouble urinating.</li>\n                                    </ul>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img src='./img/home/questions.png' />"
+                    },
+                    {
+                        "title": "",
+                        "content": "<ul>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> No. Be sure to tell your doctor before treatment begins about all medications you are taking.</li>\n                                        <li class='faq-list'><i class=\"icon-q\"></i> Will it hurt when the catheter is inserted?</li>\n                                        <li class='faq-list'><i class=\"icon-a\"></i> It may be uncomfortable to have the catheter inserted. \n                                        Some physicians use topical numbing medication to ease your discomfort.</li>\n                                    </ul>\n                                    <p><strong>If you have additional questions, please call the clinic.</strong></p>"
+                    },
+                    {
+                        "title": "",
+                        "content": "<img  src='./img/figures/talkingonphone_image.png' />"
+                    }
+                ]
             }
         ]
     },
     {
-        "pageId": "PageQuestions",
-        "pageTitle": "Frequently Asked Questions",
+        "id": "HelpPage",
+        "title": "Help",
         "sections": [
             {
                 "id": "1",
-                "title": "<div class='page-header-components1'>\n                            <div class='page-header1'>\n                                <div class='page-header-smalltext'>FREQUENTLY ASKED</div>\n                                <div class='page-header-largetext'>QUESTIONS</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn1' /></div>",
-                "content": "<ul>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Will a tuberculosis (PPD) test be positive after BCG treatment?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to recieve BCG treatment if I test positive for tuberculosis (TB)?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to be around pregnant women after I receive BCG treatment?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Can someone get tuberculosis if I forget to clean the toilet while i'm being treated with BCG?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> Yes</li>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Should I be worried if I have blood in my urine after treatment?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> You should contact your doctor if you have bright red blood, heavy bleeding, large blood clots, or trouble urinating.</li>\n                            </ul>"
-            },
-            {
-                "id": "2",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img  src='./img/home/questions.png' />"
-            },
-            {
-                "id": "3",
-                "title": "<div class='page-header-components1'>\n                            <div class='page-header1'>\n                                <div class='page-header-smalltext'>FREQUENTLY ASKED</div>\n                                <div class='page-header-largetext'>QUESTIONS</div>\n                            </div>\n                            <img src='img/audio_btn.png' class='page-header-audiobtn1'/>\n                          </div>",
-                "content": "<ul>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Is it OK to go through BCG treatment if I am taking medicines that weaken the immune system(steroids)?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> No. Be sure to tell your doctor before treatment begins about all medications you are taking.</li>\n                                <li class='faq-list'><i class=\"icon-q\"></i> Will it hurt when the catheter is inserted?</li>\n                                <li class='faq-list'><i class=\"icon-a\"></i> It may be uncomfortable to have the catheter inserted. \n                                Some physicians use topical numbing medication to ease your discomfort.</li>\n                            </ul>\n                            <p><strong>If you have additional questions, please call the clinic.</strong></p>"
-            },
-            {
-                "id": "4",
-                // "title": `<div class='title-filler'></div>`,
-                "content": "<img  src='./img/figures/talkingonphone_image.png' />"
+                "title": {
+                    "small": "",
+                    "large": "HELP: Navigating the Application"
+                },
+                "subSections": [
+                    {
+                        "title": "Narrator",
+                        "content": "<div class='help-content'>\n                                        <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>\n                                        <img  src='./img/audio_btn.png' class='help-audiobtn-image' />\n                                    </div>"
+                    },
+                    // {
+                    //     "title": "Buttons",
+                    //     "content": `<div class='help-content'> 
+                    //                     <p class ='help-para'>Tapping on 'See Timeline' button will take you to the timeline image.</p>
+                    //                     <img  src='./img/300.png' class='page-help-image' />
+                    //                 </div>`
+                    // },
+                    {
+                        "title": "Pages",
+                        "content": "<div class='help-content'>   \n                                        <p class ='help-para'>Swipe with your fingers to go to the next page or to return to the previous page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                    },
+                    // {
+                    //     "title": "",
+                    //     "content": `<div class='help-content'> 
+                    //                     <p class ='help-para'>In the timeline image tapping on the hour button will highlight the relevant information.</p>
+                    //                     <img  src='./img/300.png' class='page-help-image' />
+                    //                 </div>`
+                    // },
+                    {
+                        "title": "",
+                        "content": "<div class='help-content'> \n                                        <p class ='help-para'>Tap on the bottom bar to take you to the desired page.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                    },
+                    {
+                        "title": "Video",
+                        "content": "<div class='help-content'>\n                                        <p class ='help-para'>Tap on the video icon to play the animation.</p>\n                                        <img  src='./img/300.png' class='page-help-image' />\n                                    </div>"
+                    }
+                ]
             }
         ]
     },
     {
-        "pageId": "HelpPage",
-        "pageTitle": "<div class=\"ack-header title-font blue\" >HELP: Navigating the Application</div>",
+        "id": "AckPage",
+        "title": "Acknowledgement",
         "sections": [
             {
                 "id": "1",
-                "title": "<h3 class='title-section title-font'>Narrator</h3>",
-                "content": "<div class='help-content'>\n                                <p class ='help-para'>Tapping on the narrow icon will give you more information on each page.</p>\n                                <img  src='./img/audio_btn.png' class='help-audiobtn-image' />\n                            </div>"
-            },
-            {
-                "id": "2",
-                "title": "<h3 class='title-section title-font'>Buttons</h3>",
-                "content": "<div class='help-content'> \n                            <p class ='help-para'>Tapping on 'See Timeline' button will take you to the timeline image.</p>\n                            <img  src='./img/300.png' class='page-help-image' />\n                            </div>"
-            },
-            {
-                "id": "3",
-                "title": "<h3 class='title-section title-font'>Pages</h3>",
-                "content": "<div class='help-content'>   \n                            <p class ='help-para'>Swipe with your fingers to go to the next page or to return to the previous page.</p>\n                            <img  src='./img/300.png' class='page-help-image' />\n                            </div>"
-            },
-            {
-                "id": "4",
-                // "title": "Help: Navigating the Application",
-                "content": "<div class='help-content'> \n                            <p class ='help-para'>In the timeline image tapping on the hour button will highlight the relevant information.</p>\n                            <img  src='./img/300.png' class='page-help-image' />\n                            </div>"
-            },
-            {
-                "id": "5",
-                // "title": "Help: Navigating the Application",
-                "content": "<div class='help-content'> \n                            <p class ='help-para'>Tap on the bottom bar to take you to the desired page.</p>\n                            <img  src='./img/300.png' class='page-help-image' />\n                            </div>"
-            },
-            {
-                "id": "6",
-                "title": "<h3 class='title-section title-font'>Video</h3>",
-                "content": "<div class='help-content'>\n                            <p class ='help-para'>Tap on the video icon to play the animation.</p>\n                            <img  src='./img/300.png' class='page-help-image' />\n                            </div>"
-            }
-        ]
-    },
-    {
-        "pageId": "AckPage",
-        //"pageTitle": "Acknowledgement",
-        "sections": [
-            {
-                "id": "1",
-                "title": "Acknowledgement",
-                "content": "<img  src='./img/300.png' class='ack-image'/>\n                            <p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p>\n                            <p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p>\n                            <p>Arnold Zimmer and Family</p>\n                            <p>Robert P. Huben Endowed Professorship of Urology Oncology</p>\n                            <p>Roswell Park Alliance Foundation</p>"
+                "title": {
+                    "small": "",
+                    "large": ""
+                },
+                "subSections": [
+                    {
+                        "title": "Narrator",
+                        "content": "<img  src='./img/300.png' class='ack-image'/>\n                            <p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p>\n                            <p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p>\n                            <p>Arnold Zimmer and Family</p>\n                            <p>Robert P. Huben Endowed Professorship of Urology Oncology</p>\n                            <p>Roswell Park Alliance Foundation</p>"
+                    }
+                ]
             }
         ]
     }

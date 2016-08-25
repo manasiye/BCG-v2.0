@@ -42,23 +42,27 @@ html, body {
   min-width: 100%;
 }
 
-.title-font{
-    font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
-    color: color($colors,darkGray);
-}
-
 .blue{
     color: color($colors, blue);
 }
 
-.card-properties{
-    box-shadow: none;
-    background: transparent;
-    overflow: visible;
+.sub-section-container{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+
+
     
-    ion-card-header{
-        overflow: visible;
-    }
+    .sub-section{
+        flex: 1;
+        // box-shadow: none;
+        background: transparent;
+        min-width: 50%;
+        .sub-section-title{
+            // overflow: visible;
+            }
+    }   
 }
 
 .bg_image{
@@ -83,23 +87,58 @@ ul.list{
     margin: 0;
 }
 
+.pager-container{
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 25px;
+    padding: 0;
+    position: fixed;
+    z-index: 99;
+    top:100px;
+    
+    .pager-indicator{
+        font-family:'Oswald'; 
+        text-align: center;
+        border-radius: 50%;
+        line-height: 22px;
+        height: 22px;
+        width: 22px;
+        background-color: color($colors, gray);
+        color: color($colors,white);
+        font-size: 1em;
+        font-weight: bold; 
+        margin-top: 15px;
+        &.active{
+            background-color: color($colors, primary);
+        }
+    }
+    :first-child{
+        margin-top: 0;
+    }
+}
+
 @media only screen and (orientation:portrait) {
-    .page-header-components{
+    .section-title-container{
         position: relative;
-        padding-bottom: 20px;    
-        .page-header{
+        padding-bottom: 20px;   
+        // margin-top:40px; 
+        .section-title{
             background-color: color($colors,blue);
             display: flex;
-            width: 91%;
+            width: 87%;
             height: 10vh;
-            .page-header-large{
+            
+            .section-title-large{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 6vh;
                 padding-top: 2%;
                 margin-left: $margin-ion-header;
             }
-            .page-header-small{
+            .section-title-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 7vw;
@@ -107,7 +146,7 @@ ul.list{
                 padding-left: 6px;
             }
         }
-        .page-header-audiobtn{
+        .section-title-audiobtn{
             height: 13vh;
             width: 22vw;
             background: transparent;
@@ -116,34 +155,31 @@ ul.list{
             position: absolute;
         }
     }
-    .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-portrait;
-    }
-    .text-content{
-        font-size: $para-list-menu-font-size;
-        color: color($colors,black);
-        margin-left:$margin-title-portrait;
-    }
+   
+    // .text-content{
+    //     font-size: $para-list-menu-font-size;
+    //     color: color($colors,black);
+    //     margin-left:$margin-title-portrait;
+    // }
 }
 @media only screen and (orientation: landscape) {
-    .page-header-components{
+    .section-title-container{
         position: relative;
         padding-bottom: 20px; 
-        .page-header{
+        // margin-top: 28px;
+        .section-title{
             background-color: color($colors,blue);
             display: flex;
-            width: 89%;
+            width: 87%;
             height: 25vh;
-            .page-header-large{
+            .section-title-large{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 18vh;
                 padding-top: 1%;
                 margin-left: $margin-ion-header; 
             }
-            .page-header-small{
+            .section-title-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 6vw;
@@ -151,7 +187,7 @@ ul.list{
                 padding-left: 6px;
             }
         }
-        .page-header-audiobtn{
+        .section-title-audiobtn{
             height: 31vh;
             width: 20vw;
             background: transparent;
@@ -160,36 +196,33 @@ ul.list{
             position: absolute;
         }   
     }
-    .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-landscape;
-    }
-    .text-content{
-        font-size: $para-list-menu-font-size;
-        color: color($colors,black);
-        margin-left:$margin-title-landscape;
-    }
+    
+    // .text-content{
+    //     font-size: $para-list-menu-font-size;
+    //     color: color($colors,black);
+    //     margin-left:$margin-title-landscape;
+    // }
 }
 @media only screen and (max-device-width : 1024px) 
                    and (min-device-height : 768px) 
                    and (orientation:portrait) {
-    .page-header-components{
+    .section-title-container{
         position: relative;  
-        padding-bottom: 20px;  
-        .page-header{
+        padding-bottom: 20px; 
+        // margin-top: 28px; 
+        .section-title{
             background-color: color($colors,blue);
             display: flex;
-            width: 91%;
+            width: 87%;
             height: 10vh;
-            .page-header-large{
+            .section-title-large{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 6vh;
                 padding-top: 2%;
                 margin-left: $margin-ion-header;
             }
-            .page-header-small{
+            .section-title-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
                 font-size: 7vw;
@@ -197,7 +230,7 @@ ul.list{
                 padding-left: 6px;
             }
         }
-        .page-header-audiobtn{
+        .section-title-audiobtn{
             height: 13vh;
             width: 22vw;
             background: transparent;
@@ -206,65 +239,57 @@ ul.list{
             position: absolute;
         }
     }
-    .title-section{
-        font-size: 1.9em;
-        font-weight: 900;
-        margin-left:$margin-title-portrait-ios;
-    }
-    .text-content{
-        font-size: $para-list-menu-font-size;
-        color: color($colors,black);
-        margin-left:$margin-title-portrait-ios;
-    }
+    
+    // .text-content{
+    //     font-size: $para-list-menu-font-size;
+    //     color: color($colors,black);
+    //     margin-left:$margin-title-portrait-ios;
+    // }
 }
 @media only screen and (max-device-width : 1024px) 
                    and (min-device-height : 768px) 
                    and (orientation : landscape) {
-    .page-header-components{
+    .section-title-container{
         position: relative;
-        .page-header{
+        // width: 50%;
+        .section-title{
             background-color: color($colors,blue);
-            max-width: 100%;
-            width: 89%;
-            height: 11vh;
+            // max-width: 100%;
+            width: 47%;
+            height: 11.5vh;
             display: flex;
             position: relative;
-            .page-header-large{
+            .section-title-large{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
-                font-size: 6.5vh;
-                padding-top: 2%;
+                font-size: 8vh;
+                // padding-top: 2%;
                 margin-left: $margin-ion-header; 
             }
-            .page-header-small{
+            .section-title-small{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                 color: color($colors,white);
-                font-size: 3.2vw;
-                padding-top: 6%;
+                font-size: 5vh;
+                padding-top: 5.8%;
                 padding-left: 6px;
             }
         }
-        .page-header-audiobtn{
-            height: 13vh;
-            width: 11vw;
-            left: 36vw;
+        .section-title-audiobtn{
+            height: 14vh;
+            width: 12vw;
+            left: 41vw;
             top: 0;
             flex: 1;
             position: absolute;
         }          
     }
-    .title-section{
-        font-size: $para-list-menu-font-size;
-        font-weight: 900;
-        margin-left:$margin-title-landscape-ios;
-    }
     .text-content{
         font-size: $para-list-menu-font-size;
         color: color($colors,black);
         margin-left:$margin-title-landscape-ios;
     }
-}
-.title-filler{
+    .title-filler{
     width: 100%;
     height: 110px;
+}
 }
