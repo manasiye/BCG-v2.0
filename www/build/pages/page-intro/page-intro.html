@@ -8,7 +8,7 @@
                 <i class="icon-bcg icon-bcg-menu" blue></i>
             </button>
     </ion-buttons>
-    <ion-title class="title">What is BCG?</ion-title>
+    <ion-title text-center>{{pageContent.title}}</ion-title>
     <ion-buttons end>
       <button (click)=openHome(p)>
                 <ion-icon name="home"></ion-icon>
@@ -21,17 +21,26 @@
   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
 </ion-header>
 
-<ion-content class="bg_image">
-  <ion-row responsive-lg>
-    <ion-col *ngFor="let section of pageContent.sections" width-50 no-padding>
-      <ion-card class="card-properties" no-margin text-left>
-        <ion-card-header no-padding [innerHtml]="section.title">
-        <!--{{section.title}} -->
+<ion-content class="bg_image" *ngFor="let section of pageContent.sections">
+  <ion-row wrap>
+    <ion-col wrap no-padding>
+      <div class='section-title-container'>
+        <div class='section-title'>
+          <div class='section-title-large'>{{section.title.large}}</div>
+          <div class='section-title-small'>{{section.title.small}}</div>
+        </div>
+        <img src='img/audio_btn.png' class='section-title-audiobtn' />
+      </div>
+      <div class="sub-section-container" responsive-lg>
+      <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
+        <ion-card-header class='blue title-section sub-section-title' no-margin no-padding>
+          {{subSection.title}} 
         </ion-card-header>
-        <ion-card-content no-padding [innerHtml]="section.content">
+        <ion-card-content no-padding [innerHtml]="subSection.content">
           <!--{{section.content}}-->
         </ion-card-content>
       </ion-card>
+      </div>
     </ion-col>
   </ion-row>
 </ion-content>
