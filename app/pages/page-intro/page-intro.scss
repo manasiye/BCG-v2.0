@@ -1,10 +1,16 @@
 .fig-container{
-    display: inline;
+    // display: inline;
+    position: relative;
+    height: 350px;
 }
 
 .figure-small{
-    width: 40%;
-    height: 40%;
+    width: 45%;
+    height: 43%;
+    position: absolute;
+    left: 90px;
+    top: 55px;
+
 }
 
 

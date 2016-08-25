@@ -11,13 +11,13 @@ li.faq-list{
     line-height: 1em;
 }
 @media only screen and (orientation:portrait) {
-    .page-header-components1{
+    .section-title-container1{
             padding-bottom: 20px; 
-            display: flex;   
+            // display: flex;   
             position: relative;
             .page-header1{
                 background-color: color($colors,blue);
-                width: 91%;
+                width: 87%;
     
             .page-header-smalltext{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
@@ -44,7 +44,7 @@ li.faq-list{
     }
 }
 @media only screen and (orientation:landscape) {
-    .page-header-components1{
+    .section-title-container1{
             padding-bottom: 20px; 
             display: flex;   
             position: relative;
@@ -79,7 +79,7 @@ li.faq-list{
 @media only screen and (max-device-width : 1024px) 
                    and (min-device-height : 768px) 
                    and (orientation:portrait){
-    .page-header-components1{
+    .section-title-container1{
             padding-bottom: 20px; 
             display: flex;      
             position: relative;
@@ -115,7 +115,7 @@ li.faq-list{
 @media only screen and (max-device-width : 1024px) 
                    and (min-device-height : 768px) 
                    and (orientation:landscape){
-    .page-header-components1{
+    .section-title-container1{
             padding-bottom: 20px; 
             display: flex;   
             position: relative;
