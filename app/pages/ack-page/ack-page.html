@@ -3,12 +3,23 @@
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title class="title">Acknowledgements</ion-title>
+     <ion-title text-center>{{pageContent.title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
-  <h1>{{pageContent.pageTitle}}</h1>
-  <div *ngFor="let section of pageContent.sections" [innerHtml]="section.content" class="page-ack-content"></div>
+ <ion-row wrap *ngFor="let section of pageContent.sections" >
+    <ion-col no-padding no-margin>
+      <!--<div text-center>{{section.title.large}}</div> -->
+      <div class="sub-section-container" responsive-lg>
+      <ion-card class="sub-section" no-padding no-margin text-center *ngFor="let subSection of section.subSections">
+        <!--<ion-card-header class="title-font sub-section-title">
+          {{subSection.title}}
+        </ion-card-header>-->
+        <ion-card-content no-margin [innerHtml]="subSection.content">
+        </ion-card-content>
+      </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>

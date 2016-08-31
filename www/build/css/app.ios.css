@@ -9783,13 +9783,10 @@ body {
   top: 30px; }
 
 .ack-image {
-  height: 20%;
-  width: 20%; }
-
-.page-ack-content {
-  font-family: cursive;
-  font-weight: bolder;
-  text-align: center; }
+  height: 25%;
+  width: 25%;
+  position: relative;
+  left: 37vw; }
 
 .title-font {
   font-family: HelveticaNeue-CondensedBlack, Helvetica Neue, Arial, Helvetica, sans-serif;
@@ -10021,6 +10018,38 @@ li.faq-list {
       top: 0;
       position: absolute; } }
 
+.tabs-vertical {
+  position: absolute !important;
+  top: 43px !important;
+  height: 100% !important;
+  width: 25vw !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-left-color: white;
+  border-top-color: white;
+  border-top: none; }
+
 .thermometer {
   width: 20%;
   height: 20%;
@@ -10030,6 +10059,27 @@ li.faq-list {
   width: 30%;
   height: 30%;
   float: right; }
+
+.figure-container {
+  height: 60vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .figure-container .patient-home-img {
+    height: 60vh;
+    width: 12vw;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .figure-container .patient-stay-img {
+    height: 60vh;
+    width: 12vw;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
 
 @font-face {
   font-family: icomoon;
@@ -10226,7 +10276,6 @@ ul.list {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    top: 0;
     position: absolute; }
 
 .text-content {
@@ -10253,7 +10302,8 @@ ul.list {
   .section-title-container .section-title-audiobtn {
     height: 13vh;
     width: 22vw;
-    left: 75vw; }
+    left: 75vw;
+    top: -0.3vh; }
   .sub-section-container .sub-section .sub-section-title {
     font-size: 1.5em;
     font-weight: 900;
@@ -10265,7 +10315,7 @@ ul.list {
 
 @media only screen and (orientation: landscape) {
   .section-title-container .section-title {
-    width: 78%;
+    width: 82%;
     height: 25vh; }
     .section-title-container .section-title .section-title-large {
       font-size: 18vh;
@@ -10278,7 +10328,8 @@ ul.list {
   .section-title-container .section-title-audiobtn {
     height: 31vh;
     width: 20vw;
-    left: 67vw; }
+    left: 72vw;
+    top: 0vh; }
   .sub-section-container .sub-section .sub-section-title {
     font-size: 1.5em;
     font-weight: 900;
@@ -10289,7 +10340,7 @@ ul.list {
 
 @media only screen and (max-device-width: 1024px) and (min-device-height: 768px) and (orientation: portrait) {
   .section-title-container .section-title {
-    width: 85%;
+    width: 78%;
     height: 11.5vh; }
     .section-title-container .section-title .section-title-large {
       font-size: 7vh;
@@ -10300,8 +10351,9 @@ ul.list {
       padding-left: 6px; }
   .section-title-container .section-title-audiobtn {
     height: 14vh;
-    width: 18vw;
-    left: 75vw; }
+    width: 19vw;
+    left: 67vw;
+    top: 0vh; }
   .sub-section-container .sub-section .sub-section-title {
     font-size: 1.9em;
     font-weight: 900;
@@ -10312,7 +10364,7 @@ ul.list {
 
 @media only screen and (max-device-width: 1024px) and (min-device-height: 768px) and (orientation: landscape) {
   .section-title-container .section-title {
-    width: 47%;
+    width: 48%;
     height: 11.5vh; }
     .section-title-container .section-title .section-title-large {
       font-size: 8vh;
@@ -10324,7 +10376,8 @@ ul.list {
   .section-title-container .section-title-audiobtn {
     height: 14vh;
     width: 12vw;
-    left: 41vw; }
+    left: 42vw;
+    top: 0vh; }
   .sub-section-container .sub-section .sub-section-title {
     font-size: 1.5em;
     font-weight: 900;
@@ -10332,3 +10385,21 @@ ul.list {
   .text-content {
     font-size: 1.5em;
     margin-left: 1em; } }
+
+@media only screen and (max-device-width: 435px) and (min-device-height: 773px) and (orientation: portrait) {
+  .section-title-container .section-title {
+    width: 87%;
+    height: 10.5vh; }
+    .section-title-container .section-title .section-title-large {
+      font-size: 6vh;
+      padding-top: 3%;
+      margin-left: 0.3em; }
+    .section-title-container .section-title .section-title-small {
+      font-size: 5vh;
+      padding-top: 5.8%;
+      padding-left: 6px; }
+  .section-title-container .section-title-audiobtn {
+    height: 24vh;
+    width: 24vw;
+    left: 75vw;
+    top: -42px; } }

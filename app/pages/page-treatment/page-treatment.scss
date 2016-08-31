@@ -3,3 +3,18 @@
     height: 30%;
    float: right;
 }
+
+.figure-container{
+    height: 60vh;
+    display:flex;
+    .patient-home-img{
+        height: 60vh;
+        width: 12vw;
+        flex: 1;
+    }
+    .patient-stay-img{
+        height: 60vh;
+        width: 12vw;
+        flex: 1;
+    }
+}
