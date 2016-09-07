@@ -118,7 +118,10 @@ export let APP_CONTENT = [
                     },
                     {
                         "title": "",
-                        "content": `<img src='./img/figures/twohours_illustration_large.png'>`
+                        "content": `<div class='figure-container'>
+                                        <img src='./img/figures/patient_go_home.png' class='patient-home-img'>
+                                        <img src='./img/figures/patient_stay_clinic.png'class='patient-stay-img'>
+                                    </div>`
                     }
                 ]
 
@@ -341,8 +344,8 @@ export let APP_CONTENT = [
                 },
                 "subSections": [
                     {
-                        "title": "Narrator",
-                        "content": `<img  src='./img/300.png' class='ack-image'/>
+                        "title": "",
+                        "content": `<img  src='./img/ATLAS_LOGO_blue.png' class='ack-image'/>
                             <p>Applied Technology Laboratory for Advanced Surgery Program Acknowledges</p><p>the following for providing constructive feedback to the content of the app:</p>
                             <p>Nihal Mohamed, MD, PhD, Cheryl Lee, MD, Mark Soloway, MD,</p> <p>Donald Lamm, MD, Heather Goltz, PhD, Monica Smith, BA, Diane Quale, JD</p> <p>The BCAN (Bladder Cancer Advocacy Network) Scientific Advisory Board</p><p>Monetary Support from :</p>
                             <p>Arnold Zimmer and Family</p>

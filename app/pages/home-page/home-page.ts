@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
-import {HelpPage} from '../help-page/help-page';
-import {PageIntro} from '../page-intro/page-intro';
-import {PageQuestions} from '../page-questions/page-questions';
-import {PageTreatment} from '../page-treatment/page-treatment';
-import {PageTimeline} from '../page-timeline/page-timeline';
-import {PageSideEffects} from '../page-sideeffects/page-sideeffects';
+import { HelpPage } from '../help-page/help-page';
+import { PageIntro } from '../page-intro/page-intro';
+import { PageQuestions } from '../page-questions/page-questions';
+import { PageTreatment } from '../page-treatment/page-treatment';
+import { TimelinePage } from '../timeline-page/timeline-page';
+import { PageSideEffects } from '../page-sideeffects/page-sideeffects';
 
 
 
 
 @Component({
-  templateUrl: 'build/pages/page-home/page-home.html',
+  templateUrl: 'build/pages/home-page/home-page.html',
 })
 export class HomePage implements AppPage {
 
@@ -48,6 +48,6 @@ export class HomePage implements AppPage {
     this.nav.setRoot(PageSideEffects);
   }
   openTimeline(page) {
-    this.nav.setRoot(PageTimeline);
+    this.nav.setRoot(TimelinePage);
   }
 }

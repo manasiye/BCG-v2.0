@@ -10018,11 +10018,8 @@ li.faq-list {
       top: 0;
       position: absolute; } }
 
-.tabs-vertical {
-  position: absolute !important;
-  top: 43px !important;
-  height: 100% !important;
-  width: 25vw !important;
+.tabs-timeline ion-tabbar {
+  left: 0px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10032,23 +10029,13 @@ li.faq-list {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-left-color: white;
-  border-top-color: white;
-  border-top: none; }
+  height: 100%;
+  width: 200px;
+  top: 44px; }
+
+.tab-content {
+  margin-left: 20%;
+  margin-top: 4.3%; }
 
 .thermometer {
   width: 20%;

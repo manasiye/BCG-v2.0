@@ -4,7 +4,7 @@ import { AppPage } from '../../interfaces/app-page/app-page';
 import { ContentProvider } from '../../providers/content-provider/content-provider';
 import { HelpPage } from '../help-page/help-page';
 import {HomePage} from '../home-page/home-page';
-import { PageableSections } from '../../types/pageable-sections';
+import { PageableSections } from '../../types/pageable-sections'; 
 import { Pager } from '../../components/pager/pager';
 
 
