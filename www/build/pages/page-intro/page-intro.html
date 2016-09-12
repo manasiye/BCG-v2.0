@@ -29,17 +29,18 @@
           <div class='section-title-large'>{{section.title.large}}</div>
           <div class='section-title-small'>{{section.title.small}}</div>
         </div>
-        <img src='img/audio_btn.svg' class='section-title-audiobtn' />
+        <img src='img/audio_btn.svg' [audio-modal] [pageId]="pageContent.id" [audio-modal-title]="section.title.large" [sectionIndex]="i"
+          class='section-title-audiobtn' />
       </div>
       <div class="sub-section-container" responsive-lg>
-      <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
-        <ion-card-header class='blue title-section sub-section-title' no-margin no-padding>
-          {{subSection.title}} 
-        </ion-card-header>
-        <ion-card-content no-padding [innerHtml]="subSection.content">
-          <!--{{section.content}}-->
-        </ion-card-content>
-      </ion-card>
+        <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">
+          <ion-card-header class='blue title-section sub-section-title' no-margin no-padding>
+            {{subSection.title}}
+          </ion-card-header>
+          <ion-card-content no-padding [innerHtml]="subSection.content">
+            <!--{{section.content}}-->
+          </ion-card-content>
+        </ion-card>
       </div>
     </ion-col>
   </ion-row>

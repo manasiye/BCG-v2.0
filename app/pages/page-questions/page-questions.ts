@@ -6,11 +6,12 @@ import {HelpPage} from '../help-page/help-page';
 import {HomePage} from '../home-page/home-page';
 import { PageableSections } from '../../types/pageable-sections';
 import { Pager } from '../../components/pager/pager';
+import { AudioModal } from '../../components/audio-modal/audio-modal';
 
 
 @Component({
   templateUrl: 'build/pages/page-questions/page-questions.html',
-  directives: [Pager]
+  directives: [AudioModal,Pager]
 })
 export class PageQuestions extends PageableSections implements AppPage {
 

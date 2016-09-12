@@ -1,0 +1,28 @@
+.card-audio-modal{
+    max-height: 50vh;
+    margin: 0 auto;
+    color: color($colors, light);
+    top: 50%;
+    transform: translateY(-50%);
+    // display: flex;
+    flex:1 ;
+    // flex-direction: column;
+    // background-color: color($colors, dark);
+    background-color: rgba(34, 34, 34, 0.9);
+    ion-card-header{
+        color: color($colors, light);
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .item{
+        background-color: transparent;
+    }
+    ion-item{
+        span{
+            color: color($colors, light);
+        }
+    }
+}
