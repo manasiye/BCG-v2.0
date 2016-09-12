@@ -8,12 +8,12 @@ import { PageQuestions } from '../page-questions/page-questions';
 import { PageTreatment } from '../page-treatment/page-treatment';
 import { TimelinePage } from '../timeline-page/timeline-page';
 import { PageSideEffects } from '../page-sideeffects/page-sideeffects';
-
-
+import { AudioModal } from '../../components/audio-modal/audio-modal';
 
 
 @Component({
   templateUrl: 'build/pages/home-page/home-page.html',
+  directives: [AudioModal]
 })
 export class HomePage implements AppPage {
 

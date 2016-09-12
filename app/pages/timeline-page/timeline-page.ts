@@ -4,6 +4,10 @@ import { FourHours } from '../four-hours/four-hours';
 import { TwoHours } from '../two-hours/two-hours';
 import { SixHours } from '../six-hours/six-hours';
 import { FortyEightHours } from '../fortyeight-hours/fortyeight-hours';
+import {HelpPage} from '../help-page/help-page';
+import {HomePage} from '../home-page/home-page';
+
+
 /*
   Generated class for the TimelinePage page.
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
@@ -54,6 +58,14 @@ export class TimelinePage {
         //     this.refreshTabStatus(event);
         // });
     }
+
+    openHome(page) {
+        this.nav.setRoot(HomePage);
+    }
+    openHelp(page) {
+        this.nav.setRoot(HelpPage);
+    }
+
     // refreshTabStatus(event): void {
     //     console.log('tab refresh Works', event);
     //     if (event.newEntries > 0) {
