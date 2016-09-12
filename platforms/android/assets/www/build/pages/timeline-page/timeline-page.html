@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-buttons start left menuToggle>
+      <button class="menu-button">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+      <button icon class="menu-button">
+                <i class="icon-bcg icon-bcg-menu" blue></i>
+            </button>
+    </ion-buttons>
+    <ion-title text-center>Timeline</ion-title>
+    <ion-buttons end>
+      <button (click)=openHome(p)>
+                <ion-icon name="home"></ion-icon>
+            </button>
+      <button (click)=openHelp(p)>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs #timelineTab class="tabs-timeline">
+    <ion-tab class="tab-content" *ngFor="let tab of tabs" [enabled]="tab.enabled" [tabIcon]="tab.icon" [tabTitle]="tab.title"
+      [root]="tab.component"></ion-tab>
+  </ion-tabs>
+</ion-content>

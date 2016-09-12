@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+   <ion-title text-center>{{pageContent.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_image">
+  <ion-row wrap *ngFor="let section of pageContent.sections" >
+    <ion-col no-padding no-margin>
+      <div text-center class='sub-section-title blue'>{{section.title.large}}</div> 
+      <div class="sub-section-container" responsive-lg>
+      <ion-card class="sub-section" no-padding no-margin text-left *ngFor="let subSection of section.subSections">
+        <ion-card-header class="title-font sub-section-title">
+          {{subSection.title}}
+        </ion-card-header>
+        <ion-card-content no-margin [innerHtml]="subSection.content">
+          <!--{{section.content}}-->
+        </ion-card-content>
+      </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

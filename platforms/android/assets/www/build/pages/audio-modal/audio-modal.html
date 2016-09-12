@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AudioModal component.
+  See https://angular.io/docs/ts/latest/api/core/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+<ion-card class="card-audio-modal">
+  <ion-card-header>
+    {{title}}
+  </ion-card-header>
+  <!--<ion-card-content>-->
+    <img src="img/audio-bars.svg" *ngIf="!isPaused" (click)="togglePlayPause()" />
+    <img src="img/audio-bars-paused.svg" *ngIf="isPaused" (click)="togglePlayPause()" />
+    <ion-item>
+      <span item-left>12:34</span>
+      <ion-range [(ngModel)]="brightness">
+        <!--<ion-icon range-left small name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>-->
+      </ion-range>
+      <span item-right>12:34</span>
+
+    </ion-item>
+    <ion-row>
+      <ion-col center text-center>
+        <button light clear (click)="togglePlayPause()" *ngIf="!isPaused">
+        <ion-icon name="pause"></ion-icon>
+        <div>Pause</div>
+      </button>
+        <button light clear (click)="togglePlayPause()" *ngIf="isPaused">
+        <ion-icon name="play"></ion-icon>
+        <div>Play</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <button danger clear (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+        Close
+      </button>
+      </ion-col>
+    </ion-row>
+  <!--</ion-card-content>-->
+</ion-card>

@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar primary>
+        <ion-buttons start left menuToggle>
+            <button class="menu-button">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <button icon class="menu-button">
+                <i class="icon-bcg" blue></i>
+            </button>
+        </ion-buttons>
+        <ion-title text-center>Home</ion-title>
+        <ion-buttons end>
+            <button (click)="openHome(p)">
+                <ion-icon name="home"></ion-icon>
+            </button>
+            <button (click)=openHelp(p)>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page bg_image">
+    <div class="flex-header">
+        <div class="header-font-big">BCG</div>
+        <div class="header-font-small">for</div>
+        <div class="header-font-med">Bladder Cancer</div>
+        <img class="header-audiobtn" src="img/audio_btn.svg" />
+    </div>
+    <div class="sub-header">Everything You Need to Know</div>
+    <ion-row responsive-lg>
+        <ion-col width-50 no-margin no-padding>
+            <ion-card no-margin no-padding class="card-navigation card-intro" (click)="openIntro(p)">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-title1">BCG TREATMENT</div>
+                    <div class="card-subtitle1">What, When & How</div>
+                </div>
+            </ion-card>
+        </ion-col>
+
+        <ion-col width-25 no-margin no-padding>
+            <ion-card class="card-navigation card-treatment" (click)="openTreatment(p)">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-subtitle">Before, During & After</div>
+                    <div class="card-title">TREATMENT</div>
+                </div>
+            </ion-card>
+
+            <ion-card class="card-navigation card-questions" (click)="openFaq(p)">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-subtitle">Frequently Asked</div>
+                    <div class="card-title">QUESTIONS</div>
+
+                </div>
+            </ion-card>
+
+        </ion-col>
+        <ion-col width-25 no-margin no-padding>
+            <ion-card class="card-navigation card-sideeffects" (click)="openSideEffects(p)">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-subtitle">BCG</div>
+                    <div class="card-title">SIDEEFFECTS</div>
+                </div>
+            </ion-card>
+            <ion-card class="card-navigation card-timeline" (click)="openTimeline(p)">
+                <img class="card-bg-image" src="img/300.png" />
+                <div class="card-footer">
+                    <div class="card-subtitle">Treatment</div>
+                    <div class="card-title">TIMELINE</div>
+                </div>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+    <p text-center no-margin>&copy; Roswell Park Cancer Institute 2016. All Rights Reserved.</p>
+</ion-content>

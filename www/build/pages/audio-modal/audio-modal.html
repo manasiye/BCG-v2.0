@@ -19,11 +19,11 @@
   </ion-item>
   <ion-row>
     <ion-col center text-center>
-      <button clear (click)="togglePlayPause()" *ngIf="status === 2">
+      <button clear (click)="togglePlayPause()" *ngIf="status === 3">
         <ion-icon name="pause"></ion-icon>
         <div>Pause</div>
       </button>
-      <button clear (click)="togglePlayPause()" *ngIf="status !== 2">
+      <button clear (click)="togglePlayPause()" *ngIf="status !== 3">
         <ion-icon name="play"></ion-icon>
         <div>Play</div>
       </button>
