@@ -2,11 +2,13 @@ import { Directive, Component, Input, OnChanges } from '@angular/core';
 import { Modal, NavController, NavParams, ModalOptions, ViewController } from 'ionic-angular';
 import { Device } from 'ionic-native';
 import { MediaPlugin } from 'ionic-native';
+import { FormatTime } from '../../pipes/formatTime';
 
 
 @Component({
     templateUrl: 'build/pages/audio-modal/audio-modal.html',
-    providers: [Device]
+    providers: [Device],
+    pipes: [FormatTime]
 })
 export class AudioModalPage implements OnChanges {
 
@@ -19,12 +21,12 @@ export class AudioModalPage implements OnChanges {
 
     status: number = MediaPlugin.MEDIA_PAUSED;
     duration: number = 0;
-    currentPosition:number = 0;
+    currentPosition: number = 0;
+    currentPositionTimer: any = null;
 
 
     ngAfterContentInit() {
         // get all tracks managed by AudioProvider so we can control playback via the API
-
     }
     constructor(private viewCtrl: ViewController, private params: NavParams) {
         this.viewCtrl = viewCtrl;
@@ -33,74 +35,114 @@ export class AudioModalPage implements OnChanges {
 
         console.log(Device.device);
 
-
-
-
         this.audioFile = new MediaPlugin(this.audioSrc);
 
         // Catch the Success & Error Output
         // Platform Quirks
         // iOS calls success on completion of playback only
         // Android calls success on completion of playback AND on release()
-        this.audioFile.init.then(success=>{
-            console.log('Audio Ended',success);
+
+        this.audioFile.init.then(success => {
+            console.log('Audio Ended', success);
+            this.stop();
         },
-        err=>{
-            console.log('Audio Load error',err);
-        });
+            err => {
+                console.log('Audio Load error', err);
+            });
 
-        this.audioFile.status.subscribe(status=>{
-            console.log('Audio Status Before :',this.status);
-            this.status = status;
-            console.log('Audio Status After :',this.status);
+        this.audioFile.status.subscribe(status => {
+            
+            //     this.duration = this.audioFile.getDuration();
+            if (this.status === 4) {
+                this.stop();
+            }
         },
-        err=>{
-            console.log('Audio Status error',err);
-        });
+            err => {
+                console.log('Audio Status error', err);
+            });
 
-        setTimeout(()=>{
-            this.togglePlayPause();
-            this.duration = this.audioFile.getDuration();
-        },300);
+        this.play();
 
-        
-        // this.audioFile.init.then((data) => {
-        //     console.log(data,'Playback Finished');
-        // }, (err) => {
-        //     console.log('somthing went wrong! error code: ' + err.code + ' message: ' + err.message);
-        // });
-
-
-        // get current playback position
-        // this.audioFile.getCurrentPosition().then((position) => {
-        //     console.log('Current Position: ', position);
-        // });
 
         // get file duration
         // console.log('Total Duration: ', this.audioFile.getDuration());
     }
-
-    togglePlayPause() {
-        if (this.status === MediaPlugin.MEDIA_PAUSED) {
+    play() {
+        if (this.audioFile) {
             this.audioFile.play();
-        } else {
+            this.startCurrentPositionTimer();
+            this.status = MediaPlugin.MEDIA_RUNNING;
+        }
+        
+    }
+    pause() {
+        if (this.audioFile) {
             this.audioFile.pause();
+            this.stopCurrentPositionTimer();
+            this.status = MediaPlugin.MEDIA_PAUSED;
         }
     }
     stop() {
-        this.audioFile.stop();
+        if (this.audioFile) {
+            this.audioFile.stop();
+            this.stopCurrentPositionTimer();
+            // TODO: Check and trigger only for android
+            // this.audioFile.release();
+        }
+    }
 
-        // TODO: Check and trigger only for android
-        // this.audioFile.release();
+
+    updateCurrentPosition() {
+        // console.count('Called updateCurrentPosition');
+        // console.log(this.audioFile);
+        
+        if (this.audioFile) {
+            this.audioFile.getCurrentPosition().then(
+                position => {
+                    // console.log('New Position: ', position);
+                    if (position > 0) {
+                        // console.log('New Position: ', position);
+                        this.currentPosition = position;
+                    } else {
+                        console.log('No Duration: ', position);
+                    }
+                }, error => {
+                    console.log(error);
+                });
+        }else {
+            console.log('No audioFile');
+        }
+
     }
 
     dismiss() {
         this.stop();
     }
+    getDuration() {
+        if (this.audioFile) {
+            // this.duration = Math.floor(this.audioFile.getDuration());
+            this.duration = this.audioFile.getDuration();
+        }
+    }
+    startCurrentPositionTimer() {
+        this.currentPositionTimer = setInterval(() => {
+            this.updateCurrentPosition();
+            if (this.duration === 0) {
+                this.getDuration();
+            }
+        }, 400);
+        // console.log('Timer: ', this.durationTimer);
 
-    ngOnChanges(){
-        // this.currentPosition = this.audioFile.getCurrentPosition().then(currentPostion=>{
+    }
+    stopCurrentPositionTimer() {
+        if (this.currentPositionTimer) {
+            clearTimeout(this.currentPositionTimer);
+        }
+    }
 
+
+    ngOnChanges() {
+        // this.currentPosition = this.audioFile.getCurrentPosition().then(currentPostion=>{  
         // });
     }
 }

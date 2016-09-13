@@ -8,22 +8,22 @@
     {{title}}
   </ion-card-header>
   <!--<ion-card-content>-->
-  <img src="img/audio-bars.svg" *ngIf="!isPaused" (click)="togglePlayPause()" />
-  <img src="img/audio-bars-paused.svg" *ngIf="isPaused" (click)="togglePlayPause()" />
+  <img src="img/audio-bars.svg" *ngIf="!isPaused" (click)="pause()" />
+  <img src="img/audio-bars-paused.svg" *ngIf="isPaused" (click)="play()" />
   <ion-item>
-    <span item-left>{{audioFile.getCurrentPosition}}</span>
+    <span item-left>{{currentPosition|formatTime}}</span>
     <!--<ion-range [(ngModel)]="(currentPosition/duration)*100">
     </ion-range>-->
-    <span item-right>{{duration}}</span>
+    <span item-right>{{duration|formatTime}}</span>
 
   </ion-item>
   <ion-row>
     <ion-col center text-center>
-      <button clear (click)="togglePlayPause()" *ngIf="status === 3">
+      <button clear (click)="pause()" *ngIf="status === 2">
         <ion-icon name="pause"></ion-icon>
         <div>Pause</div>
       </button>
-      <button clear (click)="togglePlayPause()" *ngIf="status !== 3">
+      <button clear (click)="play()" *ngIf="status === 3 || status === 4">
         <ion-icon name="play"></ion-icon>
         <div>Play</div>
       </button>

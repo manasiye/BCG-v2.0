@@ -1,5 +1,5 @@
 import { Directive, Component, Input } from '@angular/core';
-import { ModalController, NavController, NavParams, ModalOptions, ViewController } from 'ionic-angular';
+import { ModalController, NavController, NavParams, ModalOptions, ViewController, Platform } from 'ionic-angular';
 import { MediaPlugin } from 'ionic-native';
 import { Device } from 'ionic-native';
 import {AudioModalPage} from '../../pages/audio-modal/audio-modal';
@@ -21,6 +21,8 @@ export class AudioModal {
 
   // @Input('audio-modal') audioSrc: string;
   location: string = 'media/';
+  ios_prefix = '';
+  android_prefix = '/android_asset/www/';
   // extension: string = '.mp3';
   extension: string = '.m4a';
   nav: NavController;
@@ -34,8 +36,9 @@ export class AudioModal {
   @Input() pageId: string;
   @Input() sectionIndex: string;
 
-  constructor(nav: NavController, private mc: ModalController) {
+  constructor(nav: NavController, private mc: ModalController,  private platform: Platform) {
     this.nav = nav;
+    
   }
 
   showModal() {
@@ -44,6 +47,10 @@ export class AudioModal {
   };
 
   getSource(): string {
-    return this.location + this.pageId + '_' + (this.sectionIndex + 1) + this.extension;
+    let prefix = this.ios_prefix;
+    if(this.platform.is('android')){
+      prefix = this.android_prefix;
+    }
+    return prefix + this.location + this.pageId + '_' + (this.sectionIndex + 1) + this.extension;
   }
 }
