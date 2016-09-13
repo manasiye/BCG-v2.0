@@ -11,10 +11,12 @@
   <img src="img/audio-bars.svg" *ngIf="!isPaused" (click)="pause()" />
   <img src="img/audio-bars-paused.svg" *ngIf="isPaused" (click)="play()" />
   <ion-item>
-    <span item-left>{{currentPosition|formatTime}}</span>
-    <!--<ion-range [(ngModel)]="(currentPosition/duration)*100">
-    </ion-range>-->
-    <span item-right>{{duration|formatTime}}</span>
+    <ion-range [ngModel]="currentPosition" (ionChange)="seekTo($event)" [min]="0" [max]="duration" [step]="0.1">
+      <span range-left>{{currentPosition|formatTime}}</span>
+      <!--<ion-icon range-left small name="sunny"></ion-icon>
+    <ion-icon range-right name="sunny"></ion-icon>-->
+      <span range-right>{{duration|formatTime}}</span>
+    </ion-range>
 
   </ion-item>
   <ion-row>
