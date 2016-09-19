@@ -28,12 +28,12 @@
   <!--<h1>{{pageContent.pageTitle}}</h1>-->
   <ion-row wrap *ngFor="let section of pageContent.sections; let i = index">
     <ion-col no-padding>
-      <div class="section-title-container" section-title (click)="selectSection(i)">
-        <div class="section-title">
-          <div class="section-title-large">{{section.title.large}}</div>
-          <div class="section-title-small">{{section.title.small}}</div>
+      <div class="section-title-container1" section-title (click)="selectSection(i)">
+        <div class="section-title1">
+          <div class="section-title-largetext">{{section.title.large}}</div>
+          <div class="section-title-smalltext">{{section.title.small}}</div>
         </div>
-        <img src='img/audio_btn.svg' class="section-title-audiobtn" [audio-modal] [pageId]="pageContent.id" [sectionIndex]="i" (click)="selectSection(i)"
+        <img src='img/audio_btn.svg' class="section-title-audiobtn1" [audio-modal] [pageId]="pageContent.id" [sectionIndex]="i" (click)="selectSection(i)"
         />
       </div>
       <div class="sub-section-container" responsive-lg>

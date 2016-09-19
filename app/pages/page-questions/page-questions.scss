@@ -15,25 +15,25 @@ li.faq-list{
             padding-bottom: 20px; 
             // display: flex;   
             position: relative;
-            .page-header1{
+            .section-title1{
                 background-color: color($colors,blue);
                 width: 87%;
     
-            .page-header-smalltext{
+            .section-title-smalltext{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 5.5vw;
                             margin-left: 1.6em;
                             
             }
-            .page-header-largetext{
+            .section-title-largetext{
             font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 9.7vw;
                             margin-left: $margin-title-landscape;
             }
         }
-        .page-header-audiobtn1{
+        .section-title-audiobtn1{
             height: 13vh;
             width: 22vw;
             background: transparent;
@@ -48,25 +48,25 @@ li.faq-list{
             padding-bottom: 20px; 
             display: flex;   
             position: relative;
-            .page-header1{
+            .section-title1{
                 background-color: color($colors,blue);
                 width: 91%;
     
-            .page-header-smalltext{
+            .section-title-smalltext{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 5.5vw;
                             margin-left: 0.9em;
                             
             }
-            .page-header-largetext{
+            .section-title-largetext{
             font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 9.7vw;
                             margin-left: 0.5em;
             }
         }
-        .page-header-audiobtn1{
+        .section-title-audiobtn1{
             height: 40vh;
             width: 22vw;
             background: transparent;
@@ -83,25 +83,25 @@ li.faq-list{
             padding-bottom: 20px; 
             display: flex;      
             position: relative;
-            .page-header1{
+            .section-title1{
                 background-color: color($colors,blue);
                 width: 91%;
     
-            .page-header-smalltext{
+            .section-title-smalltext{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 5.5vw;
                             margin-left: 1.6em;
                             
             }
-            .page-header-largetext{
+            .section-title-largetext{
             font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 9.7vw;
                             margin-left: $margin-title-landscape;
             }
         }
-        .page-header-audiobtn1{
+        .section-title-audiobtn1{
             height: 17vh;
             width: 23vw;
             background: transparent;
@@ -119,25 +119,25 @@ li.faq-list{
             padding-bottom: 20px; 
             display: flex;   
             position: relative;
-            .page-header1{
+            .section-title1{
                 background-color: color($colors,blue);
                 width: 91%;
     
-            .page-header-smalltext{
+            .section-title-smalltext{
                 font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 2.5vw;
                             margin-left: 1.2em;
                             
             }
-            .page-header-largetext{
+            .section-title-largetext{
             font-family: $font_HelveticaNeue_CondensedBlack, $font_Helvetica_Neue, $font_Arial, $font_Helvetica, $font_sans_serif;
                             color: color($colors,white);
                             font-size: 4.7vw;
                             margin-left: $margin-title-portrait;
             }
         }
-        .page-header-audiobtn1{
+        .section-title-audiobtn1{
             height: 15vh;
             width: 13vw;
             background: transparent;

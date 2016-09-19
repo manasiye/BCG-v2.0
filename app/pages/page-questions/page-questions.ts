@@ -11,12 +11,12 @@ import { AudioModal } from '../../components/audio-modal/audio-modal';
 
 @Component({
   templateUrl: 'build/pages/page-questions/page-questions.html',
-  directives: [AudioModal,Pager]
+  directives: [AudioModal, Pager]
 })
 export class PageQuestions extends PageableSections implements AppPage {
 
   pageId: string = 'PageQuestions';
-  pageContent: any; 
+  pageContent: any;
 
   constructor(private nav: NavController, cp: ContentProvider) {
     super();
@@ -29,7 +29,7 @@ export class PageQuestions extends PageableSections implements AppPage {
   openHome(page) {
     this.nav.setRoot(HomePage);
   }
-   openHelp(page) {
-   this.nav.setRoot(HelpPage);
+  openHelp(page) {
+    this.nav.setRoot(HelpPage);
   }
 }
