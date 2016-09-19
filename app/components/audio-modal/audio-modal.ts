@@ -13,8 +13,8 @@ import {AudioModalPage} from '../../pages/audio-modal/audio-modal';
 */
 @Directive({
   selector: '[audio-modal]',
-  host : {
-    '(click)': 'showModal()' 
+  host: {
+    '(click)': 'showModal()'
   }
 })
 export class AudioModal {
@@ -36,9 +36,9 @@ export class AudioModal {
   @Input() pageId: string;
   @Input() sectionIndex: string;
 
-  constructor(nav: NavController, private mc: ModalController,  private platform: Platform) {
+  constructor(nav: NavController, private mc: ModalController, private platform: Platform) {
     this.nav = nav;
-    
+
   }
 
   showModal() {
@@ -48,7 +48,7 @@ export class AudioModal {
 
   getSource(): string {
     let prefix = this.ios_prefix;
-    if(this.platform.is('android')){
+    if (this.platform.is('android')) {
       prefix = this.android_prefix;
     }
     return prefix + this.location + this.pageId + '_' + (this.sectionIndex + 1) + this.extension;

@@ -2,27 +2,27 @@
     max-height: 50vh;
     margin: 0 auto;
     color: color($colors, light);
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
-    // display: flex;
     flex:1 ;
-    // flex-direction: column;
-    // background-color: color($colors, dark);
-    background-color: rgba(34, 34, 34, 0.9);
-    ion-card-header{
+    background-color: rgba(0, 0, 0, 0.8);
+    .card-title{
         color: color($colors, light);
     }
-    img{
-        width: 100px;
-        height: 100px;
+    .audio-image{
+        width: 80px;
+        height: 50px;
         margin: 0 auto;
     }
-    .item{
-        background-color: transparent;
-    }
-    ion-item{
+
+    .audio-controls-container{
+        background: transparent;
         span{
             color: color($colors, light);
         }
+    }
+    .play-pause-btn{
+        color: color($colors, light);
     }
 }
