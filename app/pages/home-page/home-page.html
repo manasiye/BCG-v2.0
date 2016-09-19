@@ -20,12 +20,12 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page bg_image">
+<ion-content class="card-background-page bg_image" *ngFor="let section of pageContent.sections; let i = index"> 
     <div class="flex-header">
         <div class="header-font-big">BCG</div>
         <div class="header-font-small">for</div>
         <div class="header-font-med">Bladder Cancer</div>
-        <img class="header-audiobtn" src="img/audio_btn.svg" [audio-modal] />
+        <img class="header-audiobtn" src="img/audio_btn.svg" [audio-modal] [pageId]="pageContent.id" [sectionIndex]="i" (click)="selectSection(i)" [audio-modal-title]="section.title.large" />
     </div>
     <div class="sub-header">Everything You Need to Know</div>
     <ion-row responsive-lg>

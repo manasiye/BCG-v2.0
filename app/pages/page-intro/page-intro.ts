@@ -18,9 +18,9 @@ export class PageIntro implements AppPage {
 
   constructor(private nav: NavController, cp: ContentProvider) {
 
-   cp.getPage(this.pageId).subscribe((page)=>{
+    cp.getPage(this.pageId).subscribe((page) => {
       // console.log(page);
-        this.pageContent = page;
+      this.pageContent = page;
     });
   }
   openHome(page) {

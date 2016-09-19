@@ -21,7 +21,7 @@
   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
 </ion-header>
 
-<ion-content class="bg_image" *ngFor="let section of pageContent.sections">
+<ion-content class="bg_image" *ngFor="let section of pageContent.sections; let i = index">
   <ion-row>
     <ion-col no-padding>
       <div class='section-title-container'>
@@ -29,8 +29,7 @@
           <div class='section-title-large'>{{section.title.large}}</div>
           <div class='section-title-small'>{{section.title.small}}</div>
         </div>
-        <img src='img/audio_btn.svg' [audio-modal] [pageId]="pageContent.id" [audio-modal-title]="section.title.large" [sectionIndex]="i"
-          class='section-title-audiobtn' />
+        <img src='img/audio_btn.svg' class='section-title-audiobtn' [audio-modal] [pageId]="pageContent.id" [sectionIndex]="i" [audio-modal-title]="section.title.large" />
       </div>
       <div class="sub-section-container" responsive-lg>
         <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections">

@@ -34,7 +34,7 @@
           <div class="section-title-smalltext">{{section.title.small}}</div>
         </div>
         <img src='img/audio_btn.svg' class="section-title-audiobtn1" [audio-modal] [pageId]="pageContent.id" [sectionIndex]="i" (click)="selectSection(i)"
-        />
+        [audio-modal-title]="section.title.small+section.title.large" />
       </div>
       <div class="sub-section-container" responsive-lg>
         <ion-card class="sub-section" no-margin text-left *ngFor="let subSection of section.subSections; let i = index">
