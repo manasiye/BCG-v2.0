@@ -1,5 +1,5 @@
 .card-audio-modal{
-    max-height: 50vh;
+
     margin: 0 auto;
     color: color($colors, light);
     position: relative;
@@ -25,4 +25,12 @@
     .play-pause-btn{
         color: color($colors, light);
     }
+}
+
+@media only screen and (orientation:portrait) {
+        min-height: 40vh;
+}
+
+@media only screen and (orientation:landscape) {
+        min-height: 50vh;
 }
